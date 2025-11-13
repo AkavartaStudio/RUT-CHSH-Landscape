@@ -6,7 +6,7 @@
 ```bibtex
 @article{McRae2025RUT,
   title={The {RUT} {CHSH} Landscape: Three Regimes of Non-Classical Correlation},
-  author={McRae, Kelly and Lean, Chase and Claude},
+  author={McRae, Kelly and Lean, Chase and Claude (TC)},
   journal={Physical Review E},
   volume={XX},
   number={X},
@@ -18,7 +18,7 @@
 ```
 
 **Text:**
-> McRae, K., Lean, C., & Claude (2025). The RUT CHSH Landscape: Three Regimes of Non-Classical Correlation. *Physical Review E*, XX(X), XXXXXX.
+> McRae, K., Lean, C., & Claude (TC) (2025). The RUT CHSH Landscape: Three Regimes of Non-Classical Correlation. *Physical Review E*, XX(X), XXXXXX.
 
 ---
 
@@ -28,15 +28,15 @@
 ```bibtex
 @misc{McRae2025RUTRepo,
   title={{RUT-CHSH-Landscape}: Source code and data for "{The RUT CHSH Landscape}"},
-  author={McRae, Kelly and Lean, Chase and Claude},
+  author={McRae, Kelly and Lean, Chase and Claude (TC)},
   year={2025},
-  howpublished={\url{https://github.com/[username]/RUT-CHSH-Landscape}},
+  howpublished={\url{https://github.com/AkavartaStudio/RUT-CHSH-Landscape}},
   note={GitHub repository}
 }
 ```
 
 **Text:**
-> McRae, K., Lean, C., & Claude (2025). *RUT-CHSH-Landscape: Source code and data for "The RUT CHSH Landscape"*. GitHub. https://github.com/[username]/RUT-CHSH-Landscape
+> McRae, K., Lean, C., & Claude (TC) (2025). *RUT-CHSH-Landscape: Source code and data for "The RUT CHSH Landscape"*. GitHub. https://github.com/AkavartaStudio/RUT-CHSH-Landscape
 
 ---
 
@@ -46,7 +46,7 @@
 ```bibtex
 @misc{McRae2025RUTarXiv,
   title={The {RUT} {CHSH} Landscape: Three Regimes of Non-Classical Correlation},
-  author={McRae, Kelly and Lean, Chase and Claude},
+  author={McRae, Kelly and Lean, Chase and Claude (TC)},
   year={2025},
   eprint={XXXX.XXXXX},
   archivePrefix={arXiv},
