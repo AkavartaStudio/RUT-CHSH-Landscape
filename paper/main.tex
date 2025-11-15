@@ -84,7 +84,7 @@ USEC (Urge--Spin--Echo--Constraint) is used here as an internal axiom system for
 
 \subsection{Dynamics}
 
-We study two coupled Kuramoto oscillators with antisymmetric sine coupling and additive noise:
+We study two coupled Kuramoto oscillators~\cite{KuramotoBook,AcebronReview} with antisymmetric sine coupling and additive noise:
 \begin{align}
 \frac{d\theta_1}{dt} &= \omega_1 + K \sin(\theta_2 - \theta_1) + \eta_1(t),\\[4pt]
 \frac{d\theta_2}{dt} &= \omega_2 + K \sin(\theta_1 - \theta_2) + \eta_2(t),
@@ -112,14 +112,14 @@ E(a,b) = \left\langle \sin(\theta_1 - a)\,\sin(\theta_2 - b) \right\rangle,
 \end{equation}
 where $\langle \cdot \rangle$ denotes a time average over the stationary trajectory (and, when applicable, an ensemble average over noise realizations).
 
-The CHSH statistic is
+The CHSH statistic~\cite{CHSH1969} is
 \begin{equation}
 S = E(a,b) - E(a,b') + E(a',b) + E(a',b').
 \end{equation}
 The classical and quantum bounds are:
 \begin{itemize}
-    \item Classical (Bell) bound: $|S| \leq 2$,
-    \item Quantum (Tsirelson) bound: $|S| \leq 2\sqrt{2} \approx 2.828$.
+    \item Classical (Bell) bound~\cite{Bell1964}: $|S| \leq 2$,
+    \item Quantum (Tsirelson) bound~\cite{Tsirelson1980}: $|S| \leq 2\sqrt{2} \approx 2.828$.
 \end{itemize}
 Throughout, we report $|S|$ and compare it both to the classical limit $2$ and the quantum Tsirelson bound.
 
@@ -166,6 +166,20 @@ In the simulations reported here, $\rho_{\mathrm{echo}}$ tracks the onset and di
 \section{Three regimes of the CHSH landscape}
 
 As summarized schematically in Fig.~\ref{fig:regime}, the CHSH landscape of antisymmetrically coupled Kuramoto oscillators organizes into three regimes, determined primarily by coherence and memory. Figure~\ref{fig:landscape} shows a representative three-dimensional phase landscape across coupling $K$, noise $\sigma$, and measurement geometry. The Tsirelson ridge and RUT plateau appear as distinct surfaces embedded in this landscape.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/rut_chsh_regime_diagram.png}
+\caption{Three-regime CHSH landscape. The Tsirelson ridge (top), RUT plateau (middle), and forgetfulness boundary (bottom) form the complete phase structure of antisymmetric coupling. The CHSH statistic $|S|$ is plotted against Phase Lock Index (PLI). Data points from different noise levels $\sigma$ show the plateau persisting across a broad coherence range.}
+\label{fig:regime}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/rut_chsh_landscape_3d.png}
+\caption{Full 3D CHSH phase landscape across coupling strength $K$, noise level $\sigma$, and measurement geometry. The Tsirelson ridge and RUT plateau appear as distinct surfaces. Left panel shows the 3D surface; right panel shows regime boundaries and noise robustness.}
+\label{fig:landscape}
+\end{figure}
 
 \subsection{Regime~1: Tsirelson ridge}
 
