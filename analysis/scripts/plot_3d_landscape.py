@@ -146,7 +146,7 @@ ax2.plot_surface(K_mesh2, PLI_mesh2, classical_mesh2,
 ax2.set_xlabel('Coupling Strength K', fontsize=12, labelpad=10)
 ax2.set_ylabel('Phase Lock Index', fontsize=12, labelpad=10)
 ax2.set_zlabel('|S|', fontsize=12, labelpad=10)
-ax2.set_title(f'RUT CHSH Landscape (Δω={dw_focus})\nThe Goldilocks Plateau',
+ax2.set_title(f'RUT CHSH Landscape (Δω={dw_focus})\nThe RUT Plateau',
              fontsize=14, pad=20)
 ax2.legend(loc='upper left', fontsize=10)
 ax2.view_init(elev=20, azim=135)
@@ -187,7 +187,7 @@ ax_left.axvline(x=0.85, color='gray', linestyle='--', linewidth=1,
 ax_left.text(0.97, 2.6, 'TSIRELSON\nRIDGE',
             fontsize=14, fontweight='bold', ha='center',
             bbox=dict(boxstyle='round', facecolor='gold', alpha=0.3))
-ax_left.text(0.97, 2.25, 'GOLDILOCKS\nPLATEAU',
+ax_left.text(0.97, 2.25, 'RUT\nPLATEAU',
             fontsize=14, fontweight='bold', ha='center',
             bbox=dict(boxstyle='round', facecolor='lightgreen', alpha=0.3))
 ax_left.text(0.82, 1.85, 'FORGETFULNESS\n(classical)',
@@ -230,7 +230,7 @@ ax_right.axhline(y=2.828, color='purple', linestyle=':', linewidth=2,
 
 # Add plateau region
 ax_right.axhspan(2.15, 2.37, alpha=0.2, color='green',
-                label='Goldilocks Plateau')
+                label='RUT Plateau')
 
 # Add E103C and E104D points
 ax_right.scatter([0.1], [2.42], s=300, color='blue', marker='o',
@@ -260,5 +260,5 @@ print("  1. 3D landscape (PLI × |S| × σ and K)")
 print("  2. Regime diagram (the three peaks clearly marked)")
 print("\nThe three regimes are now visually distinguished:")
 print("  🏔️  Tsirelson Ridge: |S|≈2.79 at PLI=1.0")
-print("  🏞️  Goldilocks Plateau: |S|≈2.17-2.36 across σ=0.0-0.2")
+print("  🏞️  RUT Plateau: |S|≈2.17-2.36 across σ=0.0-0.2")
 print("  🌫️  Forgetfulness: |S|→2.0 when PLI<0.85")

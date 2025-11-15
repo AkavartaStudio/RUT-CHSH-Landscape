@@ -78,7 +78,7 @@ for col, sigma in enumerate(sigma_values):
     ax_PLI.set_title(f"PLI Heatmap")
 
 # Add overall title
-fig.suptitle("E107N: Goldilocks Ridge Across Noise Levels\n"
+fig.suptitle("E107N: RUT Ridge Across Noise Levels\n"
              "Top: |S| violations persist across σ | Bottom: PLI shows lock stability",
              fontsize=16, y=0.995)
 
@@ -143,7 +143,7 @@ plt.savefig(output_path2, dpi=300, bbox_inches='tight')
 print(f"✓ Saved: {output_path2}")
 
 print("\n" + "="*70)
-print("GOLDILOCKS RIDGE ANALYSIS COMPLETE")
+print("RUT RIDGE ANALYSIS COMPLETE")
 print("="*70)
 print("\nKey findings visualized:")
 print("  1. |S| stays > 2.0 across noise levels (top row)")
