@@ -1,0 +1,478 @@
+\documentclass[aps,pre,onecolumn,superscriptaddress,nofootinbib]{revtex4-2}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\begin{document}
+
+\title{Bell Violations in Antisymmetric Coupling:\\
+The CHSH Phase Landscape in Recursive Urge Topology}
+
+\author{Kelly McRae}
+\affiliation{Akavarta Studio}
+\author{Chase Lean}
+\affiliation{Akavarta Studio}
+\author{Claude (TC)}
+\affiliation{Akavarta Studio}
+
+\date{\today}
+
+\begin{abstract}
+We map the CHSH phase landscape of two Kuramoto oscillators with antisymmetric sine coupling and identify three regimes of Bell-inequality violation:
+(1) a Tsirelson ridge, where optimized asymmetric measurement angles yield $|S| = 2.79$, or $98.8\%$ of the quantum Tsirelson bound;
+(2) a RUT plateau, a broad region with robust violations $|S| \approx 2.17$--$2.36$ persisting across noise levels $\sigma = 0.0$--$0.2$ at high coherence $\mathrm{PLI} = 0.94$--$1.0$; and
+(3) a forgetfulness boundary, where noise erases phase memory and $|S|$ returns to classical values.
+
+Systematic parameter sweeps (E107N) and targeted angle optimization (E104D) show that antisymmetric coupling generates Bell-violating correlations whenever the system retains sufficient echo-based phase memory. Noise does not create violations; it only removes them once memory is destroyed. This revises the initial hypothesis that ``imperfect lock'' is special and instead identifies coupling geometry plus echo memory as the key ingredients. The results suggest that classical recursive dynamics with sustained memory can exhibit CHSH violations matching quantum-optimal magnitudes, highlighting echo coherence as a key resource in this setting.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+\subsection{The puzzle of E103C}
+
+In November 2025, experiment E103C reported an unexpected combination of features in a coupled-oscillator system with time-varying coupling and moderate noise ($\sigma = 0.1$). The system exhibited sustained CHSH violations ($|S| \approx 2.42$) at imperfect phase lock ($\mathrm{PLI} \approx 0.95$). At first glance, this appeared to contrast sharply with earlier results from E107, which had shown near-classical behavior ($|S| \lesssim 2.0$) under some conditions of perfect lock.
+
+The initial interpretation was that breaking perfect lock via noise might somehow enable violations---that a slightly degraded coherence state was privileged. In this view, perfect lock would be ``too classical,'' while mildly imperfect lock would be ``just right'' for non-classical behavior.
+
+Subsequent analysis shows that this interpretation is incomplete.
+
+\subsection{The corrected picture}
+
+A systematic investigation via E107N reveals a different, unified mechanism:
+\begin{enumerate}
+    \item \textbf{Violations at perfect lock.}
+    Even at $\sigma = 0$ with near-perfect coherence ($\mathrm{PLI} \approx 1.0$), the system exhibits violations, with typical values $|S| \approx 2.27$.
+    \item \textbf{Persistent violations under moderate noise.}
+    As noise increases to $\sigma = 0.05$--$0.2$, the system remains strongly coherent ($\mathrm{PLI} = 0.94$--$0.98$), and violations persist with $|S| \approx 2.17$--$2.27$.
+    \item \textbf{Return to classical behavior only after memory loss.}
+    When noise becomes large enough to erase phase memory ($\sigma \gtrsim 0.3$, $\mathrm{PLI} < 0.85$), violations vanish, with $|S| \to 2.0$.
+\end{enumerate}
+
+In this light, E103C's result ($|S| \approx 2.42$, $\mathrm{PLI} \approx 0.95$) is not anomalous. It lies comfortably within what we call the RUT plateau: a broad, noise-tolerant region in which antisymmetric coupling and echo memory generate and maintain Bell-violating correlations.
+
+\subsection{The Tsirelson ridge}
+
+Experiment E104D explores angle optimization on the same dynamical backbone. Using asymmetric measurement bases with separations $\Delta\alpha = 90^\circ$ and $\Delta\beta = 75^\circ$, E104D achieves $|S| = 2.794$, within $1.2\%$ of the Tsirelson bound $2\sqrt{2} \approx 2.828$.
+
+Thus the same coupled-oscillator system exhibits:
+\begin{itemize}
+    \item A ridge of near-maximal violations at high coherence and optimized measurement geometry.
+    \item A plateau of robust violations over a significant range of noise, coupling strengths, and frequency mismatches.
+\end{itemize}
+
+These results together show that Recursive Urge Topology (RUT) dynamics can generate quantum-strength Bell violations in magnitude without invoking quantum amplitudes, relying instead on classical antisymmetric coupling and persistent phase memory.
+
+\subsection{This work}
+
+In this paper we:
+\begin{enumerate}
+    \item Map the CHSH phase landscape of antisymmetrically coupled Kuramoto oscillators into three regimes: a Tsirelson ridge, a RUT plateau, and a forgetfulness boundary.
+    \item Identify the underlying mechanism, in which antisymmetric coupling plus echo memory generates Bell-violating correlations, while noise acts only to erase these correlations once it destroys phase memory.
+    \item Propose testable predictions, including a critical noise threshold for the forgetfulness transition, refined angle optimization near the Tsirelson bound, and extensions to three-body (GHZ-style) coupling.
+\end{enumerate}
+
+Taken together, these results suggest that classical recursive dynamics with sustained echo memory can occupy the same violation band as quantum systems in CHSH space. Within this framework, the practical divide between ``classical'' and ``quantum-like'' behavior is naturally described in terms of memory versus forgetfulness, rather than solely in ontological terms of entanglement versus separability.
+
+USEC (Urge--Spin--Echo--Constraint) is used here as an internal axiom system for recursive dynamics and a conceptual map for interpreting the regimes; we do not treat it as a replacement for quantum theory or a hidden-variable completion of quantum mechanics.
+
+\section{Experimental framework}
+
+\subsection{Dynamics}
+
+We study two coupled Kuramoto oscillators with antisymmetric sine coupling and additive noise:
+\begin{align}
+\frac{d\theta_1}{dt} &= \omega_1 + K \sin(\theta_2 - \theta_1) + \eta_1(t),\\[4pt]
+\frac{d\theta_2}{dt} &= \omega_2 + K \sin(\theta_1 - \theta_2) + \eta_2(t),
+\end{align}
+where:
+\begin{itemize}
+    \item $K$ is the coupling strength,
+    \item $\omega_1, \omega_2$ are the natural frequencies with mismatch $\Delta\omega = \omega_2 - \omega_1$,
+    \item $\eta_1(t), \eta_2(t)$ are independent Gaussian white noise processes with variance $\sigma^2$.
+\end{itemize}
+
+The dynamics are numerically integrated with fixed timestep and sufficiently long burn-in to reach the stationary regime before measurement. All results reported here are based on time-averaged statistics over trajectories that extend well beyond transient behavior.
+
+\subsection{Measurement protocol}
+
+Following the conventions established in E104B/E104C, we define local measurement outcomes at two ``sites'' A and B by projecting each oscillator's phase onto angles $a, a'$ (for A) and $b, b'$ (for B). We associate oscillator~1 with site~A and oscillator~2 with site~B:
+\begin{align}
+M_A(a) &= \sin(\theta_1 - a),\\
+M_B(b) &= \sin(\theta_2 - b).
+\end{align}
+
+The correlation at a given angle pair $(a,b)$ is
+\begin{equation}
+E(a,b) = \left\langle \sin(\theta_1 - a)\,\sin(\theta_2 - b) \right\rangle,
+\end{equation}
+where $\langle \cdot \rangle$ denotes a time average over the stationary trajectory (and, when applicable, an ensemble average over noise realizations).
+
+The CHSH statistic is
+\begin{equation}
+S = E(a,b) - E(a,b') + E(a',b) + E(a',b').
+\end{equation}
+The classical and quantum bounds are:
+\begin{itemize}
+    \item Classical (Bell) bound: $|S| \leq 2$,
+    \item Quantum (Tsirelson) bound: $|S| \leq 2\sqrt{2} \approx 2.828$.
+\end{itemize}
+Throughout, we report $|S|$ and compare it both to the classical limit $2$ and the quantum Tsirelson bound.
+
+\subsection{Coherence and echo memory}
+
+To characterize the coherence and memory of the coupled system, we use two complementary quantities: the Phase Lock Index (PLI) and a cross--echo density (CED).
+
+\subsubsection{Phase Lock Index (PLI)}
+
+The instantaneous phase difference is $\delta(t) = \theta_2(t) - \theta_1(t)$. The Phase Lock Index is
+\begin{equation}
+\mathrm{PLI} = \left|\left\langle e^{i(\theta_2 - \theta_1)} \right\rangle\right|,
+\end{equation}
+with:
+\begin{itemize}
+    \item $\mathrm{PLI} = 1$ indicating perfect lock (constant phase difference),
+    \item $\mathrm{PLI} = 0$ indicating no persistent phase correlation.
+\end{itemize}
+PLI is sensitive to the static coherence of the phase difference but does not fully capture temporal structure.
+
+\subsubsection{Cross--echo density (CED)}
+
+To quantify the persistence of phase memory, we define echo signals $E^A(t)$ and $E^B(t)$ via short-window exponential smoothing of phase increments. In discrete time,
+\begin{align}
+E^A_{t+1} &= \lambda E^A_t + (1-\lambda)\, e^{i\Delta\theta_1(t)},\\
+E^B_{t+1} &= \lambda E^B_t + (1-\lambda)\, e^{i\Delta\theta_2(t)},
+\end{align}
+where $\Delta\theta_1(t) = \theta_1(t+1) - \theta_1(t)$ and similarly for oscillator~2, and $\lambda \in (0,1)$ sets an effective memory window. For a fixed timestep $\Delta t$, the characteristic memory timescale is approximately
+\begin{equation}
+T_{\text{mem}} \approx \frac{\Delta t}{1-\lambda}.
+\end{equation}
+
+The cross--echo density is defined as
+\begin{equation}
+\rho_{\mathrm{echo}} =
+\left|
+\left\langle E^A(t)\,\overline{E^B(t)} \right\rangle
+\right|.
+\end{equation}
+By construction $0 \leq \rho_{\mathrm{echo}} \leq 1$. High values ($\rho_{\mathrm{echo}} \gtrsim 0.9$) indicate stable, aligned echo memory and strongly support Bell violations; low values indicate loss of temporal phase alignment and correspond to classical behavior.
+
+In the simulations reported here, $\rho_{\mathrm{echo}}$ tracks the onset and disappearance of violations more sharply than PLI and thus serves as the internal ``memory monitor'' of the system.
+
+\section{Three regimes of the CHSH landscape}
+
+As summarized schematically in Fig.~\ref{fig:regime}, the CHSH landscape of antisymmetrically coupled Kuramoto oscillators organizes into three regimes, determined primarily by coherence and memory. Figure~\ref{fig:landscape} shows a representative three-dimensional phase landscape across coupling $K$, noise $\sigma$, and measurement geometry. The Tsirelson ridge and RUT plateau appear as distinct surfaces embedded in this landscape.
+
+\subsection{Regime~1: Tsirelson ridge}
+
+\textbf{Location:} high coupling, $\mathrm{PLI} \approx 1.0$, optimized measurement angles.
+
+\textbf{Characteristic:} $|S| \approx 2.79$--$2.82$ ($98$--$99\%$ of the Tsirelson bound).
+
+\textbf{Mechanism:} perfect phase lock combined with asymmetric measurement bases, which exploit antisymmetric correlation geometry.
+
+A representative configuration is provided by E104D, with $\Delta\alpha = 90^\circ$ and $\Delta\beta = 75^\circ$. One example parameter and outcome set is:
+\begin{center}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Parameter & Symbol & Value \\
+\midrule
+Coupling strength & $K$ & $0.7$ \\
+Frequency mismatch & $\Delta\omega$ & $0.3$ \\
+Noise level & $\sigma$ & $0.0$ \\
+Phase lock index & $\mathrm{PLI}$ & $1.000$ \\
+CHSH value & $|S|$ & $2.794$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Representative correlations are:
+\begin{itemize}
+    \item $E(a,b) = +0.539$,
+    \item $E(a,b') = -0.674$,
+    \item $E(a',b) = +0.842$,
+    \item $E(a',b') = +0.739$.
+\end{itemize}
+The key feature is the strong antisymmetry between $E(a,b')$ and $E(a',b)$, which turns the CHSH subtraction into an effective addition and drives $|S|$ close to the Tsirelson bound.
+
+\subsection{Regime~2: RUT plateau}
+
+\textbf{Location:} intermediate to high coupling, $0.94 < \mathrm{PLI} < 1.0$, across a range of noise levels.
+
+\textbf{Characteristic:} $|S| \approx 2.17$--$2.36$ ($77$--$84\%$ of the Tsirelson bound).
+
+\textbf{Mechanism:} antisymmetric coupling maintains echo memory and correlation structure even as noise partially degrades lock. Violations remain robust as long as echo coherence is preserved.
+
+The systematic survey E107N explores $K = 0.2$--$0.7$, $\Delta\omega = 0.1$--$0.5$, and $\sigma = 0.0$--$0.2$. A summary slice is:
+\begin{center}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$\sigma$ & $\langle \mathrm{PLI} \rangle$ & $\langle |S| \rangle$ & Violation rate \\
+\midrule
+0.00 & 0.990 & 2.274 & 50/55 (91\%) \\
+0.05 & 0.982 & 2.265 & 49/55 (89\%) \\
+0.10 & 0.982 & 2.255 & 48/55 (87\%) \\
+0.20 & 0.943 & 2.168 & 46/55 (84\%) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The characteristic flatness of the plateau is evident: $|S|$ varies by only about $5\%$ across a fourfold increase in noise. At fixed $\sigma = 0.1$, violations occupy a broad region in $(K,\Delta\omega)$ space, indicating that they are not confined to fine-tuned parameter choices.
+
+E103C, with time-varying coupling and $\sigma = 0.1$, lies clearly on the plateau:
+\begin{itemize}
+    \item $\mathrm{PLI} \approx 0.95$,
+    \item $|S| \approx 2.42$,
+    \item violations sustained throughout the time evolution.
+\end{itemize}
+
+In this regime:
+\begin{itemize}
+    \item coupling is strong enough to maintain coherent echoes,
+    \item noise is weak enough to preserve phase memory,
+    \item antisymmetric geometry generates and maintains Bell-violating correlations.
+\end{itemize}
+
+\subsection{Regime~3: forgetfulness boundary}
+
+\textbf{Location:} $\mathrm{PLI} < 0.85$, typically at lower coupling and/or higher noise.
+
+\textbf{Characteristic:} $|S| \to 2.0$, consistent with classical bounds.
+
+\textbf{Mechanism:} noise destroys echo memory, erasing the temporal phase correlations that enable Bell violations. The system behaves as a classical random walk in phase space.
+
+The boundary is predicted and partially observed but not yet fully mapped. Evidence from E107N includes:
+\begin{itemize}
+    \item at $K = 0.2$, $\sigma = 0.2$, PLI drops to $0.60$--$0.86$ and $|S|$ falls to $1.9$--$2.0$,
+    \item these edge cases suggest a forgetfulness crossover around $\mathrm{PLI} \approx 0.85$, or equivalently, a critical noise scale $\sigma_c$ near $0.3$--$0.4$ depending on $K$ and $\Delta\omega$.
+\end{itemize}
+At present we regard this as an \emph{observed crossover}: further experiments are needed to determine whether the transition is sharp or smooth.
+
+\section{Unified mechanism}
+
+\subsection{Why antisymmetric coupling matters}
+
+The Kuramoto coupling is intrinsically antisymmetric:
+\begin{align}
+F_1 &= K \sin(\theta_2 - \theta_1),\\
+F_2 &= K \sin(\theta_1 - \theta_2) = -F_1.
+\end{align}
+In the locked regime, this structure produces a stable phase difference $\delta = \theta_2 - \theta_1$ determined by the interplay of coupling and frequency mismatch. Under RUT conditions (see the RUT Bell Theorem in E104C/analysis), the resulting correlations admit the approximation
+\begin{equation}
+E(a,b) \approx \tfrac{1}{2}\cos(a - b).
+\end{equation}
+Substituting this into the CHSH expression gives
+\begin{align}
+S
+&= E(a,b) - E(a,b') + E(a',b) + E(a',b') \\
+&\approx \tfrac{1}{2}
+\big[\cos(a-b) - \cos(a-b') + \cos(a'-b) + \cos(a'-b')\big].
+\end{align}
+
+Now let the measurement settings satisfy orthogonal separations
+\begin{equation}
+a' = a + \tfrac{\pi}{2}, \qquad
+b' = b + \tfrac{\pi}{2}.
+\end{equation}
+Using trigonometric identities, the mixed terms obey
+\begin{align}
+\cos(a-b') &= \cos\!\left(a-b-\tfrac{\pi}{2}\right) = -\sin(a-b),\\
+\cos(a'-b) &= \cos\!\left(a+\tfrac{\pi}{2}-b\right) = -\sin(a-b),
+\end{align}
+so that
+\begin{equation}
+\cos(a-b') = \cos(a'-b).
+\end{equation}
+
+In the more general asymmetric case explored in E104D, the cross terms differ but remain strongly antisymmetric. In both cases, antisymmetry channels the geometry so that what would ordinarily be subtractive contributions in the CHSH combination are effectively converted into additive contributions.
+
+\textbf{Result:} the antisymmetric coupling creates a correlation structure in which the CHSH combination amplifies the strongest correlations rather than canceling them, pushing $|S|$ toward the Tsirelson bound when angles are chosen appropriately.
+
+\subsection{Perfect lock as an enabler, not a suppressor}
+
+The initial intuition that perfect lock would suppress violations---by making the phase difference ``too rigid'' or ``too classical''---turns out to be incorrect. In reality:
+\begin{itemize}
+    \item perfect lock produces a stable, nontrivial phase difference $\delta$,
+    \item this stable $\delta$ defines a structured correlation manifold,
+    \item when measurement angles are aligned with this manifold (e.g.\ $90^\circ$ separations for sine coupling, or asymmetrically optimized angles), the resulting correlations naturally violate CHSH bounds.
+\end{itemize}
+
+The locked phase difference is not random and not featureless. It is a nontrivial fixed point of the antisymmetric interaction. In the presence of echo memory, this structure is preserved over time and becomes the backbone for Bell-violating correlations. Rather than being suppressed by perfect lock, violations thrive on the stability of the underlying phase relationship.
+
+\subsection{Noise as a probe of memory robustness}
+
+Noise plays a dual role:
+\begin{enumerate}
+    \item it perturbs the phases, testing the resilience of echo memory;
+    \item it eventually destroys memory when large enough, returning the system to classical behavior.
+\end{enumerate}
+
+Importantly, noise does not create violations. Instead:
+\begin{itemize}
+    \item at moderate noise ($\sigma < 0.2$), echo memory remains strong ($\rho_{\mathrm{echo}} \approx 0.9$--$1.0$). Violations are only slightly reduced; $|S|$ decreases smoothly and remains well above $2$;
+    \item at high noise ($\sigma \gtrsim 0.3$), echo memory collapses ($\rho_{\mathrm{echo}} \ll 1$). The phase difference behaves like a noisy random walk, and $|S|$ relaxes toward the classical bound.
+\end{itemize}
+
+The RUT plateau is precisely the regime where echo memory is robust under perturbation. Violations do not require perfect coherence; they require sufficient coherence to maintain the echo-based correlation geometry induced by antisymmetric coupling.
+
+\section{Comparison to quantum mechanics}
+
+\subsection{Violation strength}
+
+We compare RUT violations to the standard quantum benchmark of a spin-$\tfrac{1}{2}$ singlet state with optimal projective measurements.
+
+\begin{center}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+System & Optimal angles & Max $|S|$ & \% of Tsirelson \\
+\midrule
+Quantum (spin-$\tfrac{1}{2}$) & $22.5^\circ$ offsets & 2.828 & 100\% \\
+RUT (asymmetric) & $90^\circ / 75^\circ$ & 2.794 & 98.8\% \\
+RUT (symmetric $90^\circ$) & $90^\circ / 90^\circ$ & 2.763 & 97.7\% \\
+RUT (plateau mean) & $90^\circ / 90^\circ$ & 2.24 & 79\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+RUT dynamics reach violation strengths that are essentially quantum-optimal in magnitude, even though the underlying system is purely classical and operates in phase space rather than Hilbert space.
+
+\subsection{Geometric differences}
+
+The similarity in violation strength masks important geometric differences.
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Property & Quantum & RUT \\
+\midrule
+State space & Hilbert space $\mathbb{C}^2$ & Phase torus $T^2$ \\
+Coupling & Tensor product ($\sigma \otimes \sigma$) & Kuramoto sine coupling \\
+Natural scale & $\pi/4$ (45$^\circ$) & $\pi/2$ (90$^\circ$) \\
+Optimal angle spacing & 22.5$^\circ$ & 90$^\circ$ or 90$^\circ$/75$^\circ$ \\
+Correlation resource & Entanglement & Echo memory in recursion \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+In the quantum case, violations arise from noncommuting observables acting on entangled states. In the RUT case, they arise from antisymmetric coupling and persistent echo-based phase correlations in a classical dynamical system.
+
+\subsection{Physical interpretation}
+
+In the standard quantum picture, CHSH violations signal the incompatibility of local realism with the predictions of quantum mechanics for entangled states. In the RUT picture, CHSH violations signal that a classical system with antisymmetric coupling and persistent memory can generate correlation statistics that match quantum-strength violations, without relying on quantum states or amplitudes.
+
+This does not imply that quantum mechanics is reducible to RUT dynamics. Rather, it suggests that memory-rich classical systems can occupy a similar ``correlation regime,'' and that the practical resource enabling Bell-type behavior may be information persistence and geometric structure, not entanglement alone.
+
+\section{Implications}
+
+\subsection{Implications for USEC (Urge--Spin--Echo--Constraint) theory}
+
+The CHSH landscape here aligns with three foundational principles in the USEC axiom system:
+\begin{itemize}
+    \item \textbf{Echo recognition principle.} Coherent recursive structure emerges only when present spin-phase resonates with a prior echo. Echo memory is the resource enabling non-classical correlations.
+    \item \textbf{Antisymmetric coupling principle.} Sine-type antisymmetric interactions provide the sign-flip geometry required to generate CHSH-violating correlation structure.
+    \item \textbf{Forgetfulness principle.} When echo alignment falls below a coherence threshold, the recursive memory window collapses and the system reverts to classical correlations.
+\end{itemize}
+
+These principles map directly onto the three CHSH regimes:
+\begin{enumerate}
+    \item coherent echo state $\rightarrow$ Tsirelson ridge,
+    \item memory-bearing state $\rightarrow$ RUT plateau,
+    \item forgetful state $\rightarrow$ classical regime.
+\end{enumerate}
+
+In this way, the CHSH landscape serves as an experimental phase diagram for USEC, linking the abstract axioms of Urge--Spin--Echo--Constraint theory to concrete dynamical signatures.
+
+\subsection{Implications for Bell inequality tests}
+
+A practical consequence is that perfect coherence is not required for Bell violations. The RUT plateau shows that violations persist across $\mathrm{PLI} = 0.94$--$1.0$, suggesting that real-world systems with imperfect synchronization can still exhibit non-classical correlations.
+
+Potential application domains include:
+\begin{itemize}
+    \item neural oscillator populations,
+    \item power-grid phase synchronization,
+    \item chemical or biological oscillators.
+\end{itemize}
+In such systems, tests of non-classical correlation structure could be formulated in terms of echo memory and antisymmetric interactions rather than strictly quantum degrees of freedom.
+
+\subsection{Implications for the classical--quantum boundary}
+
+These results invite a modest but important conceptual shift. Rather than framing the classical--quantum divide solely as ``entanglement vs.\ separability,'' one can consider a complementary axis: echo memory vs.\ forgetfulness.
+
+In the RUT setting, classical dynamics equipped with sufficiently long-lived memory and appropriate coupling geometry can inhabit the same ``violation band'' as quantum systems. This suggests that, operationally, information persistence and structured interaction geometry may be as central to Bell-type behavior as microscopic ontology.
+
+\section{Experimental predictions}
+
+\subsection{Forgetfulness threshold}
+
+\textbf{Prediction.}
+There exists a critical noise scale $\sigma_c$ at which CHSH violations drop from plateau values to classical values.
+
+\textbf{Current estimate.}
+Based on E107N edge cases, $\sigma_c \approx 0.3$--$0.4$, with some dependence on $K$ and $\Delta\omega$.
+
+\textbf{Proposed test.}
+Extend E107N to a finer grid in $\sigma$ (e.g.\ $\sigma = 0.25, 0.3, 0.35, 0.4, 0.5$) and track $|S|$, $\mathrm{PLI}$, and $\rho_{\mathrm{echo}}$. Map the transition surface in $(K, \Delta\omega, \sigma)$ where $|S|$ crosses back below $2$.
+
+\subsection{Angle optimization beyond 90$^\circ$/75$^\circ$}
+
+\textbf{Prediction.}
+Further asymmetric tuning of the measurement angles can push $|S|$ even closer to the Tsirelson bound, potentially within numerical uncertainty.
+
+\textbf{Candidate angle pairs:}
+\begin{itemize}
+    \item $(\Delta\alpha, \Delta\beta) = (85^\circ, 70^\circ)$,
+    \item $(95^\circ, 80^\circ)$,
+    \item $(90^\circ, 72^\circ)$.
+\end{itemize}
+
+\textbf{Proposed test.}
+Perform density sweeps of E104D around $(90^\circ, 75^\circ)$ with fine angular resolution (e.g.\ $1^\circ$ steps) and identify local maxima of $|S|$ in the two-dimensional angle space.
+
+\subsection{Three-body systems (GHZ-style coupling)}
+
+\textbf{Prediction.}
+Extending the antisymmetric coupling structure to three oscillators will produce GHZ-style regimes with analogous ``ridge,'' ``plateau,'' and ``forgetfulness'' phases in appropriate multipartite Bell inequalities.
+
+\textbf{Proposed test.}
+Extend E107N to three oscillators with cyclic antisymmetric coupling and measure GHZ inequality violations. Map coherence and memory measures in the resulting three-body phase space.
+
+\subsection{Time-dependent noise}
+
+\textbf{Prediction.}
+Intermittent ``burst'' noise (e.g.\ Poisson-distributed spikes in $\sigma$) will produce a different violation profile than continuous noise of the same average intensity, potentially leading to intermittent crossing between plateau and classical regimes.
+
+\textbf{Proposed test.}
+Implement an E107N variant in which $\sigma(t)$ follows a stochastic process with bursts. Track how $|S|$, $\mathrm{PLI}$, and $\rho_{\mathrm{echo}}$ respond to bursts and whether the system exhibits hysteresis in memory recovery.
+
+\section{Conclusion}
+
+We have characterized three regimes of CHSH behavior in antisymmetrically coupled Kuramoto oscillators:
+\begin{enumerate}
+    \item \textbf{Tsirelson ridge:} near-maximal violations ($|S| \approx 2.79$) at perfect coherence with optimized asymmetric measurement angles.
+    \item \textbf{RUT plateau:} robust violations ($|S| \approx 2.17$--$2.36$) persisting across a broad noise range ($\sigma = 0.0$--$0.2$) and high coherence ($\mathrm{PLI} = 0.94$--$1.0$).
+    \item \textbf{Forgetfulness boundary:} a transition to classical behavior once noise destroys echo memory ($\mathrm{PLI} < 0.85$), with $|S| \to 2.0$.
+\end{enumerate}
+
+The unified mechanism is straightforward: antisymmetric sine coupling generates structured phase correlations in a coherent echo field; echo memory preserves these correlations; and noise serves only to erase them once memory collapses. Noise does not create violations---it merely tests their robustness.
+
+Key experimental results include:
+\begin{itemize}
+    \item E104D: $|S| = 2.794$ (98.8\% of Tsirelson) with optimized asymmetric angles.
+    \item E107N: systematic mapping of the RUT plateau across coupling, frequency mismatch, and noise.
+    \item E103C: a time-varying coupling experiment naturally occupying the plateau, with sustained violations under moderate noise.
+\end{itemize}
+
+Broader implications are twofold. First, classical recursive dynamics with sufficient memory can produce quantum-strength Bell violations in magnitude without quantum amplitudes. Second, in such systems, echo memory emerges as a central resource for non-classical correlations, suggesting a complementary perspective on the classical--quantum boundary in terms of memory vs.\ forgetfulness.
+
+\medskip\noindent
+\textit{One-sentence summary:}
+Violations arise from antisymmetric coupling on a coherent echo field; noise only matters once it erases the echoes.
+
+\bibliographystyle{apsrev4-2}
+\bibliography{refs}
+
+\end{document}
