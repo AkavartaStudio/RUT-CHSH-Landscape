@@ -190,7 +190,7 @@ ax_left.text(0.97, 2.6, 'TSIRELSON\nRIDGE',
 ax_left.text(0.97, 2.25, 'RUT\nPLATEAU',
             fontsize=14, fontweight='bold', ha='center',
             bbox=dict(boxstyle='round', facecolor='lightgreen', alpha=0.3))
-ax_left.text(0.82, 1.85, 'FORGETFULNESS\n(classical)',
+ax_left.text(0.86, 1.82, 'FORGETFULNESS\n(classical)',
             fontsize=12, ha='center', style='italic',
             bbox=dict(boxstyle='round', facecolor='lightcoral', alpha=0.3))
 
