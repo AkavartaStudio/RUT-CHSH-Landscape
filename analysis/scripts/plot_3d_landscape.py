@@ -207,7 +207,7 @@ ax_left.set_ylabel('|S|', fontsize=14)
 ax_left.set_title('The Three Regimes of RUT CHSH Violations', fontsize=16)
 ax_left.set_xlim([0.8, 1.02])
 ax_left.set_ylim([1.7, 2.9])
-ax_left.legend(loc='lower left', fontsize=10)
+ax_left.legend(loc='upper left', fontsize=9)
 ax_left.grid(True, alpha=0.3)
 
 # Right: |S| vs σ (noise robustness)
