@@ -126,7 +126,9 @@ For questions or collaboration inquiries:
 
 ## 📚 **License**
 
-To be determined before publication (MIT, CC-BY 4.0, or similar)
+This work is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+
+You are free to share and adapt this material for any purpose, including commercially, as long as you provide appropriate attribution. See the [LICENSE](LICENSE) file for full details.
 
 ---
 
