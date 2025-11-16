@@ -1,8 +1,8 @@
-# **RUT–CHSH Landscape: Three Regimes of Non-Classical Correlation**
+# **Bell Violations in Antisymmetric Coupling: The CHSH Phase Landscape in Recursive Urge Topology**
 
 This repository contains the full source, figures, and analysis code for the manuscript:
 
-***"The RUT CHSH Landscape: Three Regimes of Non-Classical Correlation"* (2025)**
+***"Bell Violations in Antisymmetric Coupling: The CHSH Phase Landscape in Recursive Urge Topology"* (2025)**
 
 **Authors:** Kelly McRae, Chase Lean, Claude (TC)
 
@@ -130,4 +130,4 @@ To be determined before publication (MIT, CC-BY 4.0, or similar)
 
 ---
 
-# 🌟 *"The landscape has three peaks. We climbed all three."*
+# 🌟 *"Classical antisymmetric coupling with echo memory can produce Bell violations without quantum amplitudes."*
