@@ -1,0 +1,4 @@
+Threshold,sigma_c,Justification
+2.0,0.811,Classical bound (theoretical)
+2.3,0.655,Practical threshold (chosen)
+Delta,0.156,Difference in collapse point

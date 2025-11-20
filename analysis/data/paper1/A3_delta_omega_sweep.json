@@ -1,0 +1,1971 @@
+{
+  "experiment_id": "A3-DELTA-OMEGA-SWEEP",
+  "timestamp": "2025-11-20T15:00:25.387248",
+  "config": {
+    "experiment_id": "A3-DELTA-OMEGA-SWEEP",
+    "description": "\u0394\u03c9 vs |S| curve at ridge point (K=0.7, \u03c3=0.2) - Paper 1 Fig 5",
+    "purpose": "Demonstrate that \u0394\u03c9=0 is not optimal; reserve full \u0394\u03c9-K landscape for Paper 2",
+    "parameters": {
+      "K": 0.7,
+      "sigma": 0.2,
+      "angles": {
+        "a": 0.0,
+        "a_prime": 95.0,
+        "b": 45.0,
+        "b_prime": 129.0
+      },
+      "delta_omega_values": [
+        0.0,
+        0.05,
+        0.1,
+        0.2,
+        0.3
+      ],
+      "n_seeds": 10,
+      "T_steps": 100000,
+      "dt": 0.01,
+      "transient_steps": 20000,
+      "omega1": 1.0
+    },
+    "expected_outputs": {
+      "per_point": [
+        "mean_abs_S",
+        "std_abs_S",
+        "mean_PLI"
+      ],
+      "optimal_delta_omega": "Expected \u0394\u03c9* \u2248 0.14-0.20 (approximately 0.2K)"
+    },
+    "paper_figure": "Figure 5: |S|(\u0394\u03c9) at K=0.7, \u03c3=0.2 - single ridge-point slice",
+    "scope_note": "Focused experiment at one K,\u03c3 point. Full \u0394\u03c9-K landscape reserved for Paper 2.",
+    "git_commit": "TBD",
+    "frozen_for_paper": false
+  },
+  "sweep_results": [
+    {
+      "delta_omega": 0.0,
+      "n_seeds": 10,
+      "abs_S_mean": 2.7660663175096976,
+      "abs_S_std": 0.002467311444842686,
+      "abs_S_sem": 0.0007802323862703791,
+      "PLI_mean": 0.985351965998537,
+      "PLI_std": 0.000710209610571291,
+      "individual_results": [
+        {
+          "seed": 1,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.0,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9845563005227341,
+          "rho_echo": 0.9996021901473896,
+          "S": 2.764857894459136,
+          "abs_S": 2.764857894459136,
+          "correlations": {
+            "E_ab": 0.6962493662934778,
+            "E_ab_prime": -0.6195321874512104,
+            "E_a_prime_b": 0.6327924103926278,
+            "E_a_prime_b_prime": 0.8162839303218203
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 2,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.0,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9848326843702184,
+          "rho_echo": 0.9996018841296038,
+          "S": 2.7635875467315456,
+          "abs_S": 2.7635875467315456,
+          "correlations": {
+            "E_ab": 0.7014630006942333,
+            "E_ab_prime": -0.6141537276842212,
+            "E_a_prime_b": 0.6274963956324436,
+            "E_a_prime_b_prime": 0.8204744227206476
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 3,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.0,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9850471228953717,
+          "rho_echo": 0.9996032058615225,
+          "S": 2.7645879831882887,
+          "abs_S": 2.7645879831882887,
+          "correlations": {
+            "E_ab": 0.7006681481696415,
+            "E_ab_prime": -0.6153414992940481,
+            "E_a_prime_b": 0.6286722165936335,
+            "E_a_prime_b_prime": 0.8199061191309658
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 4,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.0,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9843148268452303,
+          "rho_echo": 0.9995998465658689,
+          "S": 2.7638196366329475,
+          "abs_S": 2.7638196366329475,
+          "correlations": {
+            "E_ab": 0.696990730687072,
+            "E_ab_prime": -0.6183764113526268,
+            "E_a_prime_b": 0.6316477001211127,
+            "E_a_prime_b_prime": 0.816804794472136
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 5,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.0,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9856175045303766,
+          "rho_echo": 0.999599657675551,
+          "S": 2.763164328195749,
+          "abs_S": 2.763164328195749,
+          "correlations": {
+            "E_ab": 0.7079499499920349,
+            "E_ab_prime": -0.6079893303226028,
+            "E_a_prime_b": 0.6214354661335917,
+            "E_a_prime_b_prime": 0.8257895817475195
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 6,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.0,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9851640593671486,
+          "rho_echo": 0.9995998399020811,
+          "S": 2.7664604476797816,
+          "abs_S": 2.7664604476797816,
+          "correlations": {
+            "E_ab": 0.6969443531511124,
+            "E_ab_prime": -0.6196230060987664,
+            "E_a_prime_b": 0.6328955778027866,
+            "E_a_prime_b_prime": 0.8169975106271163
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 7,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.0,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9861286421112886,
+          "rho_echo": 0.99959959725217,
+          "S": 2.769725901333875,
+          "abs_S": 2.769725901333875,
+          "correlations": {
+            "E_ab": 0.6961960170769772,
+            "E_ab_prime": -0.6218005420796408,
+            "E_a_prime_b": 0.6350636442312638,
+            "E_a_prime_b_prime": 0.8166656979459933
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 8,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.0,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.986569690340063,
+          "rho_echo": 0.9996013256252967,
+          "S": 2.766728628586238,
+          "abs_S": 2.766728628586238,
+          "correlations": {
+            "E_ab": 0.7066705668707801,
+            "E_ab_prime": -0.6107919526408531,
+            "E_a_prime_b": 0.6242203512053754,
+            "E_a_prime_b_prime": 0.8250457578692294
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 9,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.0,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9858738759306438,
+          "rho_echo": 0.9995979349052314,
+          "S": 2.769833167402688,
+          "abs_S": 2.769833167402688,
+          "correlations": {
+            "E_ab": 0.6938390388792782,
+            "E_ab_prime": -0.6240191220627883,
+            "E_a_prime_b": 0.6372445943794061,
+            "E_a_prime_b_prime": 0.8147304120812154
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 10,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.0,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9854149530722944,
+          "rho_echo": 0.9996007848770839,
+          "S": 2.7678976408867273,
+          "abs_S": 2.7678976408867273,
+          "correlations": {
+            "E_ab": 0.6952322546337021,
+            "E_ab_prime": -0.6218542443223856,
+            "E_a_prime_b": 0.6351005241791061,
+            "E_a_prime_b_prime": 0.8157106177515336
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        }
+      ]
+    },
+    {
+      "delta_omega": 0.05,
+      "n_seeds": 10,
+      "abs_S_mean": 2.774474261584718,
+      "abs_S_std": 0.002094527825399762,
+      "abs_S_sem": 0.0006623478550862723,
+      "PLI_mean": 0.9853444019694175,
+      "PLI_std": 0.0007090743303733781,
+      "individual_results": [
+        {
+          "seed": 1,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.05,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9845537680691666,
+          "rho_echo": 0.9996021913653583,
+          "S": 2.7729291537272847,
+          "abs_S": 2.7729291537272847,
+          "correlations": {
+            "E_ab": 0.6705377825102603,
+            "E_ab_prime": -0.6468801359980348,
+            "E_a_prime_b": 0.6597351579183438,
+            "E_a_prime_b_prime": 0.7957760773006461
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 2,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.05,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9848349560210425,
+          "rho_echo": 0.9996018850958175,
+          "S": 2.7723984140449236,
+          "abs_S": 2.7723984140449236,
+          "correlations": {
+            "E_ab": 0.6759383432337445,
+            "E_ab_prime": -0.6416667793819086,
+            "E_a_prime_b": 0.6546078042992213,
+            "E_a_prime_b_prime": 0.8001854871300493
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 3,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.05,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.985043297610353,
+          "rho_echo": 0.9996032062876671,
+          "S": 2.7732449286583076,
+          "abs_S": 2.7732449286583076,
+          "correlations": {
+            "E_ab": 0.6751038639745707,
+            "E_ab_prime": -0.6428208583026298,
+            "E_a_prime_b": 0.6557491805083258,
+            "E_a_prime_b_prime": 0.7995710258727817
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 4,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.05,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.984305821560815,
+          "rho_echo": 0.9995998467326648,
+          "S": 2.772003728587407,
+          "abs_S": 2.772003728587407,
+          "correlations": {
+            "E_ab": 0.6713082031069404,
+            "E_ab_prime": -0.6457490512489529,
+            "E_a_prime_b": 0.6586156904215149,
+            "E_a_prime_b_prime": 0.796330783809999
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 5,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.05,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9856186238614937,
+          "rho_echo": 0.9995996578093347,
+          "S": 2.772836742281239,
+          "abs_S": 2.772836742281239,
+          "correlations": {
+            "E_ab": 0.6826420971356265,
+            "E_ab_prime": -0.6356955710646708,
+            "E_a_prime_b": 0.6487441933960925,
+            "E_a_prime_b_prime": 0.8057548806848492
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 6,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.05,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9851425753483941,
+          "rho_echo": 0.9995998398527194,
+          "S": 2.77451782621588,
+          "abs_S": 2.77451782621588,
+          "correlations": {
+            "E_ab": 0.6712291255752055,
+            "E_ab_prime": -0.6469679808824332,
+            "E_a_prime_b": 0.6598352826201834,
+            "E_a_prime_b_prime": 0.796485437138058
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 7,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.05,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9861132959267576,
+          "rho_echo": 0.9995995969694467,
+          "S": 2.7775963438639417,
+          "abs_S": 2.7775963438639417,
+          "correlations": {
+            "E_ab": 0.6704343840635067,
+            "E_ab_prime": -0.6491030135847002,
+            "E_a_prime_b": 0.6619599599311783,
+            "E_a_prime_b_prime": 0.7960989862845562
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 8,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.05,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9865663986455879,
+          "rho_echo": 0.9996013256957061,
+          "S": 2.7761040441756837,
+          "abs_S": 2.7761040441756837,
+          "correlations": {
+            "E_ab": 0.6812875497441461,
+            "E_ab_prime": -0.6384319879024177,
+            "E_a_prime_b": 0.6514614426054887,
+            "E_a_prime_b_prime": 0.8049230639236311
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 9,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.05,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9858612874901703,
+          "rho_echo": 0.9995979349238476,
+          "S": 2.777398408181069,
+          "abs_S": 2.777398408181069,
+          "correlations": {
+            "E_ab": 0.6680004398046041,
+            "E_ab_prime": -0.6512533069673314,
+            "E_a_prime_b": 0.6640711579776416,
+            "E_a_prime_b_prime": 0.794073503431492
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 10,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.05,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9854039951603951,
+          "rho_echo": 0.9996007850253988,
+          "S": 2.7757130261114416,
+          "abs_S": 2.7757130261114416,
+          "correlations": {
+            "E_ab": 0.6694565314925851,
+            "E_ab_prime": -0.6491445865458716,
+            "E_a_prime_b": 0.6619844429346318,
+            "E_a_prime_b_prime": 0.795127465138353
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        }
+      ]
+    },
+    {
+      "delta_omega": 0.1,
+      "n_seeds": 10,
+      "abs_S_mean": 2.779182882304752,
+      "abs_S_std": 0.001921224294901132,
+      "abs_S_sem": 0.0006075444667938595,
+      "PLI_mean": 0.9853166484892251,
+      "PLI_std": 0.000709947123539493,
+      "individual_results": [
+        {
+          "seed": 1,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.1,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9845293101602219,
+          "rho_echo": 0.9996021930566561,
+          "S": 2.777292123695922,
+          "abs_S": 2.777292123695922,
+          "correlations": {
+            "E_ab": 0.6438924450950042,
+            "E_ab_prime": -0.6733970881932232,
+            "E_a_prime_b": 0.6858291253302566,
+            "E_a_prime_b_prime": 0.7741734650774383
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 2,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.1,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9848156662436943,
+          "rho_echo": 0.9996018865339447,
+          "S": 2.77750590799279,
+          "abs_S": 2.77750590799279,
+          "correlations": {
+            "E_ab": 0.6494810195835417,
+            "E_ab_prime": -0.6683500747941064,
+            "E_a_prime_b": 0.6808716940871816,
+            "E_a_prime_b_prime": 0.7788031195279603
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 3,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.1,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9850190636742258,
+          "rho_echo": 0.999603207119991,
+          "S": 2.7782018087034954,
+          "abs_S": 2.7782018087034954,
+          "correlations": {
+            "E_ab": 0.6486076902255828,
+            "E_ab_prime": -0.6694712541420217,
+            "E_a_prime_b": 0.6819794336233593,
+            "E_a_prime_b_prime": 0.7781434307125316
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 4,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.1,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9842730778959708,
+          "rho_echo": 0.9995998475473183,
+          "S": 2.7764741671663846,
+          "abs_S": 2.7764741671663846,
+          "correlations": {
+            "E_ab": 0.6446903567195693,
+            "E_ab_prime": -0.6722896901963566,
+            "E_a_prime_b": 0.684733866854542,
+            "E_a_prime_b_prime": 0.7747602533959168
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 5,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.1,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9856008233712558,
+          "rho_echo": 0.9995996583991379,
+          "S": 2.7788183826950794,
+          "abs_S": 2.7788183826950794,
+          "correlations": {
+            "E_ab": 0.6564050724130519,
+            "E_ab_prime": -0.6625745828714785,
+            "E_a_prime_b": 0.675207994701324,
+            "E_a_prime_b_prime": 0.7846307327092251
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 6,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.1,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9850999292725805,
+          "rho_echo": 0.9995998403399208,
+          "S": 2.7788712276307086,
+          "abs_S": 2.7788712276307086,
+          "correlations": {
+            "E_ab": 0.6445812436721753,
+            "E_ab_prime": -0.6734829132182973,
+            "E_a_prime_b": 0.6859271821232908,
+            "E_a_prime_b_prime": 0.7748798886169447
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 7,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.1,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9860794886089649,
+          "rho_echo": 0.9995995973196259,
+          "S": 2.7817733871533163,
+          "abs_S": 2.7817733871533163,
+          "correlations": {
+            "E_ab": 0.6437428785367222,
+            "E_ab_prime": -0.6755777041701343,
+            "E_a_prime_b": 0.6880107844656778,
+            "E_a_prime_b_prime": 0.7744420199807825
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 8,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.1,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9865460370585889,
+          "rho_echo": 0.9996013263624092,
+          "S": 2.7817966364034716,
+          "abs_S": 2.7817966364034716,
+          "correlations": {
+            "E_ab": 0.6549770399288224,
+            "E_ab_prime": -0.6652468729048697,
+            "E_a_prime_b": 0.6778597196879614,
+            "E_a_prime_b_prime": 0.7837130038818181
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 9,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.1,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9858299824449726,
+          "rho_echo": 0.999597935511777,
+          "S": 2.781267242808823,
+          "abs_S": 2.781267242808823,
+          "correlations": {
+            "E_ab": 0.6412309519933345,
+            "E_ab_prime": -0.6776592756194323,
+            "E_a_prime_b": 0.6900517765121744,
+            "E_a_prime_b_prime": 0.7723252386838818
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 10,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.1,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9853731061617749,
+          "rho_echo": 0.9996007857047922,
+          "S": 2.7798279387975278,
+          "abs_S": 2.7798279387975278,
+          "correlations": {
+            "E_ab": 0.6427490925341861,
+            "E_ab_prime": -0.6756056200731146,
+            "E_a_prime_b": 0.688021307831087,
+            "E_a_prime_b_prime": 0.7734519183591402
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        }
+      ]
+    },
+    {
+      "delta_omega": 0.2,
+      "n_seeds": 10,
+      "abs_S_mean": 2.7773981260331824,
+      "abs_S_std": 0.0023289683351481244,
+      "abs_S_sem": 0.0007364844537478456,
+      "PLI_mean": 0.9851988227824832,
+      "PLI_std": 0.0007178949508591653,
+      "individual_results": [
+        {
+          "seed": 1,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.2,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9844129477139032,
+          "rho_echo": 0.9996021978802672,
+          "S": 2.7747834594920047,
+          "abs_S": 2.7747834594920047,
+          "correlations": {
+            "E_ab": 0.5877728660852486,
+            "E_ab_prime": -0.7239134231560952,
+            "E_a_prime_b": 0.7354456129962291,
+            "E_a_prime_b_prime": 0.7276515572544315
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 2,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.2,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9847110102656697,
+          "rho_echo": 0.9996018908452717,
+          "S": 2.776513978790315,
+          "abs_S": 2.776513978790315,
+          "correlations": {
+            "E_ab": 0.5937440318487653,
+            "E_ab_prime": -0.7192056761099147,
+            "E_a_prime_b": 0.7308347326758354,
+            "E_a_prime_b_prime": 0.7327295381557997
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 3,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.2,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9849078937239093,
+          "rho_echo": 0.9996032099947246,
+          "S": 2.776915891925669,
+          "abs_S": 2.776915891925669,
+          "correlations": {
+            "E_ab": 0.5927946082073436,
+            "E_ab_prime": -0.7202628787159354,
+            "E_a_prime_b": 0.7318770525166376,
+            "E_a_prime_b_prime": 0.7319813524857524
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 4,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.2,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9841341856543712,
+          "rho_echo": 0.9995998511336711,
+          "S": 2.7741641109042305,
+          "abs_S": 2.7741641109042305,
+          "correlations": {
+            "E_ab": 0.5886210106500119,
+            "E_ab_prime": -0.7228503261355239,
+            "E_a_prime_b": 0.7343956115265232,
+            "E_a_prime_b_prime": 0.7282971625921711
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 5,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.2,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9855073095333143,
+          "rho_echo": 0.9995996609467013,
+          "S": 2.7796283908583774,
+          "abs_S": 2.7796283908583774,
+          "correlations": {
+            "E_ab": 0.601123140696678,
+            "E_ab_prime": -0.7138327633637424,
+            "E_a_prime_b": 0.7255822751798114,
+            "E_a_prime_b_prime": 0.7390902116181455
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 6,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.2,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.984948470392857,
+          "rho_echo": 0.9995998429101332,
+          "S": 2.776353580638822,
+          "abs_S": 2.776353580638822,
+          "correlations": {
+            "E_ab": 0.588459190815204,
+            "E_ab_prime": -0.7239974303358746,
+            "E_a_prime_b": 0.735541805473918,
+            "E_a_prime_b_prime": 0.7283551540138257
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 7,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.2,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9859544705770205,
+          "rho_echo": 0.9995995999261144,
+          "S": 2.778934382169868,
+          "abs_S": 2.778934382169868,
+          "correlations": {
+            "E_ab": 0.5875418414789443,
+            "E_ab_prime": -0.7260184270878441,
+            "E_a_prime_b": 0.7375501034359973,
+            "E_a_prime_b_prime": 0.7278240101670829
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 8,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.2,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9864528388901704,
+          "rho_echo": 0.9996013294902242,
+          "S": 2.7820471538516123,
+          "abs_S": 2.7820471538516123,
+          "correlations": {
+            "E_ab": 0.5995518281117649,
+            "E_ab_prime": -0.7163818849542055,
+            "E_a_prime_b": 0.7281081101956487,
+            "E_a_prime_b_prime": 0.7380053305899928
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 9,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.2,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9857094301915345,
+          "rho_echo": 0.999597938391525,
+          "S": 2.7777978497658142,
+          "abs_S": 2.7777978497658142,
+          "correlations": {
+            "E_ab": 0.5848696376175336,
+            "E_ab_prime": -0.7279601556730784,
+            "E_a_prime_b": 0.7394482047675639,
+            "E_a_prime_b_prime": 0.7255198517076386
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 10,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.2,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9852496708820823,
+          "rho_echo": 0.9996007886582936,
+          "S": 2.7768424619351064,
+          "abs_S": 2.7768424619351064,
+          "correlations": {
+            "E_ab": 0.5865104077957543,
+            "E_ab_prime": -0.7260142248319335,
+            "E_a_prime_b": 0.7375277939574276,
+            "E_a_prime_b_prime": 0.7267900353499909
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        }
+      ]
+    },
+    {
+      "delta_omega": 0.3,
+      "n_seeds": 10,
+      "abs_S_mean": 2.7603365639835777,
+      "abs_S_std": 0.0034230334451144473,
+      "abs_S_sem": 0.001082458219349462,
+      "PLI_mean": 0.9849920394314869,
+      "PLI_std": 0.0007348418528437607,
+      "individual_results": [
+        {
+          "seed": 1,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.3,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9842006770743292,
+          "rho_echo": 0.9996022046645294,
+          "S": 2.75694276256118,
+          "abs_S": 2.75694276256118,
+          "correlations": {
+            "E_ab": 0.5277926036277072,
+            "E_ab_prime": -0.7709940260480245,
+            "E_a_prime_b": 0.7815528402768346,
+            "E_a_prime_b_prime": 0.6766032926086136
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 2,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.3,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.984512774777867,
+          "rho_echo": 0.999601897107416,
+          "S": 2.760250559012944,
+          "abs_S": 2.760250559012944,
+          "correlations": {
+            "E_ab": 0.5341611258686095,
+            "E_ab_prime": -0.7666395536589566,
+            "E_a_prime_b": 0.7773028018532373,
+            "E_a_prime_b_prime": 0.6821470776321409
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 3,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.3,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9847078168827711,
+          "rho_echo": 0.9996032144638975,
+          "S": 2.76036451896235,
+          "abs_S": 2.76036451896235,
+          "correlations": {
+            "E_ab": 0.5331367574060079,
+            "E_ab_prime": -0.7676344723832914,
+            "E_a_prime_b": 0.7782814178776764,
+            "E_a_prime_b_prime": 0.6813118712953745
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 4,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.3,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9838900145878527,
+          "rho_echo": 0.9995998573679212,
+          "S": 2.756497827911767,
+          "abs_S": 2.756497827911767,
+          "correlations": {
+            "E_ab": 0.5286840472932728,
+            "E_ab_prime": -0.769970583189222,
+            "E_a_prime_b": 0.7805433195038385,
+            "E_a_prime_b_prime": 0.6772998779254343
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 5,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.3,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9853320953085802,
+          "rho_echo": 0.9995996653224819,
+          "S": 2.7652693496982814,
+          "abs_S": 2.7652693496982814,
+          "correlations": {
+            "E_ab": 0.5420223670700902,
+            "E_ab_prime": -0.7616909966894964,
+            "E_a_prime_b": 0.7724838746260437,
+            "E_a_prime_b_prime": 0.6890721113126511
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 6,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.3,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9847009146778213,
+          "rho_echo": 0.9995998475773796,
+          "S": 2.758512497687013,
+          "abs_S": 2.758512497687013,
+          "correlations": {
+            "E_ab": 0.5284787522515446,
+            "E_ab_prime": -0.771078019358851,
+            "E_a_prime_b": 0.7816490157718383,
+            "E_a_prime_b_prime": 0.6773067103047792
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 7,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.3,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9857467766966562,
+          "rho_echo": 0.9995996051079276,
+          "S": 2.7608158483755583,
+          "abs_S": 2.7608158483755583,
+          "correlations": {
+            "E_ab": 0.527493985958215,
+            "E_ab_prime": -0.7730345904193596,
+            "E_a_prime_b": 0.7835915966082373,
+            "E_a_prime_b_prime": 0.6766956753897462
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 8,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.3,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.986285277840108,
+          "rho_echo": 0.9996013350334844,
+          "S": 2.7671457020352404,
+          "abs_S": 2.7671457020352404,
+          "correlations": {
+            "E_ab": 0.540310667933944,
+            "E_ab_prime": -0.7641220727456434,
+            "E_a_prime_b": 0.7748890019740772,
+            "E_a_prime_b_prime": 0.6878239593815758
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 9,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.3,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.985505984058034,
+          "rho_echo": 0.9995979435453916,
+          "S": 2.759021460363507,
+          "abs_S": 2.759021460363507,
+          "correlations": {
+            "E_ab": 0.524653473528934,
+            "E_ab_prime": -0.77483134717417,
+            "E_a_prime_b": 0.7853415286948029,
+            "E_a_prime_b_prime": 0.6741951109656001
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        },
+        {
+          "seed": 10,
+          "parameters": {
+            "K": 0.7,
+            "delta_omega": 0.3,
+            "sigma": 0.2,
+            "angles": {
+              "a": 0.0,
+              "a_prime": 95.0,
+              "b": 45.0,
+              "b_prime": 129.0
+            },
+            "T": 100000,
+            "dt": 0.01,
+            "transient": 20000,
+            "omega1": 1.0,
+            "K_modulation": null
+          },
+          "PLI": 0.9850380624108495,
+          "rho_echo": 0.999600793749458,
+          "S": 2.7585451132279384,
+          "abs_S": 2.7585451132279384,
+          "correlations": {
+            "E_ab": 0.5264165098191282,
+            "E_ab_prime": -0.7729912530215644,
+            "E_a_prime_b": 0.7835292781839689,
+            "E_a_prime_b_prime": 0.6756080722032772
+          },
+          "violation": true,
+          "regime": "tsirelson_ridge"
+        }
+      ]
+    }
+  ],
+  "optimal": {
+    "delta_omega": 0.1,
+    "n_seeds": 10,
+    "abs_S_mean": 2.779182882304752,
+    "abs_S_std": 0.001921224294901132,
+    "abs_S_sem": 0.0006075444667938595,
+    "PLI_mean": 0.9853166484892251,
+    "PLI_std": 0.000709947123539493,
+    "individual_results": [
+      {
+        "seed": 1,
+        "parameters": {
+          "K": 0.7,
+          "delta_omega": 0.1,
+          "sigma": 0.2,
+          "angles": {
+            "a": 0.0,
+            "a_prime": 95.0,
+            "b": 45.0,
+            "b_prime": 129.0
+          },
+          "T": 100000,
+          "dt": 0.01,
+          "transient": 20000,
+          "omega1": 1.0,
+          "K_modulation": null
+        },
+        "PLI": 0.9845293101602219,
+        "rho_echo": 0.9996021930566561,
+        "S": 2.777292123695922,
+        "abs_S": 2.777292123695922,
+        "correlations": {
+          "E_ab": 0.6438924450950042,
+          "E_ab_prime": -0.6733970881932232,
+          "E_a_prime_b": 0.6858291253302566,
+          "E_a_prime_b_prime": 0.7741734650774383
+        },
+        "violation": true,
+        "regime": "tsirelson_ridge"
+      },
+      {
+        "seed": 2,
+        "parameters": {
+          "K": 0.7,
+          "delta_omega": 0.1,
+          "sigma": 0.2,
+          "angles": {
+            "a": 0.0,
+            "a_prime": 95.0,
+            "b": 45.0,
+            "b_prime": 129.0
+          },
+          "T": 100000,
+          "dt": 0.01,
+          "transient": 20000,
+          "omega1": 1.0,
+          "K_modulation": null
+        },
+        "PLI": 0.9848156662436943,
+        "rho_echo": 0.9996018865339447,
+        "S": 2.77750590799279,
+        "abs_S": 2.77750590799279,
+        "correlations": {
+          "E_ab": 0.6494810195835417,
+          "E_ab_prime": -0.6683500747941064,
+          "E_a_prime_b": 0.6808716940871816,
+          "E_a_prime_b_prime": 0.7788031195279603
+        },
+        "violation": true,
+        "regime": "tsirelson_ridge"
+      },
+      {
+        "seed": 3,
+        "parameters": {
+          "K": 0.7,
+          "delta_omega": 0.1,
+          "sigma": 0.2,
+          "angles": {
+            "a": 0.0,
+            "a_prime": 95.0,
+            "b": 45.0,
+            "b_prime": 129.0
+          },
+          "T": 100000,
+          "dt": 0.01,
+          "transient": 20000,
+          "omega1": 1.0,
+          "K_modulation": null
+        },
+        "PLI": 0.9850190636742258,
+        "rho_echo": 0.999603207119991,
+        "S": 2.7782018087034954,
+        "abs_S": 2.7782018087034954,
+        "correlations": {
+          "E_ab": 0.6486076902255828,
+          "E_ab_prime": -0.6694712541420217,
+          "E_a_prime_b": 0.6819794336233593,
+          "E_a_prime_b_prime": 0.7781434307125316
+        },
+        "violation": true,
+        "regime": "tsirelson_ridge"
+      },
+      {
+        "seed": 4,
+        "parameters": {
+          "K": 0.7,
+          "delta_omega": 0.1,
+          "sigma": 0.2,
+          "angles": {
+            "a": 0.0,
+            "a_prime": 95.0,
+            "b": 45.0,
+            "b_prime": 129.0
+          },
+          "T": 100000,
+          "dt": 0.01,
+          "transient": 20000,
+          "omega1": 1.0,
+          "K_modulation": null
+        },
+        "PLI": 0.9842730778959708,
+        "rho_echo": 0.9995998475473183,
+        "S": 2.7764741671663846,
+        "abs_S": 2.7764741671663846,
+        "correlations": {
+          "E_ab": 0.6446903567195693,
+          "E_ab_prime": -0.6722896901963566,
+          "E_a_prime_b": 0.684733866854542,
+          "E_a_prime_b_prime": 0.7747602533959168
+        },
+        "violation": true,
+        "regime": "tsirelson_ridge"
+      },
+      {
+        "seed": 5,
+        "parameters": {
+          "K": 0.7,
+          "delta_omega": 0.1,
+          "sigma": 0.2,
+          "angles": {
+            "a": 0.0,
+            "a_prime": 95.0,
+            "b": 45.0,
+            "b_prime": 129.0
+          },
+          "T": 100000,
+          "dt": 0.01,
+          "transient": 20000,
+          "omega1": 1.0,
+          "K_modulation": null
+        },
+        "PLI": 0.9856008233712558,
+        "rho_echo": 0.9995996583991379,
+        "S": 2.7788183826950794,
+        "abs_S": 2.7788183826950794,
+        "correlations": {
+          "E_ab": 0.6564050724130519,
+          "E_ab_prime": -0.6625745828714785,
+          "E_a_prime_b": 0.675207994701324,
+          "E_a_prime_b_prime": 0.7846307327092251
+        },
+        "violation": true,
+        "regime": "tsirelson_ridge"
+      },
+      {
+        "seed": 6,
+        "parameters": {
+          "K": 0.7,
+          "delta_omega": 0.1,
+          "sigma": 0.2,
+          "angles": {
+            "a": 0.0,
+            "a_prime": 95.0,
+            "b": 45.0,
+            "b_prime": 129.0
+          },
+          "T": 100000,
+          "dt": 0.01,
+          "transient": 20000,
+          "omega1": 1.0,
+          "K_modulation": null
+        },
+        "PLI": 0.9850999292725805,
+        "rho_echo": 0.9995998403399208,
+        "S": 2.7788712276307086,
+        "abs_S": 2.7788712276307086,
+        "correlations": {
+          "E_ab": 0.6445812436721753,
+          "E_ab_prime": -0.6734829132182973,
+          "E_a_prime_b": 0.6859271821232908,
+          "E_a_prime_b_prime": 0.7748798886169447
+        },
+        "violation": true,
+        "regime": "tsirelson_ridge"
+      },
+      {
+        "seed": 7,
+        "parameters": {
+          "K": 0.7,
+          "delta_omega": 0.1,
+          "sigma": 0.2,
+          "angles": {
+            "a": 0.0,
+            "a_prime": 95.0,
+            "b": 45.0,
+            "b_prime": 129.0
+          },
+          "T": 100000,
+          "dt": 0.01,
+          "transient": 20000,
+          "omega1": 1.0,
+          "K_modulation": null
+        },
+        "PLI": 0.9860794886089649,
+        "rho_echo": 0.9995995973196259,
+        "S": 2.7817733871533163,
+        "abs_S": 2.7817733871533163,
+        "correlations": {
+          "E_ab": 0.6437428785367222,
+          "E_ab_prime": -0.6755777041701343,
+          "E_a_prime_b": 0.6880107844656778,
+          "E_a_prime_b_prime": 0.7744420199807825
+        },
+        "violation": true,
+        "regime": "tsirelson_ridge"
+      },
+      {
+        "seed": 8,
+        "parameters": {
+          "K": 0.7,
+          "delta_omega": 0.1,
+          "sigma": 0.2,
+          "angles": {
+            "a": 0.0,
+            "a_prime": 95.0,
+            "b": 45.0,
+            "b_prime": 129.0
+          },
+          "T": 100000,
+          "dt": 0.01,
+          "transient": 20000,
+          "omega1": 1.0,
+          "K_modulation": null
+        },
+        "PLI": 0.9865460370585889,
+        "rho_echo": 0.9996013263624092,
+        "S": 2.7817966364034716,
+        "abs_S": 2.7817966364034716,
+        "correlations": {
+          "E_ab": 0.6549770399288224,
+          "E_ab_prime": -0.6652468729048697,
+          "E_a_prime_b": 0.6778597196879614,
+          "E_a_prime_b_prime": 0.7837130038818181
+        },
+        "violation": true,
+        "regime": "tsirelson_ridge"
+      },
+      {
+        "seed": 9,
+        "parameters": {
+          "K": 0.7,
+          "delta_omega": 0.1,
+          "sigma": 0.2,
+          "angles": {
+            "a": 0.0,
+            "a_prime": 95.0,
+            "b": 45.0,
+            "b_prime": 129.0
+          },
+          "T": 100000,
+          "dt": 0.01,
+          "transient": 20000,
+          "omega1": 1.0,
+          "K_modulation": null
+        },
+        "PLI": 0.9858299824449726,
+        "rho_echo": 0.999597935511777,
+        "S": 2.781267242808823,
+        "abs_S": 2.781267242808823,
+        "correlations": {
+          "E_ab": 0.6412309519933345,
+          "E_ab_prime": -0.6776592756194323,
+          "E_a_prime_b": 0.6900517765121744,
+          "E_a_prime_b_prime": 0.7723252386838818
+        },
+        "violation": true,
+        "regime": "tsirelson_ridge"
+      },
+      {
+        "seed": 10,
+        "parameters": {
+          "K": 0.7,
+          "delta_omega": 0.1,
+          "sigma": 0.2,
+          "angles": {
+            "a": 0.0,
+            "a_prime": 95.0,
+            "b": 45.0,
+            "b_prime": 129.0
+          },
+          "T": 100000,
+          "dt": 0.01,
+          "transient": 20000,
+          "omega1": 1.0,
+          "K_modulation": null
+        },
+        "PLI": 0.9853731061617749,
+        "rho_echo": 0.9996007857047922,
+        "S": 2.7798279387975278,
+        "abs_S": 2.7798279387975278,
+        "correlations": {
+          "E_ab": 0.6427490925341861,
+          "E_ab_prime": -0.6756056200731146,
+          "E_a_prime_b": 0.688021307831087,
+          "E_a_prime_b_prime": 0.7734519183591402
+        },
+        "violation": true,
+        "regime": "tsirelson_ridge"
+      }
+    ]
+  }
+}

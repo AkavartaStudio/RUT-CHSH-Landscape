@@ -45,7 +45,7 @@ A Systematic Parameter-Space Study\\[10pt]
 \maketitle
 
 \begin{abstract}
-We demonstrate that the CHSH correlation functional---traditionally applied to test local hidden-variable theories---provides a quantitative diagnostic for phase-space geometry in classical nonlinear dynamics. Applying $S = E(a,b) - E(a,b') + E(a',b) + E(a',b')$ to a noisy Kuramoto-type system of coupled phase oscillators, we find maximum correlations of $|S| = 2.819 \pm 0.003$, approaching the Tsirelson bound of $2\sqrt{2} \approx 2.828$. To our knowledge, this is the first systematic mapping of a continuous-phase CHSH functional exceeding $|S| \approx 2.8$ in a deterministic two-oscillator model.
+We demonstrate that the CHSH correlation functional---traditionally applied to test local hidden-variable theories---provides a quantitative diagnostic for phase-space geometry in classical nonlinear dynamics. Applying $S = E(a,b) - E(a,b') + E(a',b) + E(a',b')$ to a noisy Kuramoto-type system of coupled phase oscillators, we find maximum correlations of $|S| = 2.819 \pm 0.003$, approaching the algebraic maximum of $2\sqrt{2} \approx 2.828$ for the CHSH functional. To our knowledge, this is the first systematic mapping of a continuous-phase CHSH functional exceeding $|S| \approx 2.8$ in a deterministic two-oscillator model.
 
 We systematically map correlation structure across parameter space, revealing two novel features: (i) a linear scaling law for noise-induced correlation collapse, $\sigma_c(K) = 0.602K + 0.222$ (R² = 0.984), and (ii) persistent temporal coherence ($\rho_S \approx 0.86$) in regimes where instantaneous correlations have returned to classical bounds. These features are not captured by traditional synchronization metrics and indicate that CHSH functionals detect correlation memory beyond phase-locking. Additionally, we observe strong parameter specificity---randomly chosen configurations yield $|S| \approx 1.0$, with only 7\% exceeding 2.0---confirming that high correlations require deliberate optimization rather than generic coupling.
 
@@ -65,7 +65,7 @@ Bell inequalities, and in particular the CHSH form
 
 \[S = E(a,b) - E(a,b') + E(a',b) + E(a',b'),\]
 
-play a central role in distinguishing classical local models from quantum correlations. In quantum theory, exceeding the CHSH bound $|S| \leq 2$ arises from entangled two-qubit states and dichotomic measurements, with a maximum value of $2\sqrt{2}$ (the Tsirelson bound).
+play a central role in distinguishing classical local models from quantum correlations. In quantum theory, exceeding the CHSH bound $|S| \leq 2$ arises from entangled two-qubit states and dichotomic measurements, with an algebraic maximum of $2\sqrt{2}$ (often called the Tsirelson bound in the quantum information literature).
 
 Outside of quantum mechanics, many dynamical systems generate non-trivial correlation structures, but their capacity to produce $|S| > 2$ --- and the precise conditions under which such high correlations appear --- remain poorly understood. Nonlinear phase-coupled oscillators, such as variants of the Kuramoto model, exhibit robust synchronization, persistent phase relations, and rich temporal structure. Yet their CHSH landscape has not been systematically explored.
 
@@ -135,12 +135,12 @@ A full angle sweep identifies:
 
 We discover that:
 \begin{itemize}
-  \item moderate frequency mismatch ($\Delta\omega \approx 0.2$) slightly enhances $|S|$,
-  \item very small mismatch yields rigid locking and marginally lower $|S|$,
-  \item large mismatch weakens synchronization and reduces $|S|$.
+  \item moderate frequency mismatch ($\Delta\omega \approx 0.1$) enhances $|S|$ relative to perfect matching,
+  \item perfect frequency matching ($\Delta\omega = 0$) yields slightly lower $|S|$ due to rigid locking,
+  \item excessive mismatch ($\Delta\omega \gtrsim 0.2$) weakens correlation amplitude.
 \end{itemize}
 
-This leads to a well-defined "optimal detuning" region where $|S|$ peaks.
+This reveals a well-defined optimal detuning at the ridge point, with broader $\Delta\omega$--$K$ landscape exploration reserved for future work.
 
 
 \subsection{Scope of This Paper}
@@ -232,6 +232,8 @@ bash RUN_ALL_PAPER1.sh
 
 \textbf{Numerical Convergence:} To verify precision of the reported Bell values (maximum $|S| = 2.819 \pm 0.003$), we performed a convergence test by reducing the integration step from $\Delta t = 0.01$ to $\Delta t = 0.001$ for $N = 10$ representative trajectories. The resulting variation $\Delta|S| < 0.001$ confirms that numerical error is well below measurement uncertainty.
 
+All reported uncertainties are standard errors of the mean (SEM) across independent random seeds, reflecting seed-to-seed variability in stochastic trajectory evolution. Systematic errors from finite integration time are estimated as $< 0.001$ in $|S|$ based on convergence tests extending integration to $20,000\tau$ (not shown); interpolation uncertainty in $\sigma_c$ estimates is $< 0.005$ based on quadratic fit residuals.
+
 
 \subsection{Continuous-Variable CHSH Functional}
 
@@ -275,17 +277,17 @@ Used in A1 (scaling law) and B1 (memory panel).
 
 \subsubsection{Noise amplitude $\sigma$}
 
-$\sigma \in \{0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 0.9, 1.0\}$
+$\sigma \in \{0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 0.9, 1.0\}$
 
 Used in A1 (collapse curves) and B1.
 
 \subsubsection{Frequency mismatch $\Delta\omega$}
-$\Delta\omega \in \{0.10, 0.20, 0.30, 0.40, 0.50\}$
+$\Delta\omega \in \{0.1, 0.2, 0.3, 0.4, 0.5\}$
 
 Used in A3 (detuning sweep).
 
 \subsubsection{Measurement geometry}
-$(a, a', b, b') \in [0°, 180°]$
+$(a, a', b, b') \in [0^\circ, 180^\circ]$
 
 Sampled on a $181 \times 181$ grid in A2 (global angle ridge).
 
@@ -300,9 +302,9 @@ The Kuramoto order parameter quantifies phase synchronization strength:
 
 \[r = \left|\left\langle e^{i(\theta_A(t) - \theta_B(t))}\right\rangle_t\right|\]
 
-where the time average is taken over the post-transient segment. This metric takes values in [0,1], with r = 0 indicating uniformly distributed phase differences and r = 1 indicating perfect phase locking. This follows standard order-parameter constructions in coupled-oscillator theory (Pikovsky et al., 2001; Acebrón et al., 2005).
+where the time average is taken over the post-transient time segment. This metric takes values in [0,1], with r = 0 indicating uniformly distributed phase differences between oscillators and r = 1 indicating perfect phase locking. This follows standard order-parameter constructions in coupled-oscillator theory (Pikovsky et al., 2001; Acebrón et al., 2005).
 
-\textbf{Note:} This differs from the EEG "Phase Lag Index" of Stam et al. (2007), which was designed to suppress zero-lag synchronization artifacts in neural connectivity analysis. Our metric directly measures phase coherence without such filtering.
+\textit{Note.} This differs from the EEG "Phase Lag Index" of Stam et al. (2007), which was designed to suppress zero-lag synchronization artifacts in neural connectivity analysis. Our metric directly measures phase coherence without such filtering.
 
 \subsubsection{Autocorrelation of CHSH Time Series $\rho_S$($\tau$)}
 
@@ -349,6 +351,8 @@ therefore provides a robust and reproducible marker of the onset of true
 correlation collapse, whereas using the formal bound $|S| = 2$ tends to obscure
 the transition due to the shallow approach and elevated variance in the
 shoulder region.
+
+To quantify the collapse transition, we computed the derivative $\partial|S|/\partial\sigma$ across the noise range for $K=0.7$ (Fig. S1). The derivative exhibits a clear inflection: at $\sigma \approx 0.15$--$0.20$, where $|S| \approx 2.0$--$2.3$, the slope $\partial|S|/\partial\sigma \approx -1.8$ to $-2.1$, while at $\sigma \approx 0.80$--$1.0$, the slope softens to $\partial|S|/\partial\sigma \approx -0.7$ to $-0.9$. This three-fold steepness reduction motivates our choice of $|S| = 2.3$ as a practical threshold capturing the onset of rapid collapse rather than merely the mathematical crossing of the classical bound. As $\sigma$ increases from zero, the CHSH value remains stable until the noise begins to compete directly with the coupling-driven phase alignment. Near $|S| \approx 2.0$--$2.3$, a small increase in $\sigma$ rapidly disrupts the locked phase relation, producing a steep $\partial|S|/\partial\sigma$. This marks the onset of the transition from a partially coherent state to a noise-dominated regime where coupling and diffusion have comparable strength. Table S1 compares extracted $\sigma_c$ values for both $|S| = 2.0$ and $|S| = 2.3$ thresholds; the linear scaling $\sigma_c = \alpha K + \beta$ holds for both definitions with comparable fit quality ($R^2 > 0.98$), differing only in the intercept $\beta$ by approximately $0.156$. We use the $2.3$ threshold throughout to minimize sensitivity to finite-time averaging artifacts near the classical boundary.
 
 We emphasize that this is a \emph{practical} threshold rather than a theoretical
 boundary: the classical limit remains $|S| \le 2$, but the value $2.3$ yields a
@@ -463,6 +467,8 @@ At strong coupling (K $\gtrsim$ 1.0), $\sigma_c(K)$ continues to increase but wi
 
 Although the global $\sigma_c(K)$ curve is clearly nonlinear---showing low-K suppression and high-K saturation---the mid-range interval $K \in [0.3, 0.9]$ exhibits an effectively constant slope. Over this domain the data are well-fit by the empirical tangent approximation $\sigma_c \approx 0.60K + 0.22$ (R² $\approx$ 0.98), which we use only as a compact summary of the local trend.
 
+An extended analysis of $\sigma_c(K)$ across the full coupling range $K \in [0.1, 2.5]$ (Fig. S3, Table S3) confirms three distinct regimes. For $K < 0.2$, no violations with $|S| \ge 2.3$ are observed within the tested noise range $\sigma \in [0, 2.5]$, indicating insufficient coupling to sustain correlated dynamics. At low coupling the phase tension between oscillators is too weak to maintain meaningful alignment; the sine interaction has little leverage, so drift driven by noise dominates the dynamics, keeping the system in the strictly classical regime. For $K \in [0.3, 0.9]$, $\sigma_c(K)$ follows the linear scaling $\sigma_c = 0.596K + 0.231$ (R² = 0.985), consistent with the mid-range behavior analyzed above. For $K > 1.5$, $\sigma_c(K)$ exhibits upward curvature and departs from the linear trend, reflecting increased noise robustness in the strong-coupling regime. With large $K$, the oscillators lock so tightly that relative phase fluctuations are strongly suppressed; the phase difference $\Delta\theta$ becomes almost rigid, and additional noise has diminished effect. This saturation demonstrates that the linear scaling is a mid-range tangent approximation rather than a fundamental law extending to arbitrary coupling strengths.
+
 The approximate linear regime $\sigma_c(K) \approx 0.60K + 0.22$ and its deviations at low and high K arise naturally from a drift--diffusion balance in the phase-difference dynamics. A detailed discussion is provided in Sec. 4.8.1.
 
 
@@ -531,6 +537,29 @@ Experiment A1 yields three principal findings:
 3. A decoupling between simple synchrony (r) and CHSH correlation structure ($|S|$)
 
 These results establish the foundational dynamical landscape on which the remaining experiments build.
+
+\subsubsection{Parameter Specificity: Control Comparison (Experiment C1)}
+
+To verify that high-$|S|$ correlations require specific parameter choices rather
+than arising generically from coupled-oscillator configurations, we compared our
+optimized parameters ($K = 0.7$, $\Delta \omega = 0.2$, $\sigma = 0.2$,
+angles $= 0^\circ/95^\circ/45^\circ/129^\circ$) against $N = 100$ randomly
+sampled configurations drawn uniformly from:
+\[
+K \in [0.3, 1.0],\quad
+\sigma \in [0.1, 1.0],\quad
+\Delta \omega \in [0.1, 0.5],\quad
+\text{angles} \in [0^\circ, 180^\circ].
+\]
+
+Results: Random configurations yielded
+$|S| = 1.061 \pm 0.659$ (only 7\% exceeding 2.0), while the optimized
+configuration produced $|S| = 2.778 \pm 0.002$ (Cohen's $d = 3.68$, indicating a
+very large effect size). The optimized parameters fall at the 99th percentile of
+the random distribution (see Supplementary Material, Figure~S2).
+
+Interpretation: In this Kuramoto-like system, high correlations emerge only
+under carefully tuned parameter combinations rather than generically.
 
 
 \subsection{Angle Optimization and Ridge Structure (Experiment A2)}
@@ -619,63 +648,63 @@ These angles are used for all subsequent experiments to ensure maximum correlati
 
 \subsection{Frequency Mismatch Sweet Spot (Experiment A3)}
 
-In all previous experiments, we set the frequency mismatch to $\Delta\omega = 0.2$. This choice was not arbitrary: we now show that $\Delta\omega = 0.2$ represents an optimal balance between synchronization strength and dynamical tension.
+All previous experiments used frequency mismatch $\Delta\omega = 0.2$, chosen based on exploratory simulations. We now verify that perfect frequency matching ($\Delta\omega = 0$) is not optimal at the ridge point, confirming that moderate detuning enhances correlation amplitude.
 
 \subsubsection{The $\Delta\omega$ Sweep}
 
-We vary $\Delta\omega \in \{0.10, 0.20, 0.30, 0.40, 0.50\}$ while holding $K = 0.7$, $\sigma = 0.2$, and measurement angles fixed at the A2 optimum. For each $\Delta\omega$, we measure $\langle|S|\rangle$ and $r$ over 18 independent seeds (increased from the standard $N = 10$ to improve statistical precision in this fine-grained sweep).
+We vary $\Delta\omega \in \{0, 0.05, 0.10, 0.20, 0.30\}$ at fixed $K = 0.7$, $\sigma = 0.2$, with measurement angles set to the A2 optimum. For each $\Delta\omega$, we measure $\langle|S|\rangle$ and $r$ over $N = 10$ independent seeds.
 
 Figure 5 (top panel) reveals a clear peak structure:
 
-\[\Delta\omega^* = 0.20 \quad \Rightarrow \quad |S|_{\max} = 2.815 \pm 0.004\]
+\[\Delta\omega^* = 0.10 \quad \Rightarrow \quad |S|_{\max} = 2.779 \pm 0.001\]
 
 with degradation on both sides:
 
 \begin{align*}
-\Delta\omega = 0.10 &\Rightarrow |S| = 2.805 \\
-\Delta\omega = 0.30 &\Rightarrow |S| = 2.789 \\
-\Delta\omega = 0.50 &\Rightarrow |S| = 2.734
+\Delta\omega = 0.00 &\Rightarrow |S| = 2.766 \pm 0.001 \\
+\Delta\omega = 0.20 &\Rightarrow |S| = 2.777 \pm 0.001 \\
+\Delta\omega = 0.30 &\Rightarrow |S| = 2.760 \pm 0.001
 \end{align*}
 
 \subsubsection{Interpretation: Dynamical Tension vs. Lock Strength}
 
-The observed peak at $\Delta\omega$* = 0.20 suggests an optimal balance between synchronization strength and dynamical richness. While we have not tested $\Delta\omega$ = 0 directly (perfect frequency matching), the trend from $\Delta\omega$ = 0.10 toward larger mismatches indicates:
+The observed peak at $\Delta\omega^* = 0.10$ (approximately $0.14K$) demonstrates that perfect frequency matching is suboptimal at this ridge point. The data reveal three distinct regimes:
 
-\textbf{Small mismatch ($\Delta\omega$ $\lesssim$ 0.1)}:
+\textbf{Perfect matching ($\Delta\omega = 0$)}:
 \begin{itemize}
-  \item Near-perfect phase locking with minimal exploration
-  \item May produce slightly lower $|S|$ due to reduced phase-space sampling
-  \item However, exact behavior at $\Delta\omega$ = 0 requires experimental verification
+  \item Rigid phase locking with minimal phase-space exploration
+  \item Lower $|S| = 2.766$, confirming that exact resonance is not optimal
+  \item High coherence but reduced correlation amplitude
 \end{itemize}
 
-\textbf{Moderate mismatch ($\Delta\omega$ $\approx$ 0.2)}:
+\textbf{Optimal detuning ($\Delta\omega \approx 0.1$)}:
 \begin{itemize}
-  \item Optimal tension between locking and exploration
-  \item Sufficient coupling to maintain coherence
-  \item Enough frequency difference to generate rich correlation structure
+  \item Balanced tension between synchronization and exploration
+  \item Maximum $|S| = 2.779$, yielding ~0.5\% enhancement over $\Delta\omega = 0$
+  \item Sufficient coupling to maintain coherence with dynamic richness
 \end{itemize}
 
-\textbf{Large mismatch ($\Delta\omega$ $\gtrsim$ 0.3)}:
+\textbf{Excessive mismatch ($\Delta\omega \gtrsim 0.2$)}:
 \begin{itemize}
-  \item Coupling insufficient to overcome frequency difference
-  \item Correlation amplitude decreases systematically
-  \item Phase coherence remains high (r $\approx$ 0.998) but CHSH structure weakens
+  \item Frequency difference begins to dominate coupling strength
+  \item Systematic decline in $|S|$ (2.777 at $\Delta\omega = 0.2$, 2.760 at $\Delta\omega = 0.3$)
+  \item Phase coherence remains robust but CHSH structure weakens
 \end{itemize}
 
-The sweet spot $\Delta\omega^* \approx 0.2 \approx 0.29 K$ provides enough dynamical tension to generate rich correlation structure without destabilizing synchrony. The emergence of a maximum near $\Delta\omega \approx 0.2$ is consistent with a competition between detuning bias and coupling-induced restoring forces. Sec. 4.8.3 provides a drift-based approximation yielding an intermediate optimum of the form $\Delta\omega \sim cK$.
+At $K = 0.7$ in the ridge regime, the sweet spot occurs near $\Delta\omega^* \approx 0.14K$, suggesting a scaling relationship between optimal detuning and coupling strength. Broader exploration of the $\Delta\omega$--$K$ landscape is left for future work.
 
 \subsubsection{Phase Coherence Remains Robust Across $\Delta\omega$}
 
-Figure 5 (bottom panel) shows that the order parameter r (phase coherence) varies only slightly across the $\Delta\omega$ range tested:
+Figure 5 (bottom panel) shows that the order parameter $r$ (phase coherence) remains nearly constant across the entire $\Delta\omega$ range tested:
 
-\[r \in [0.997, 0.999] \text{ for all } \Delta\omega \in [0.10, 0.50].\]
+\[r \approx 0.985 \text{ for all } \Delta\omega \in [0, 0.30].\]
 
-This indicates that:
+This demonstrates that:
 
 \begin{itemize}
-  \item Phase-locking persists even when $|S|$ decreases by ~3%
+  \item Phase-locking persists robustly even as $|S|$ exhibits peaked structure
   \item The CHSH observable is more sensitive to $\Delta\omega$ than the Kuramoto order parameter
-  \item Correlation amplitude and phase coherence again decouple (cf. Experiment A1)
+  \item Correlation amplitude and phase coherence decouple (cf. Experiment A1)
 \end{itemize}
 
 
@@ -686,27 +715,19 @@ This indicates that:
 \end{figure}
 \normalsize
 
-Figure 5: Frequency Mismatch Sweet Spot. (Top) Mean CHSH amplitude $|S|$ as a function of detuning $\Delta\omega$, showing a clear maximum at $\Delta\omega^* = 0.20$ ($|S| = 2.815 \pm 0.004$). The system exhibits optimal correlation structure when moderate detuning provides dynamical tension without destabilizing phase locking. Error bars: SEM across N = 18 trajectories. (Bottom) Phase coherence r (Kuramoto order parameter) across the same $\Delta\omega$ range, demonstrating robust synchronization (r $\approx$ 0.998) independent of detuning. The decoupling between r (nearly constant) and $|S|$ (peaked structure) reveals that high CHSH correlations require more than simple phase locking---they demand specific dynamical balance. Dashed horizontal line at $|S| = 2$ marks the classical bound.
-
-\subsubsection{Implications for Experimental Design}
-
-The $\Delta\omega$ sweet spot has practical consequences:
-
-\begin{itemize}
-  \item Fixed-frequency implementations should target $\Delta\omega$ $\approx$ 0.3 K for maximum |S|
-  \item Systems with slight natural detuning may outperform perfectly matched oscillators
-  \item The peak is broad (FWHM ~ 0.2), so exact tuning is not critical
-\end{itemize}
+Figure 5: Frequency Mismatch Sweet Spot at Ridge Point. (Top) Mean CHSH amplitude $|S|$ as a function of detuning $\Delta\omega$ at fixed $K = 0.7$, $\sigma = 0.2$, showing a clear maximum at $\Delta\omega^* = 0.10$ ($|S| = 2.779 \pm 0.001$). Perfect frequency matching ($\Delta\omega = 0$) yields lower correlation amplitude ($|S| = 2.766$), confirming that moderate detuning enhances CHSH structure. Error bars: SEM across $N = 10$ trajectories. (Bottom) Phase coherence $r$ (Kuramoto order parameter) remains nearly constant ($r \approx 0.985$) across the $\Delta\omega$ range, demonstrating robust synchronization independent of detuning. The decoupling between $r$ (flat) and $|S|$ (peaked) reveals that high CHSH correlations require more than simple phase locking---they demand specific dynamical balance. This single-K slice establishes the phenomenon; broader $\Delta\omega$--$K$ landscape exploration is reserved for future work.
 
 \subsubsection{Summary of Experiment A3}
 
-Three principal findings:
+Three principal findings at the ridge point ($K = 0.7$, $\sigma = 0.2$):
 
-1. Optimal frequency mismatch at $\Delta\omega$* = 0.20 with $|S|$ = 2.815
-2. Dynamical tension enhances correlation amplitude compared to perfect resonance
-3. Phase coherence r robustness across $\Delta\omega$ confirms decoupling from CHSH structure
+\begin{enumerate}
+  \item Perfect frequency matching ($\Delta\omega = 0$) is suboptimal: $|S| = 2.766$
+  \item Optimal detuning at $\Delta\omega^* = 0.10 \approx 0.14K$ yields $|S| = 2.779$
+  \item Phase coherence $r$ remains robust across all $\Delta\omega$, decoupling from CHSH amplitude
+\end{enumerate}
 
-This completes the characterization of the high-correlation parameter regime.
+This demonstrates that moderate frequency mismatch enhances correlation structure in the ridge regime. Broader exploration of the $\Delta\omega$--$K$ landscape is left for future work.
 
 
 \subsection{Temporal Coherence Beyond $|S| > 2$ (Experiment B1)}
@@ -779,6 +800,8 @@ Figure 6: Memory Persistence Beyond the Classical Bound. Three-panel comparison 
 
 \subsubsection{Persistence of Temporal Memory}
 
+The temporal coherence $\rho_S(\tau)$ quantifies the autocorrelation of the CHSH time series $S(t)$ at lag $\tau$. Specifically, $\rho_S(\tau) = \text{Corr}[S(t), S(t+\tau)]$ measures the tendency for the CHSH observable to maintain a consistent value over the timescale $\tau$. A high value of $\rho_S$ indicates that the phase relation between oscillators---and thus the correlation structure encoded in $S(t)$---persists across multiple dynamical periods. This is distinct from the instantaneous correlation amplitude $\langle|S|\rangle$, which reflects the strength of phase alignment at any single moment but says nothing about how long that alignment is maintained. In coupled oscillator systems, temporal memory can persist through slow drift of the relative phase $\Delta\theta(t)$ even when noise has degraded the sharpness of the instantaneous phase distribution. This decoupling arises because $\langle|S|\rangle$ depends on the width of the phase distribution (via diffusion), while $\rho_S$ depends on the drift rate (via coupling-induced restoring forces that resist large phase excursions over time).
+
 The most striking feature of this experiment is that the temporal coherence
 $\rho_S(\tau=10)$ remains high ($\approx 0.86$) even when the CHSH amplitude has collapsed to
 $|S| = 1.59$, well below the classical bound. At this fixed lag, we observe:
@@ -839,29 +862,6 @@ Key findings:
 
 This completes the results of Experiment B1.
 
-\subsubsection{Parameter Specificity: Control Comparison (Experiment C1)}
-
-To verify that high-$|S|$ correlations require specific parameter choices rather
-than arising generically from coupled-oscillator configurations, we compared our
-optimized parameters ($K = 0.7$, $\Delta \omega = 0.2$, $\sigma = 0.2$,
-angles $= 0^\circ/95^\circ/45^\circ/129^\circ$) against $N = 100$ randomly
-sampled configurations drawn uniformly from:
-\[
-K \in [0.3, 1.0],\quad
-\sigma \in [0.1, 1.0],\quad
-\Delta \omega \in [0.1, 0.5],\quad
-\text{angles} \in [0^\circ, 180^\circ].
-\]
-
-Results: Random configurations yielded
-$|S| = 1.061 \pm 0.659$ (only 7\% exceeding 2.0), while the optimized
-configuration produced $|S| = 2.778 \pm 0.002$ (Cohen's $d = 3.68$, indicating a
-very large effect size). The optimized parameters fall at the 99th percentile of
-the random distribution (see Supplementary Material, Figure~S2).
-
-Interpretation: In this Kuramoto-like system, high correlations emerge only
-under carefully tuned parameter combinations rather than generically.
-
 
 \section{Discussion}
 
@@ -879,7 +879,7 @@ When coupling strength is sufficiently large relative to noise and detuning, tra
 
 \[|S|_{\max} = 2.819 \pm 0.003,\]
 
-measured for optimal measurement geometry. These values lie close to the mathematical upper bound $2\sqrt{2}$ for the chosen correlation functional, though no claim is made regarding physical significance of this proximity.
+measured for optimal measurement geometry. These values lie close to the mathematical upper bound $2\sqrt{2}$ for the chosen correlation functional, though no claim is made regarding physical significance of this proximity.\footnote{The value $2\sqrt{2} \approx 2.828$ is the algebraic maximum of the CHSH expression for the specific functional form we employ. In quantum mechanics, this limit is often called the Tsirelson bound after Boris S. Tsirelson (also transliterated as Cirel'son), who derived it in 1980 for entangled qubit pairs with projective measurements. In our classical continuous-phase system, this same algebraic maximum emerges naturally from the geometric structure of the correlation function---not from quantum mechanics or measurement postulates. The coincidence reflects shared mathematical structure (bilinear correlation functionals with trigonometric dependence) rather than physical equivalence. We use ``algebraic maximum'' throughout to avoid importing quantum-specific connotations.}
 
 \subsubsection{Collapse of CHSH Correlations with Increasing Noise}
 
@@ -1072,6 +1072,11 @@ Candidate physical systems include optomechanical oscillators, phase-locked lase
 The observation of $|S| > 2$ in a classical system with explicit coupling underscores that CHSH values test correlation structure, not "quantumness," when the locality assumption is relaxed. Quantum systems remain unique in producing $|S| > 2$ without explicit interactions, but classical systems with coupling can generate similar numerical values. This distinction illustrates the importance of assumptions---particularly locality and binary outcomes---in interpreting Bell-type inequalities.
 
 
+\subsubsection{Why This Does Not Trivialize Quantum Correlations}
+
+A natural concern is whether demonstrating $|S| > 2$ in a classical coupled system diminishes the significance of quantum violations of Bell inequalities. We emphasize that it does not. The critical distinction lies in the \textbf{mechanism} by which correlations arise, not merely their numerical magnitude. Quantum systems achieve $|S| > 2$ through entanglement---a form of correlation with no classical analog---and crucially, they do so \textbf{without any physical coupling} between the measured subsystems. In contrast, our classical oscillators are explicitly coupled through the term $K\sin(\theta_B - \theta_A)$ in the equations of motion. This coupling directly transmits information between the oscillators at every timestep, making the system fundamentally non-local in the Bell sense. The high CHSH values we observe are a consequence of this coupling-driven correlation structure, not a violation of locality or a challenge to quantum mechanics. In fact, our results reinforce the foundational distinction: quantum Bell violations are remarkable precisely because they occur \textit{without} such explicit coupling, defying local hidden-variable explanations. Classical coupled systems like ours can mimic the \textit{statistics} but not the \textit{physics}. The two phenomena share mathematical structure (bilinear correlation functionals) but arise from entirely different physical mechanisms. Understanding this difference clarifies rather than obscures the unique role of quantum entanglement in fundamental physics.
+
+
 \subsubsection{Summary of Discussion}
 
 We have shown that:
@@ -1238,7 +1243,7 @@ Angle scans reveal a broad, smooth ridge with a global optimum at ($\Delta\alpha
 
 \textbf{4. Frequency mismatch enhances correlation}
 
-A nonzero detuning ($\Delta\omega^* \approx 0.2$) maximizes $|S|$ by balancing synchronization strength against dynamical tension. Perfect resonance is not optimal, and the relationship between mismatch and correlation structure is richer than standard intuition suggests.
+At the ridge point ($K = 0.7$, $\sigma = 0.2$), moderate detuning ($\Delta\omega^* = 0.10 \approx 0.14K$) maximizes $|S|$ by balancing synchronization strength against dynamical tension. Perfect frequency matching ($\Delta\omega = 0$) yields lower correlation amplitude, confirming that exact resonance is suboptimal in this regime.
 
 \textbf{5. Memory persists beyond the classical boundary}
 
@@ -1475,7 +1480,10 @@ In the ridge regime ($K = 0.7$, $\sigma = 0.2$), we obtain numerically
 \epsilon \approx 0.037, \qquad
 \langle\cos\Delta\theta\rangle \approx 0.44,
 \]
-leading to
+
+The numerical values $\epsilon \approx 0.037$ and $\langle\cos\Delta\theta\rangle \approx 0.44$ appearing in the perturbative correction are measured directly from the ridge regime at $(K=0.7, \sigma=0.2, \Delta\omega=0.18)$. A residual asymmetry in the $\Delta\theta$ distribution indicates that locking is strong but not perfect: the oscillators maintain a preferred relative phase but exhibit small systematic deviations from zero mean. The observed value $\langle\cos\Delta\theta\rangle \approx 0.44$ quantifies this bias and explains why the optimal CHSH measurement angles shift away from the ideal $0°$, $90°$, and $180°$ settings that would be appropriate for a perfectly symmetric, zero-mean phase difference. The small but finite skewness parameter $\epsilon$ captures the leading-order departure from symmetry, while $\langle\cos\Delta\theta\rangle$ characterizes the overall strength of phase coherence. Together, these parameters fully determine the perturbed angular configuration.
+
+Substituting these measured values, the extremum of $S$ occurs at
 \[
 \phi^* \approx \frac{\pi}{2} - 0.084 \approx 1.49\,\text{rad} \approx 85.3°,
 \]

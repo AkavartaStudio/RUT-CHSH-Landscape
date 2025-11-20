@@ -1,0 +1,91 @@
+{
+  "experiment_id": "B1-MINIMAL-ECHO",
+  "timestamp": "2025-11-17T17:27:48.442190",
+  "config": {
+    "experiment_id": "B1-MINIMAL-ECHO",
+    "description": "Minimal echo panel - Paper 1 Figure: Memory beyond violations",
+    "purpose": "Show violations vanish before all memory vanishes (simple, NO ECR taxonomy)",
+    "parameters": {
+      "K": 0.7,
+      "delta_omega": 0.2,
+      "angles": {
+        "a": 0.0,
+        "a_prime": 98.0,
+        "b": 45.0,
+        "b_prime": 127.0
+      },
+      "sigma_points": [
+        {
+          "name": "ridge",
+          "value": 0.2
+        },
+        {
+          "name": "boundary",
+          "value": 0.7
+        },
+        {
+          "name": "classical",
+          "value": 1.0
+        }
+      ],
+      "n_seeds": 20,
+      "T_steps": 600000,
+      "dt": 0.01,
+      "transient_steps": 300000,
+      "omega1": 1.0,
+      "autocorr_tau": 10
+    },
+    "metrics": {
+      "required": [
+        "abs_S",
+        "PLI",
+        "rho_S_autocorr"
+      ],
+      "excluded": [
+        "rho_violation",
+        "ECR_classification",
+        "gap_metrics"
+      ]
+    },
+    "note": "KEEP SIMPLE - just show |S|, PLI, and temporal coherence at 3 \u03c3 values. NO ECR for Paper 1.",
+    "expected_message": "Violations vanish at \u03c3\u22480.7 while PLI and \u03c1_S remain non-zero",
+    "paper_figure": "Figure: Three \u03c3 panels showing |S| decay vs memory persistence",
+    "git_commit": "TBD",
+    "frozen_for_paper": false
+  },
+  "results": [
+    {
+      "sigma_name": "ridge",
+      "sigma": 0.2,
+      "n_seeds": 20,
+      "abs_S_mean": 2.773587645695202,
+      "abs_S_std": 0.0009573620633951652,
+      "PLI_mean": 0.9854006517021443,
+      "PLI_std": 0.0003400720717478616,
+      "rho_S_autocorr_mean": 0.7620381993518509,
+      "rho_S_autocorr_std": 0.005307051989380726
+    },
+    {
+      "sigma_name": "boundary",
+      "sigma": 0.7,
+      "n_seeds": 20,
+      "abs_S_mean": 2.2281133534679025,
+      "abs_S_std": 0.01840952340680722,
+      "PLI_mean": 0.7918815663015599,
+      "PLI_std": 0.0064997375147034875,
+      "rho_S_autocorr_mean": 0.8581437745285092,
+      "rho_S_autocorr_std": 0.010876702852651358
+    },
+    {
+      "sigma_name": "classical",
+      "sigma": 1.0,
+      "n_seeds": 20,
+      "abs_S_mean": 1.5943472507451761,
+      "abs_S_std": 0.035747150055351846,
+      "PLI_mean": 0.5665758588644796,
+      "PLI_std": 0.012687122456300286,
+      "rho_S_autocorr_mean": 0.8599658687068461,
+      "rho_S_autocorr_std": 0.004792275887284474
+    }
+  ]
+}
