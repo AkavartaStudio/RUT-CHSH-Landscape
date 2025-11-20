@@ -1,0 +1,8 @@
+Δθ Distribution Statistics
+Ridge Regime: K=0.7, σ=0.2, Δω=0.2
+Seeds: 30
+Total samples: 2,400,000
+
+⟨cos Δθ⟩ = 0.975123 ± 0.000274
+⟨sin Δθ⟩ = ε = 0.140912 ± 0.001413
+Mean Δθ = 0.981292 rad
