@@ -144,7 +144,7 @@ ax2.plot_surface(K_mesh2, PLI_mesh2, classical_mesh2,
                 alpha=0.2, color='red', zorder=1)
 
 ax2.set_xlabel('Coupling Strength K', fontsize=12, labelpad=10)
-ax2.set_ylabel('Phase Lock Index', fontsize=12, labelpad=10)
+ax2.set_ylabel('Phase Coherence r', fontsize=12, labelpad=10)
 ax2.set_zlabel('|S|', fontsize=12, labelpad=10)
 ax2.set_title(f'RUT CHSH Landscape (Δω={dw_focus})\nThe RUT Plateau',
              fontsize=14, pad=20)
@@ -202,7 +202,7 @@ ax_left.scatter([1.0], [2.794], s=500, color='gold', marker='*',
                edgecolors='black', linewidths=3, zorder=10,
                label='E104D')
 
-ax_left.set_xlabel('Phase Lock Index (PLI)', fontsize=14)
+ax_left.set_xlabel('Phase Coherence r', fontsize=14)
 ax_left.set_ylabel('|S|', fontsize=14)
 ax_left.set_title('The Three Regimes of RUT CHSH Violations', fontsize=16)
 ax_left.set_xlim([0.8, 1.02])

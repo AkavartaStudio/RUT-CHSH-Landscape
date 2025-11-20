@@ -1,0 +1,191 @@
+{
+  "metadata": {
+    "experiment_id": "E104D",
+    "name": "Tsirelson Ridge (Asymmetric Angles)",
+    "description": "Optimized asymmetric measurement angles at perfect lock",
+    "timestamp": "2025-11-15T10:22:00.041331"
+  },
+  "statistics": {
+    "experiment_id": "E104D",
+    "name": "Tsirelson Ridge (Asymmetric Angles)",
+    "n_runs": 5,
+    "S": {
+      "mean": 2.7940908813625738,
+      "std": 1.5984948006286143e-08,
+      "min": 2.7940908622908935,
+      "max": 2.7940909014738247
+    },
+    "PLI": {
+      "mean": 0.9999999999999337,
+      "std": 6.163961832144051e-14,
+      "min": 0.9999999999998495,
+      "max": 0.999999999999996
+    },
+    "rho_echo": {
+      "mean": 1.0,
+      "std": 4.965068306494546e-17,
+      "min": 0.9999999999999999,
+      "max": 1.0
+    },
+    "violation_rate": 1.0,
+    "validation": {
+      "expected_S": 2.794,
+      "measured_S": 2.7940908813625738,
+      "deviation": 9.088136257373591e-05,
+      "tolerance": 0.13970000000000002,
+      "passes": "True"
+    }
+  },
+  "all_runs": [
+    {
+      "seed": 0,
+      "parameters": {
+        "K": 0.7,
+        "delta_omega": 0.3,
+        "sigma": 0.0,
+        "angles": {
+          "a": 0.0,
+          "a_prime": 90.0,
+          "b": 45.0,
+          "b_prime": 120.0
+        },
+        "T": 5000,
+        "dt": 0.01,
+        "transient": 1000,
+        "K_modulation": null
+      },
+      "PLI": 0.9999999999999953,
+      "rho_echo": 1.0,
+      "S": 2.7940908716193156,
+      "abs_S": 2.7940908716193156,
+      "correlations": {
+        "E_ab": 0.5391585170511339,
+        "E_ab_prime": -0.6739623978911106,
+        "E_a_prime_b": 0.8422043062649418,
+        "E_a_prime_b_prime": 0.738765650412129
+      },
+      "violation": true,
+      "regime": "tsirelson_ridge"
+    },
+    {
+      "seed": 1,
+      "parameters": {
+        "K": 0.7,
+        "delta_omega": 0.3,
+        "sigma": 0.0,
+        "angles": {
+          "a": 0.0,
+          "a_prime": 90.0,
+          "b": 45.0,
+          "b_prime": 120.0
+        },
+        "T": 5000,
+        "dt": 0.01,
+        "transient": 1000,
+        "K_modulation": null
+      },
+      "PLI": 0.9999999999999556,
+      "rho_echo": 1.0,
+      "S": 2.7940908622908935,
+      "abs_S": 2.7940908622908935,
+      "correlations": {
+        "E_ab": 0.5391584840748764,
+        "E_ab_prime": -0.6739624268172119,
+        "E_a_prime_b": 0.842204327375484,
+        "E_a_prime_b_prime": 0.7387656240233207
+      },
+      "violation": true,
+      "regime": "tsirelson_ridge"
+    },
+    {
+      "seed": 2,
+      "parameters": {
+        "K": 0.7,
+        "delta_omega": 0.3,
+        "sigma": 0.0,
+        "angles": {
+          "a": 0.0,
+          "a_prime": 90.0,
+          "b": 45.0,
+          "b_prime": 120.0
+        },
+        "T": 5000,
+        "dt": 0.01,
+        "transient": 1000,
+        "K_modulation": null
+      },
+      "PLI": 0.9999999999998725,
+      "rho_echo": 1.0,
+      "S": 2.794090899436539,
+      "abs_S": 2.794090899436539,
+      "correlations": {
+        "E_ab": 0.5391586153882092,
+        "E_ab_prime": -0.6739623116315436,
+        "E_a_prime_b": 0.8422042433118069,
+        "E_a_prime_b_prime": 0.7387657291049794
+      },
+      "violation": true,
+      "regime": "tsirelson_ridge"
+    },
+    {
+      "seed": 3,
+      "parameters": {
+        "K": 0.7,
+        "delta_omega": 0.3,
+        "sigma": 0.0,
+        "angles": {
+          "a": 0.0,
+          "a_prime": 90.0,
+          "b": 45.0,
+          "b_prime": 120.0
+        },
+        "T": 5000,
+        "dt": 0.01,
+        "transient": 1000,
+        "K_modulation": null
+      },
+      "PLI": 0.999999999999996,
+      "rho_echo": 1.0,
+      "S": 2.794090871992296,
+      "abs_S": 2.794090871992296,
+      "correlations": {
+        "E_ab": 0.53915851836964,
+        "E_ab_prime": -0.6739623967345428,
+        "E_a_prime_b": 0.8422043054208675,
+        "E_a_prime_b_prime": 0.7387656514672456
+      },
+      "violation": true,
+      "regime": "tsirelson_ridge"
+    },
+    {
+      "seed": 4,
+      "parameters": {
+        "K": 0.7,
+        "delta_omega": 0.3,
+        "sigma": 0.0,
+        "angles": {
+          "a": 0.0,
+          "a_prime": 90.0,
+          "b": 45.0,
+          "b_prime": 120.0
+        },
+        "T": 5000,
+        "dt": 0.01,
+        "transient": 1000,
+        "K_modulation": null
+      },
+      "PLI": 0.9999999999998495,
+      "rho_echo": 0.9999999999999999,
+      "S": 2.7940909014738247,
+      "abs_S": 2.7940909014738247,
+      "correlations": {
+        "E_ab": 0.5391586225903837,
+        "E_ab_prime": -0.6739623053139051,
+        "E_a_prime_b": 0.8422042387011227,
+        "E_a_prime_b_prime": 0.738765734868413
+      },
+      "violation": true,
+      "regime": "tsirelson_ridge"
+    }
+  ]
+}

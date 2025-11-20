@@ -1,0 +1,35 @@
+{
+  "experiment_id": "B1-MINIMAL-ECHO",
+  "description": "Minimal echo panel - Paper 1 Figure: Memory beyond violations",
+  "purpose": "Show violations vanish before all memory vanishes (simple, NO ECR taxonomy)",
+  "parameters": {
+    "K": 0.7,
+    "delta_omega": 0.2,
+    "angles": {
+      "a": 0.0,
+      "a_prime": 98.0,
+      "b": 45.0,
+      "b_prime": 127.0
+    },
+    "sigma_points": [
+      {"name": "ridge", "value": 0.2},
+      {"name": "boundary", "value": 0.7},
+      {"name": "classical", "value": 1.0}
+    ],
+    "n_seeds": 20,
+    "T_steps": 600000,
+    "dt": 0.01,
+    "transient_steps": 300000,
+    "omega1": 1.0,
+    "autocorr_tau": 10
+  },
+  "metrics": {
+    "required": ["abs_S", "PLI", "rho_S_autocorr"],
+    "excluded": ["rho_violation", "ECR_classification", "gap_metrics"]
+  },
+  "note": "KEEP SIMPLE - just show |S|, PLI, and temporal coherence at 3 σ values. NO ECR for Paper 1.",
+  "expected_message": "Violations vanish at σ≈0.7 while PLI and ρ_S remain non-zero",
+  "paper_figure": "Figure: Three σ panels showing |S| decay vs memory persistence",
+  "git_commit": "TBD",
+  "frozen_for_paper": false
+}

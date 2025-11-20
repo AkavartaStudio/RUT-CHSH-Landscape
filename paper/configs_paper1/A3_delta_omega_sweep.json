@@ -1,0 +1,29 @@
+{
+  "experiment_id": "A3-DELTA-OMEGA-SWEEP",
+  "description": "Δω vs |S| curve at ridge point (K=0.7, σ=0.2) - Paper 1 Fig 5",
+  "purpose": "Demonstrate that Δω=0 is not optimal; reserve full Δω-K landscape for Paper 2",
+  "parameters": {
+    "K": 0.7,
+    "sigma": 0.2,
+    "angles": {
+      "a": 0.0,
+      "a_prime": 95.0,
+      "b": 45.0,
+      "b_prime": 129.0
+    },
+    "delta_omega_values": [0.0, 0.05, 0.1, 0.2, 0.3],
+    "n_seeds": 10,
+    "T_steps": 100000,
+    "dt": 0.01,
+    "transient_steps": 20000,
+    "omega1": 1.0
+  },
+  "expected_outputs": {
+    "per_point": ["mean_abs_S", "std_abs_S", "mean_PLI"],
+    "optimal_delta_omega": "Expected Δω* ≈ 0.14-0.20 (approximately 0.2K)"
+  },
+  "paper_figure": "Figure 5: |S|(Δω) at K=0.7, σ=0.2 - single ridge-point slice",
+  "scope_note": "Focused experiment at one K,σ point. Full Δω-K landscape reserved for Paper 2.",
+  "git_commit": "TBD",
+  "frozen_for_paper": false
+}

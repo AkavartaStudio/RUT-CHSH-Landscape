@@ -1,0 +1,34 @@
+{
+  "experiment_id": "A1-SIGMA-C-K-SWEEP",
+  "description": "High-precision σ_c(K) scaling law - Paper 1 Figure: Noise-coupling scaling",
+  "purpose": "Nail the scaling relation σ_c ≈ 0.9 K with tight error bars",
+  "parameters": {
+    "K_values": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.2, 1.5],
+    "delta_omega": 0.2,
+    "sigma_values": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 0.9, 1.0, 1.2, 1.5, 2.0],
+    "angles": {
+      "a": 0.0,
+      "a_prime": 98.0,
+      "b": 45.0,
+      "b_prime": 127.0
+    },
+    "n_seeds": 20,
+    "T_steps": 600000,
+    "dt": 0.01,
+    "transient_steps": 300000,
+    "omega1": 1.0
+  },
+  "expected_outputs": {
+    "per_point": [
+      "mean_abs_S",
+      "std_abs_S",
+      "mean_PLI",
+      "std_PLI",
+      "violation_rate"
+    ],
+    "sigma_c_definition": "threshold where |S| crosses below 2.3 or violation rate < 50%"
+  },
+  "paper_figure": "Figure: σ_c vs K scaling law",
+  "git_commit": "TBD",
+  "frozen_for_paper": false
+}

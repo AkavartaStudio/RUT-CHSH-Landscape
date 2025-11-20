@@ -70,16 +70,16 @@ for col, sigma in enumerate(sigma_values):
                 vmin=0.85, vmax=1.0,
                 xticklabels=[f"{k:.2f}" for k in K_values],
                 yticklabels=[f"{d:.1f}" for d in delta_omega_values],
-                annot=True, fmt=".2f", cbar_kws={"label": "PLI"},
+                annot=True, fmt=".2f", cbar_kws={"label": "r"},
                 cbar=(col == 3))
 
     ax_PLI.set_xlabel("Coupling Strength K")
     ax_PLI.set_ylabel("Δω" if col == 0 else "")
-    ax_PLI.set_title(f"PLI Heatmap")
+    ax_PLI.set_title(f"r Heatmap")
 
 # Add overall title
 fig.suptitle("E107N: RUT Ridge Across Noise Levels\n"
-             "Top: |S| violations persist across σ | Bottom: PLI shows lock stability",
+             "Top: |S| violations persist across σ | Bottom: r shows phase coherence",
              fontsize=16, y=0.995)
 
 plt.tight_layout(rect=[0, 0, 1, 0.99])
@@ -116,13 +116,13 @@ line2 = ax.plot(sigma_values, [s/2.828 for s in avg_S_values], 's-',
                linewidth=3, markersize=10, color='blue',
                label='⟨|S|⟩ / Tsirelson')
 line3 = ax2.plot(sigma_values, avg_PLI_values, '^-', linewidth=3,
-                markersize=10, color='green', label='⟨PLI⟩')
+                markersize=10, color='green', label='⟨r⟩')
 
 ax.axhline(y=0.5, color='red', linestyle='--', alpha=0.3,
           label='50% violation threshold')
 ax.set_xlabel('Noise Level σ', fontsize=14)
 ax.set_ylabel('Violation Rate & Normalized |S|', fontsize=14)
-ax2.set_ylabel('Phase Lock Index', fontsize=14, color='green')
+ax2.set_ylabel('Phase Coherence r', fontsize=14, color='green')
 ax2.tick_params(axis='y', labelcolor='green')
 
 ax.set_ylim([0, 1.05])

@@ -234,6 +234,8 @@ bash RUN_ALL_PAPER1.sh
 
 All reported uncertainties are standard errors of the mean (SEM) across independent random seeds, reflecting seed-to-seed variability in stochastic trajectory evolution. Systematic errors from finite integration time are estimated as $< 0.001$ in $|S|$ based on the observation that correlation statistics reach steady-state values within the first 200 time units (see transient removal discussion) and remain stable over the 800-time-unit analysis window, with no systematic drift observed in $|S|$ values computed over successive subwindows. Interpolation uncertainty in $\sigma_c$ estimates is $< 0.005$ based on quadratic fit residuals.
 
+\textbf{Integration Time Variations:} Unless otherwise noted, all experiments used $T = 1000$ time units (100,000 integration steps with $\Delta t = 0.01$). Experiments A1 (noise-induced collapse) and A2 (angle optimization) employed extended integration times of $T = 6000$ (600,000 steps) with correspondingly longer transient periods (3000 time units) to ensure convergence of the $\sigma_c$ threshold interpolation and precise characterization of the angle ridge, respectively. The analysis window for these extended runs was $t \in [3000, 6000]$, maintaining the same 3000-time-unit statistics collection period used in other experiments. Experiment A3 (frequency detuning) and all supplemental experiments used the standard $T = 1000$ protocol.
+
 
 \subsection{Continuous-Variable CHSH Functional}
 
@@ -479,7 +481,7 @@ The approximate linear regime $\sigma_c(K) \approx 0.60K + 0.22$ and its deviati
 \end{figure}
 \normalsize
 
-Figure 2: Global $\sigma_c(K)$ curve with mid-range linear regime. Critical noise amplitude $\sigma_c$ at which $|S|$ drops below 2 as a function of coupling strength K. Circles show empirical values obtained from the extended sweep $K \in \{0.1, 0.2, \ldots, 1.5\}$. The solid line shows the best-fit linear scaling $\sigma_c(K) \approx 0.60K + 0.22$ obtained by fitting only the mid-range points $K \in [0.3, 0.9]$. In this interval, $\sigma_c$ grows almost linearly with K (R² $\approx$ 0.98), indicating a simple balance between coupling-driven alignment and noise-driven diffusion. At very weak coupling (K = 0.1) no $|S|$ > 2 region is observed within the tested $\sigma$ range, and at strong coupling (K $\gtrsim$ 1.0) the curve bends away from the extrapolated line and begins to saturate. This establishes $\sigma_c(K)$ as a monotone, concave-down curve with a broad linear regime rather than a globally linear law.
+Figure 2: Global $\sigma_c(K)$ curve with mid-range linear regime. Critical noise amplitude $\sigma_c$ at which $|S|$ drops below 2.3 as a function of coupling strength K. Circles show empirical values obtained from the extended sweep $K \in \{0.1, 0.2, \ldots, 1.5\}$. The solid line shows the best-fit linear scaling $\sigma_c(K) \approx 0.60K + 0.22$ obtained by fitting only the mid-range points $K \in [0.3, 0.9]$. In this interval, $\sigma_c$ grows almost linearly with K (R² $\approx$ 0.98), indicating a simple balance between coupling-driven alignment and noise-driven diffusion. The threshold $|S| = 2.3$ is used to capture the onset of rapid collapse (see Section 2.6 for justification). At very weak coupling (K = 0.1) no $|S|$ > 2.3 region is observed within the tested $\sigma$ range, and at strong coupling (K $\gtrsim$ 1.0) the curve bends away from the extrapolated line and begins to saturate. This establishes $\sigma_c(K)$ as a monotone, concave-down curve with a broad linear regime rather than a globally linear law.
 
 \subsubsection{Collapse Curves and Universal Shape}
 
@@ -758,27 +760,27 @@ Figure~6 displays the results as a three-panel bar chart. The data show:
 
 \textbf{Ridge regime ($\sigma = 0.2$):}
 \[
-|S| = 2.774 \pm 0.001, \qquad
-r = 0.985 \pm 0.0003, \qquad
-\rho_S = 0.762 \pm 0.005.
+|S| = 2.774 \pm 0.000, \qquad
+r = 0.985 \pm 0.0001, \qquad
+\rho_S = 0.762 \pm 0.001.
 \]
 Strong correlations ($|S| \ge 2$), high synchrony, moderate temporal coherence.
 
 \medskip
 \textbf{Boundary regime ($\sigma = 0.7$):}
 \[
-|S| = 2.228 \pm 0.018, \qquad
-r = 0.792 \pm 0.006, \qquad
-\rho_S = 0.858 \pm 0.011.
+|S| = 2.228 \pm 0.004, \qquad
+r = 0.792 \pm 0.001, \qquad
+\rho_S = 0.858 \pm 0.002.
 \]
 Correlations reduced but still $|S| \ge 2$. Synchrony partially degraded. Temporal coherence increases.
 
 \medskip
 \textbf{Classical regime ($\sigma = 1.0$):}
 \[
-|S| = 1.594 \pm 0.036, \qquad
-r = 0.567 \pm 0.013, \qquad
-\rho_S = 0.860 \pm 0.005.
+|S| = 1.594 \pm 0.008, \qquad
+r = 0.567 \pm 0.003, \qquad
+\rho_S = 0.860 \pm 0.001.
 \]
 Returned to $|S| < 2$. Synchrony weak. \textbf{Temporal coherence remains high.}
 

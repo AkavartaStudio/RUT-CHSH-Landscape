@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "experiment_id": "E103C",
+    "description": "Re-run with FIXED noise scaling",
+    "fix_applied": "rut_core.py noise injection corrected",
+    "timestamp": "2025-11-17T07:38:17.536806"
+  },
+  "statistics": {
+    "experiment_id": "E103C",
+    "name": "Time-Varying Coupling (Fixed Noise)",
+    "n_runs": 5,
+    "S": {
+      "mean": 2.4388091959310025,
+      "std": 0.003324659457776227,
+      "min": 2.4330539592078093,
+      "max": 2.4411143889327596
+    },
+    "PLI": {
+      "mean": 0.9957179516993204,
+      "std": 0.0013575829284147654,
+      "min": 0.9933434831749003,
+      "max": 0.9965946357157308
+    },
+    "rho_echo": {
+      "mean": 0.999900616684215,
+      "std": 7.184566424467038e-07,
+      "min": 0.9998998650055859,
+      "max": 0.999901548494972
+    },
+    "violation_rate": 1.0,
+    "timestamp": "2025-11-17T07:38:17.536391"
+  },
+  "all_runs": [
+    {
+      "experiment": "E103C",
+      "seed": 0,
+      "parameters": {
+        "K": 0.7,
+        "delta_omega": 0.3,
+        "sigma": 0.1,
+        "angles": {
+          "a": 0.0,
+          "a_prime": 45.0,
+          "b": 22.5,
+          "b_prime": 67.5
+        },
+        "T": 5000,
+        "dt": 0.01,
+        "transient": 1000,
+        "K_modulation": {
+          "amplitude": 0.1,
+          "frequency": 0.1
+        }
+      },
+      "S": 2.4411143889327596,
+      "PLI": 0.9965946357157308,
+      "rho_echo": 0.999901548494972,
+      "violation": true,
+      "correlations": {
+        "E_ab": 0.8167392994705401,
+        "E_ab_prime": 0.17370400212132694,
+        "E_a_prime_b": 0.9813397921130089,
+        "E_a_prime_b_prime": 0.8167392994705375
+      },
+      "timestamp": "2025-11-17T07:38:17.379726"
+    },
+    {
+      "experiment": "E103C",
+      "seed": 1,
+      "parameters": {
+        "K": 0.7,
+        "delta_omega": 0.3,
+        "sigma": 0.1,
+        "angles": {
+          "a": 0.0,
+          "a_prime": 45.0,
+          "b": 22.5,
+          "b_prime": 67.5
+        },
+        "T": 5000,
+        "dt": 0.01,
+        "transient": 1000,
+        "K_modulation": {
+          "amplitude": 0.1,
+          "frequency": 0.1
+        }
+      },
+      "S": 2.4393027543545047,
+      "PLI": 0.995900499266522,
+      "rho_echo": 0.9999006014404512,
+      "violation": true,
+      "correlations": {
+        "E_ab": 0.819376528909053,
+        "E_ab_prime": 0.17911185166848453,
+        "E_a_prime_b": 0.9796615482048859,
+        "E_a_prime_b_prime": 0.8193765289090504
+      },
+      "timestamp": "2025-11-17T07:38:17.427810"
+    },
+    {
+      "experiment": "E103C",
+      "seed": 2,
+      "parameters": {
+        "K": 0.7,
+        "delta_omega": 0.3,
+        "sigma": 0.1,
+        "angles": {
+          "a": 0.0,
+          "a_prime": 45.0,
+          "b": 22.5,
+          "b_prime": 67.5
+        },
+        "T": 5000,
+        "dt": 0.01,
+        "transient": 1000,
+        "K_modulation": {
+          "amplitude": 0.1,
+          "frequency": 0.1
+        }
+      },
+      "S": 2.4330539592078093,
+      "PLI": 0.9933434831749003,
+      "rho_echo": 0.9998998650055859,
+      "violation": true,
+      "correlations": {
+        "E_ab": 0.8169625683403556,
+        "E_ab_prime": 0.1781153607854921,
+        "E_a_prime_b": 0.9772441833125928,
+        "E_a_prime_b_prime": 0.8169625683403531
+      },
+      "timestamp": "2025-11-17T07:38:17.476746"
+    },
+    {
+      "experiment": "E103C",
+      "seed": 3,
+      "parameters": {
+        "K": 0.7,
+        "delta_omega": 0.3,
+        "sigma": 0.1,
+        "angles": {
+          "a": 0.0,
+          "a_prime": 45.0,
+          "b": 22.5,
+          "b_prime": 67.5
+        },
+        "T": 5000,
+        "dt": 0.01,
+        "transient": 1000,
+        "K_modulation": {
+          "amplitude": 0.1,
+          "frequency": 0.1
+        }
+      },
+      "S": 2.4395249508917023,
+      "PLI": 0.9961922640426081,
+      "rho_echo": 0.9999010899383689,
+      "violation": true,
+      "correlations": {
+        "E_ab": 0.8263240765584353,
+        "E_ab_prime": 0.19086095910476275,
+        "E_a_prime_b": 0.9777377568795973,
+        "E_a_prime_b_prime": 0.8263240765584327
+      },
+      "timestamp": "2025-11-17T07:38:17.506706"
+    },
+    {
+      "experiment": "E103C",
+      "seed": 4,
+      "parameters": {
+        "K": 0.7,
+        "delta_omega": 0.3,
+        "sigma": 0.1,
+        "angles": {
+          "a": 0.0,
+          "a_prime": 45.0,
+          "b": 22.5,
+          "b_prime": 67.5
+        },
+        "T": 5000,
+        "dt": 0.01,
+        "transient": 1000,
+        "K_modulation": {
+          "amplitude": 0.1,
+          "frequency": 0.1
+        }
+      },
+      "S": 2.4410499262682377,
+      "PLI": 0.996558876296841,
+      "rho_echo": 0.9998999785416969,
+      "violation": true,
+      "correlations": {
+        "E_ab": 0.8119702701632336,
+        "E_ab_prime": 0.16559499118340754,
+        "E_a_prime_b": 0.9827043771251806,
+        "E_a_prime_b_prime": 0.8119702701632309
+      },
+      "timestamp": "2025-11-17T07:38:17.535235"
+    }
+  ]
+}

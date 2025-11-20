@@ -312,17 +312,17 @@ sns.heatmap(S_matrix, ax=axes[0], cmap="RdYlGn", center=2.0, vmin=1.8, vmax=2.6,
             annot=True, fmt=".2f", cbar_kws={"label": "|S|"})
 axes[0].set_xlabel("Coupling Strength K")
 axes[0].set_ylabel("Noise Level σ")
-axes[0].set_title(f"E107N: |S| vs K and σ (Δω={delta_omega_focus})\nGoldilocks Band Search")
+axes[0].set_title(f"E107N: |S| vs K and σ (Δω={delta_omega_focus})\nRUT Plateau Search")
 axes[0].axhline(y=2, color='blue', linestyle='--', linewidth=2, label="σ=0.1 (E103C)")
 
 # PLI heatmap
 sns.heatmap(PLI_matrix, ax=axes[1], cmap="viridis", vmin=0.8, vmax=1.0,
             xticklabels=[f"{k:.2f}" for k in K_values],
             yticklabels=[f"{s:.2f}" for s in sigma_values],
-            annot=True, fmt=".2f", cbar_kws={"label": "PLI"})
+            annot=True, fmt=".2f", cbar_kws={"label": "r"})
 axes[1].set_xlabel("Coupling Strength K")
 axes[1].set_ylabel("Noise Level σ")
-axes[1].set_title(f"E107N: PLI vs K and σ (Δω={delta_omega_focus})\nLock Breaking Pattern")
+axes[1].set_title(f"E107N: r vs K and σ (Δω={delta_omega_focus})\nPhase Coherence Pattern")
 axes[1].axhline(y=2, color='yellow', linestyle='--', linewidth=2, label="σ=0.1 (E103C)")
 
 plt.tight_layout()

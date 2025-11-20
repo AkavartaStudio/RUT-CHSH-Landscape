@@ -1,0 +1,28 @@
+{
+  "experiment_id": "A5-QUANTIZATION-THRESHOLD",
+  "description": "Phase resolution vs violation - Paper 1 Figure: Curvature threshold",
+  "purpose": "Clean |S| vs phase resolution plot",
+  "parameters": {
+    "K": 0.7,
+    "delta_omega": 0.2,
+    "sigma": 0.0,
+    "angles": {
+      "a": 0.0,
+      "a_prime": 98.0,
+      "b": 45.0,
+      "b_prime": 127.0
+    },
+    "N_levels": [4, 6, 8, 10, 12, 18, 36, 72, 360],
+    "continuous_baseline": true,
+    "n_seeds": 10,
+    "T_steps": 600000,
+    "dt": 0.01,
+    "transient_steps": 300000,
+    "omega1": 1.0
+  },
+  "note": "N = number of phase quantization levels around circle. N=4 → 90° bins, N=8 → 45° bins, etc.",
+  "expected_outcome": "Violations persist to N≈8 (45°), sharp collapse at N=4 (90°)",
+  "paper_figure": "Figure: |S| vs 1/N or vs log(N)",
+  "git_commit": "TBD",
+  "frozen_for_paper": false
+}
