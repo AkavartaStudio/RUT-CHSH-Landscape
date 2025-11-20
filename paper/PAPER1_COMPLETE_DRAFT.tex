@@ -232,7 +232,7 @@ bash RUN_ALL_PAPER1.sh
 
 \textbf{Numerical Convergence:} To verify precision of the reported Bell values (maximum $|S| = 2.819 \pm 0.003$), we performed a convergence test by reducing the integration step from $\Delta t = 0.01$ to $\Delta t = 0.001$ for $N = 10$ representative trajectories. The resulting variation $\Delta|S| < 0.001$ confirms that numerical error is well below measurement uncertainty.
 
-All reported uncertainties are standard errors of the mean (SEM) across independent random seeds, reflecting seed-to-seed variability in stochastic trajectory evolution. Systematic errors from finite integration time are estimated as $< 0.001$ in $|S|$ based on convergence tests extending integration to $20,000\tau$ (not shown); interpolation uncertainty in $\sigma_c$ estimates is $< 0.005$ based on quadratic fit residuals.
+All reported uncertainties are standard errors of the mean (SEM) across independent random seeds, reflecting seed-to-seed variability in stochastic trajectory evolution. Systematic errors from finite integration time are estimated as $< 0.001$ in $|S|$ based on the observation that correlation statistics reach steady-state values within the first 200 time units (see transient removal discussion) and remain stable over the 800-time-unit analysis window, with no systematic drift observed in $|S|$ values computed over successive subwindows. Interpolation uncertainty in $\sigma_c$ estimates is $< 0.005$ based on quadratic fit residuals.
 
 
 \subsection{Continuous-Variable CHSH Functional}
@@ -1532,7 +1532,7 @@ Thus, the departure from the canonical (90°, 90°) configuration is not anomalo
 \normalsize
 
 \textbf{Figure S1: Complete Temporal Coherence Decay Series.}
-Temporal coherence $\rho_S(\tau)$ as a function of lag time $\tau$ for 20 noise levels $\sigma \in [0.05, 1.0]$ at $K = 0.7$, $\Delta\omega = 0.2$, optimal angles. Light blue curves show the complete series (N = 10 seeds per curve), revealing the continuous transition across noise regimes. Three representative curves (σ = 0.05, 0.20, 1.00) are highlighted in bold with shaded ±1 SEM error bands (N = 30 seeds), matching the curves from Fig. 6B in the main text. Note: Even at high noise ($\sigma = 1.0$, dark blue), where $|S| < 2$, temporal coherence remains elevated with $\rho_S(100) \approx 0.23$, demonstrating persistent memory structure beyond the classical bound. This complete series confirms the non-monotonic behavior observed in Fig. 6B and provides full context for the noise-dependent reorganization of temporal dynamics discussed in Sec. 3.4.3.
+Temporal coherence $\rho_S(\tau)$ as a function of lag time $\tau$ for 20 noise levels $\sigma \in [0.05, 1.0]$ at $K = 0.7$, $\Delta\omega = 0.2$, optimal angles. Light blue curves show the complete series (N = 10 seeds per curve), revealing the continuous transition across noise regimes. Three representative curves ($\sigma = 0.05, 0.20, 1.00$) are highlighted in bold with shaded ±1 SEM error bands (N = 30 seeds), matching the curves from Fig. 6B in the main text. Note: Even at high noise ($\sigma = 1.0$, dark blue), where $|S| < 2$, temporal coherence remains elevated with $\rho_S(100) \approx 0.23$, demonstrating persistent memory structure beyond the classical bound. This complete series confirms the non-monotonic behavior observed in Fig. 6B and provides full context for the noise-dependent reorganization of temporal dynamics discussed in Sec. 3.4.3.
 
 \subsection*{Figure S2: Control Comparison}
 
