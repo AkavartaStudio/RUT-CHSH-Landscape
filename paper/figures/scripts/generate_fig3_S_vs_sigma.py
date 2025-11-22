@@ -43,7 +43,7 @@ for i, K in enumerate(K_values):
 ax.axhline(y=2.0, color='red', linestyle='--', linewidth=2,
            label='Classical bound', alpha=0.7)
 ax.axhline(y=2.828, color='blue', linestyle=':', linewidth=2,
-           label='Tsirelson bound', alpha=0.7)
+           label='$2\sqrt{2}$', alpha=0.7)
 
 # Styling - match paper body text size
 ax.set_xlabel('Noise Level $\sigma$', fontsize=10)
