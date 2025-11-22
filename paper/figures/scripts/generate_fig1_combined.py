@@ -115,8 +115,8 @@ ax_main.legend(loc='upper right', bbox_to_anchor=(0.85, 0.96),
 # ============================================
 # INSET: Small 3D Surface (visual impact)
 # ============================================
-# Position inset: 10% wider for all labels to breathe
-ax_inset = fig.add_axes([0.08, 0.62, 0.34, 0.26], projection='3d')
+# Position inset: sized to fit within purple region, positioned higher
+ax_inset = fig.add_axes([0.10, 0.68, 0.24, 0.20], projection='3d')
 # Add visible border around inset
 for spine in ['top', 'bottom', 'left', 'right']:
     ax_inset.spines[spine].set_visible(True)

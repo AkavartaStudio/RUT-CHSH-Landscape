@@ -209,7 +209,7 @@ def main():
         f'Note: σ = 0.70 shows slowest decay\n'
         f'despite reduced instantaneous |S|'
     )
-    ax.text(0.02, 0.45, text, transform=ax.transAxes,
+    ax.text(0.02, 0.38, text, transform=ax.transAxes,
             fontsize=10, verticalalignment='top',
             bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8))
 

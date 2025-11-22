@@ -46,25 +46,43 @@ ax1.legend(fontsize=10, frameon=True, shadow=True)
 ax1.grid(True, alpha=0.3, linestyle=':')
 ax1.set_ylim(2.73, 2.83)
 
-# Annotate peak - positioned left inside box with breathing room
+# Annotate peak - positioned up and right inside box
 ax1.annotate(f'Peak: {optimal["abs_S_mean"]:.3f}',
             xy=(optimal['delta_omega'], optimal['abs_S_mean']),
-            xytext=(optimal['delta_omega'] - 0.15, optimal['abs_S_mean'] - 0.005),
+            xytext=(optimal['delta_omega'] - 0.08, optimal['abs_S_mean'] + 0.003),
             arrowprops=dict(arrowstyle='->', color='red', lw=2),
             fontsize=10, fontweight='bold')
 
-# Plot 2: PLI vs Δω
+# Plot 2: PLI vs Δω (zoomed to show flatness)
 ax2.plot(delta_omega, PLI, marker='s', markersize=8, linewidth=2,
          color='#06A77D', markeredgewidth=1.5, markeredgecolor='white')
 
 ax2.axvline(x=optimal['delta_omega'], color='red', linestyle='--',
             linewidth=2, alpha=0.7)
 ax2.set_xlabel('Frequency Mismatch $\Delta\omega$', fontsize=10)
-ax2.set_ylabel('Phase Coherence r', fontsize=10)
+ax2.set_ylabel('Phase Coherence $r$', fontsize=10)
 ax2.xaxis.labelpad = 10  # Professional spacing from ticks
 ax2.yaxis.labelpad = 10  # Professional spacing from ticks
 ax2.grid(True, alpha=0.3, linestyle=':')
-ax2.set_ylim(0.995, 1.001)
+
+# Zoom y-axis to actual data range to show flatness
+PLI_min, PLI_max = np.min(PLI), np.max(PLI)
+PLI_center = (PLI_min + PLI_max) / 2
+PLI_range = PLI_max - PLI_min
+y_margin = max(0.002, PLI_range * 1.5)  # At least 0.002, or 1.5x data range
+ax2.set_ylim(PLI_center - y_margin, PLI_center + y_margin)
+
+# Add annotation explaining the key finding
+annotation_text = (
+    f'Phase coherence remains flat\n'
+    f'$r \\approx {PLI_center:.3f}$ across all $\\Delta\\omega$\n'
+    f'($\\Delta r < {PLI_range:.4f}$)\n\n'
+    f'→ CHSH varies strongly while\n'
+    f'   synchronization stays constant'
+)
+ax2.text(0.98, 0.97, annotation_text, transform=ax2.transAxes,
+        fontsize=9, verticalalignment='top', horizontalalignment='right',
+        bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.85, edgecolor='black'))
 
 plt.tight_layout()
 
