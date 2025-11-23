@@ -5,7 +5,7 @@
 # Executes A1-A5, B1 in sequence
 # Total: ~1890 trajectories
 
-set -e  # Exit on error
+set -euo pipefail  # Exit on error, undefined vars, pipe failures
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$SCRIPT_DIR"
@@ -28,18 +28,43 @@ echo ""
 echo "================================================================================"
 echo ""
 
-# A1 already complete
-echo "✓ A1: σ_c(K) sweep - COMPLETE"
+# A1: σ_c(K) sweep
+echo "================================================================================"
+echo "STAGE 1: Running A1 - σ_c(K) sweep"
+echo "================================================================================"
+python3 A1_sigma_c_K_sweep.py
+if [ $? -eq 0 ]; then
+    echo "✅ STAGE 1 COMPLETE: A1_sigma_c_K_sweep"
+else
+    echo "❌ STAGE 1 FAILED: A1_sigma_c_K_sweep"
+    exit 1
+fi
 echo ""
 
 # A2: Angle ridge
-echo "Running A2: Angle ridge refinement..."
+echo "================================================================================"
+echo "STAGE 2: Running A2 - Angle ridge refinement"
+echo "================================================================================"
 python3 A2_angle_ridge.py
+if [ $? -eq 0 ]; then
+    echo "✅ STAGE 2 COMPLETE: A2_angle_ridge"
+else
+    echo "❌ STAGE 2 FAILED: A2_angle_ridge"
+    exit 1
+fi
 echo ""
 
 # A3: Δω sweep
-echo "Running A3: Δω vs |S| curve..."
+echo "================================================================================"
+echo "STAGE 3: Running A3 - Δω vs |S| curve"
+echo "================================================================================"
 python3 A3_delta_omega_sweep.py
+if [ $? -eq 0 ]; then
+    echo "✅ STAGE 3 COMPLETE: A3_delta_omega_sweep"
+else
+    echo "❌ STAGE 3 FAILED: A3_delta_omega_sweep"
+    exit 1
+fi
 echo ""
 
 # A4: Dichotomic variants (skip for now - needs special implementation)
@@ -51,12 +76,20 @@ echo "⚠️  A5: Quantization threshold - SKIPPED (requires phase quantization 
 echo ""
 
 # B1: Minimal echo
-echo "Running B1: Minimal echo panel..."
+echo "================================================================================"
+echo "STAGE 4: Running B1 - Minimal echo panel"
+echo "================================================================================"
 python3 B1_minimal_echo.py
+if [ $? -eq 0 ]; then
+    echo "✅ STAGE 4 COMPLETE: B1_minimal_echo"
+else
+    echo "❌ STAGE 4 FAILED: B1_minimal_echo"
+    exit 1
+fi
 echo ""
 
 echo "================================================================================"
-echo "✅ Paper 1 Experimental Suite Complete (A1-A3, B1)"
+echo "✅ ALL STAGES COMPLETE: Paper 1 Experimental Suite (A1-A3, B1)"
 echo "================================================================================"
 echo ""
 echo "Results saved to: ../../../data/paper1/"

@@ -3,6 +3,7 @@
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{cleveref}
 \usepackage[margin=1in]{geometry}
 \usepackage{mathptmx}
 \usepackage{float}
@@ -300,7 +301,7 @@ The Kuramoto order parameter quantifies phase synchronization strength:
 
 where the time average is taken over the post-transient time segment. This metric takes values in [0,1], with r = 0 indicating uniformly distributed phase differences between oscillators and r = 1 indicating perfect phase locking. This follows standard order-parameter constructions in coupled-oscillator theory~\cite{pikovsky2001synchronization,acebron2005kuramoto}.
 
-\textit{Note.} This differs from the EEG ``Phase Lag Index'' of~\cite{stam2007phase}, which was designed to suppress zero-lag synchronization artifacts in neural connectivity analysis. Our metric directly measures phase coherence without such filtering.
+\textit{Note.} This differs from the EEG ``Phase Lag Index''~\cite{stam2007phase}, which was designed to suppress zero-lag synchronization artifacts in neural connectivity analysis. Our metric directly measures phase coherence without such filtering.
 
 \subsubsection{Autocorrelation of CHSH Time Series $\rho_S$($\tau$)}
 
@@ -383,6 +384,7 @@ The optimal point ($K = 0.7$, $\sigma = 0.2$, gold star) yields $|S|_{\max} = 2.
 Inset: 3D surface visualization showing the topographic structure of the correlation landscape.
 The surface is constructed from 144 measurements across the tested parameter space (Experiment A1).
 }
+\label{fig:landscape}
 \end{figure}
 \normalsize
 
@@ -452,6 +454,7 @@ Figure~\ref{fig:S3} and Table~S3 provide full characterization across $K \in [0.
 \centering
 \includegraphics[width=0.9\textwidth]{figures/fig2_sigma_c_scaling.png}
 \caption{Noise-Coupling Scaling Law}
+\label{fig:scaling}
 \end{figure}
 \normalsize
 
@@ -468,6 +471,7 @@ The similarity of curve shapes across coupling strengths indicates that collapse
 \centering
 \includegraphics[width=0.9\textwidth]{figures/fig3_S_vs_sigma.png}
 \caption{Universal Collapse Curves for CHSH Correlations}
+\label{fig:collapse}
 \end{figure}
 \normalsize
 
@@ -529,11 +533,13 @@ The CHSH parameter depends on the choice of measurement angles $(a, a', b, b')$.
 \Delta\beta &= b' - b  \in [70°, 100°]
 \end{align*}
 
-with $a$ fixed at 0° and $b$ at 45°.
+with $a$ fixed at 0° and $b$ held at 45°.
 
 \subsubsection{Optimal Measurement Geometry}
 
-Within the scanned parameter window ($\Delta\alpha \in [80°, 110°]$, $\Delta\beta \in [70°, 100°]$, with $a = 0°$ and $b = 45°$ fixed), the scanned angle ranges were chosen a priori, centered on the quadrature geometry (90°) predicted by classical cosine-based CHSH theory to maximize correlation amplitude, ensuring that the optimization maps the local ridge structure rather than post-selecting favorable configurations. The maximum is found at:
+The scanned angle ranges were chosen a priori, centered on the quadrature geometry (90°) predicted by classical cosine-based CHSH theory to maximize correlation amplitude. This ensures that the optimization maps the local ridge structure rather than post-selecting favorable configurations.
+
+Within this parameter window, the maximum is found at:
 
 \[\Delta\alpha^* = 95°, \quad \Delta\beta^* = 84°\]
 
@@ -541,13 +547,13 @@ yielding:
 
 \[|S|_{\max} = 2.819 \pm 0.003.\]
 
-This corresponds to the explicit angle configuration:
+This value remains just below the algebraic ceiling $2\sqrt{2} \approx 2.828$, indicating a small systematic reduction introduced by the continuous-phase measurement model.
+
+The maximizing angle configuration is:
 
 \[a = 0°, \quad a' = 95°, \quad b = 45°, \quad b' = 129°,\]
 
 which we adopt for all subsequent experiments.
-
-The measured value $|S| = 2.819$ remains just below the algebraic ceiling $2\sqrt{2} \approx 2.828$, suggesting that the continuous-phase measurement model introduces a small but systematic reduction compared to ideal dichotomic projections.
 
 \subsubsection{Angles and Symmetry Considerations}
 
@@ -578,10 +584,11 @@ This robustness indicates that the CHSH correlation structure is not fragile to 
 \centering
 \includegraphics[width=0.9\textwidth]{figures/fig4_angle_ridge.png}
 \caption{Angle-Space Ridge Structure for Optimal CHSH Correlations}
+\label{fig:angles}
 \end{figure}
 \normalsize
 
-Figure 4: Angle-Space Ridge Structure for Optimal CHSH Correlations. Heatmap of CHSH amplitude $|S|$ as a function of measurement angle differences ($\Delta\alpha = a' - a$, $\Delta\beta = b' - b$), with a = 0° and b = 45° held fixed. The global optimum (red star) occurs at ($\Delta\alpha^*$, $\Delta\beta^*$) = (95°, 84°), yielding $|S|_{\max} = 2.819 \pm 0.003$. The high-correlation region forms a broad ridge (red/yellow, $|S|$ > 2.7) extending $\approx$10° around the optimum, demonstrating robustness to angular misalignment. The landscape is smooth with no local maxima. Blue regions ($|S|$ < 2.5) correspond to suboptimal measurement geometries. Colorbar shows $|S|$ values from 2.0 to 2.82 (algebraic maximum $2\sqrt{2} \approx 2.828$ marked by dashed line).
+Figure 4: Angle-Space Ridge Structure for Optimal CHSH Correlations. Heatmap of CHSH amplitude $|S|$ as a function of measurement angle differences ($\Delta\alpha = a' - a$, $\Delta\beta = b' - b$), with a = 0° and b = 45° held fixed. The global optimum (red star) occurs at ($\Delta\alpha^*$, $\Delta\beta^*$) = (95°, 84°), yielding $|S|_{\max} = 2.819 \pm 0.003$. The high-correlation region forms a broad ridge (red/yellow, $|S| > 2.7$) extending $\approx$10° around the optimum, demonstrating robustness to angular misalignment. The landscape is smooth with no local maxima. Green regions ($|S| < 2.5$) correspond to suboptimal measurement geometries.
 
 \subsubsection{Comparison to Theoretical Predictions}
 
@@ -660,6 +667,7 @@ This demonstrates that:
 \centering
 \includegraphics[width=0.9\textwidth]{figures/fig5_delta_omega.png}
 \caption{Frequency-Mismatch Sweet Spot and Temporal Memory}
+\label{fig:detuning}
 \end{figure}
 \normalsize
 
@@ -674,19 +682,19 @@ A central question is whether the return to $|S| < 2$ coincides with the complet
 
 We select three noise levels representing qualitatively different regimes:
 
-1. \textbf{Ridge} ($\sigma = 0.2$): Deep in the high-correlation region
-2. \textbf{Boundary} ($\sigma = 0.7$): Near the collapse threshold $\sigma_c \approx 0.65$ for $K = 0.7$
-3. \textbf{Classical} ($\sigma = 1.0$): Well beyond the classical bound
+\begin{enumerate}
+  \item \textbf{Ridge} ($\sigma = 0.2$): Deep in the high-correlation region
+  \item \textbf{Boundary} ($\sigma = 0.7$): Near the collapse threshold $\sigma_c \approx 0.65$ for $K = 0.7$
+  \item \textbf{Classical} ($\sigma = 1.0$): Well beyond the classical bound
+\end{enumerate}
 
-For each regime, we measure:
+For each regime, we measure (at $K = 0.7$, $\Delta\omega = 0.2$, optimal angles):
 
 \begin{itemize}
   \item CHSH amplitude $\langle|S|\rangle$
   \item Phase coherence $r$
   \item Temporal coherence $\rho_S(\tau = 10)$
 \end{itemize}
-
-using $K = 0.7$, $\Delta\omega = 0.2$, and optimal angles.
 
 \subsubsection*{3.4.2\quad Key Findings}
 
@@ -720,7 +728,7 @@ Returned to $|S| < 2$. Synchrony weak. \textbf{Temporal coherence remains high.}
 
 \medskip
 The persistence of $\rho_S$ at moderate noise, even after $|S|$ drops below 2, is
-consistent with the fact that the OU drift rate is largely insensitive to the
+consistent with the fact that the effective linear restoring rate near the locked phase is largely insensitive to the
 distribution's instantaneous width. Section~4.8.4 develops this argument and explains
 the mild non-monotonicity near $\sigma \approx 0.7$.
 
@@ -729,11 +737,12 @@ the mild non-monotonicity near $\sigma \approx 0.7$.
 \centering
 \includegraphics[width=0.9\textwidth]{figures/fig6_memory_panel.png}
 \caption{Temporal Memory Panel}
+\label{fig:memory}
 \end{figure}
 \normalsize
 
-\textbf{Figure 6. Temporal coherence across noise levels.}
-Instantaneous CHSH correlations $|S|$ (top) decrease monotonically with noise, while the temporal coherence $\rho_S(\tau)$ (bottom) shows a non-monotonic peak at $\sigma = 0.7$. This peak reflects an intermediate "memory basin" regime in which moderate noise suppresses slow deterministic drift without inducing full phase slips. At low noise ($\sigma \lesssim 0.2$), the phase difference undergoes rapid cumulative drift inside the locking basin, producing strong instantaneous correlations but fast temporal decay. At intermediate noise, stochastic forcing repeatedly resets $\Delta\theta(t)$ toward the potential minimum, stabilizing the relative phase and producing long-lived correlations even as $|S|$ weakens. At high noise ($\sigma \gtrsim 1$), frequent barrier crossings destroy both instantaneous and temporal structure. Error bars show SEM across $N=10$ seeds.
+\textbf{Figure 6: Temporal coherence across noise regimes.}
+Each vertical panel shows a different dynamical quantity evaluated at three representative noise levels---Ridge ($\sigma = 0.2$), Boundary ($\sigma = 0.7$), and Classical ($\sigma = 1.0$)---displayed left, middle, and right within each panel. Left panel: Instantaneous CHSH correlations $|S|$ decline steadily from ridge $\to$ boundary $\to$ classical. Middle panel: Phase coherence $r$ shows a similar decrease with noise. Right panel: Temporal memory $\rho_S(\tau)$ displays a non-monotonic pattern: it remains high at intermediate noise ($\sigma = 0.7$) despite the reduction in $|S|$, demonstrating that long-lived memory and instantaneous CHSH violations reflect different underlying dynamical structures. At high noise ($\sigma = 1.0$), both instantaneous correlations and temporal coherence degrade sharply.
 
 \subsubsection{Persistence of Temporal Memory}
 
@@ -779,12 +788,13 @@ The most striking feature is that $\sigma = 0.70$ shows the \textbf{slowest temp
 \centering
 \includegraphics[width=0.95\textwidth]{figures/fig6B_rhoS_four_curves.png}
 \caption{Temporal Coherence Decay Across Noise Regimes ($K=0.7$, $\Delta\omega=0.2$)}
+\label{fig:decay}
 \end{figure}
 \normalsize
 
-\textbf{Figure 6B:} Temporal coherence $\rho_S(\tau)$ as a function of lag time $\tau$ for four representative noise levels. Black: low noise ($\sigma = 0.05$), blue: ridge ($\sigma = 0.20$), red: non-monotonic regime ($\sigma = 0.70$), gray: high noise ($\sigma = 1.00$). Shaded regions show $\pm$1 SEM across $N=30$ trajectories per curve. Dotted line marks half-decay ($\rho_S = 0.5$). Key finding: $\sigma = 0.70$ exhibits the \textbf{slowest decay} (largest $\tau_{1/2}$) despite having lower instantaneous $|S|$ than the ridge, demonstrating that temporal memory and correlation amplitude are distinct dynamical structures with different noise dependencies. The complete decay series (20 curves, $\sigma \in [0.05, 1.0]$) is provided in Supplementary Fig.~S1.
+\textbf{Figure 6B:} Temporal coherence $\rho_S(\tau)$ as a function of lag time $\tau$ for four representative noise levels at fixed coupling $K = 0.7$ and detuning $\Delta\omega = 0.2$. Black: low noise ($\sigma = 0.05$). Blue: ridge regime ($\sigma = 0.20$). Red: intermediate non-monotonic regime ($\sigma = 0.70$). Gray: high noise ($\sigma = 1.00$). Curves show the decay of temporal phase coherence averaged over $N = 30$ independent trajectories. The dotted horizontal line marks the half-decay level $\rho_S = 0.5$.
 
-For the present study, we highlight the observation that temporal memory persists robustly across noise regimes and exhibits non-monotonic structure, but we avoid strong mechanistic claims pending further theoretical development.
+Notably, $\sigma = 0.70$ exhibits the slowest temporal decay (largest $\tau_{1/2}$), even though its instantaneous CHSH amplitude $|S|$ is lower than in the ridge regime. This shows that temporal memory and instantaneous correlation respond to noise in qualitatively different ways.
 
 \subsubsection{Implications for Interpretation}
 
@@ -816,7 +826,7 @@ When reinterpreted as a probe of correlation geometry rather than a test of quan
 
 Traditional synchronization measures (phase-locking order parameter $r$, mean-field coherence, pairwise phase difference) quantify how well oscillators align at a single measurement geometry. The CHSH functional, by contrast, probes correlation structure across multiple simultaneous angular projections. This multi-angle sensitivity exposes fine-grained geometric organization that scalar metrics miss: narrow ridges where specific angle combinations produce maximal correlation ($|S|_{\max} = 2.819$, within 0.3\% of the algebraic ceiling $2\sqrt{2}$), sharp collapse boundaries marking regime transitions ($\sigma_c = 0.60K + 0.22$), and decoupling between instantaneous amplitude and temporal memory.
 
-Three findings establish this landscape. First, high correlations arise robustly in phase-coherent regimes but require coordinated tuning---random parameter configurations yield $\langle|S|\rangle \approx 1.1$, with only 7\% exceeding 2.0. Second, noise-induced collapse follows a predictable linear scaling over the mid-range, reflecting drift--diffusion balance. Third, temporal coherence persists ($\rho_S \approx 0.86$) even after $|S|$ drops below 2, demonstrating that correlation amplitude and temporal memory reflect distinct dynamical structures. These features are not artifacts of the CHSH construction---they reveal genuine phase-space organization in coupled nonlinear systems.
+Three findings establish this landscape. First, high correlations arise robustly in phase-coherent regimes but require coordinated tuning---random parameter configurations yield $\langle|S|\rangle \approx 1.1$, with only 7\% exceeding 2.0. Second, noise-induced collapse follows a predictable linear scaling over the mid-range, reflecting drift--diffusion balance. Third, temporal coherence persists ($\rho_S \approx 0.86$) even after $|S|$ drops below 2. These features are not artifacts of the CHSH construction---they reveal genuine phase-space organization in coupled nonlinear systems.
 
 We find that the instantaneous CHSH amplitude responds to noise in a strongly non-monotonic way. Low diffusion can enhance geometric alignment, but higher noise eventually destroys it. By contrast, temporal memory decays monotonically, indicating that persistence of the correlation state is governed by different dynamical processes than the moment-by-moment correlation amplitude.
 
@@ -833,7 +843,7 @@ The significance of our results lies not in mimicking quantum statistics, but in
 
 \subsection{Universality}
 
-Although our analysis focused on the minimal two-oscillator system, the underlying mechanisms driving the CHSH landscape are not unique to this architecture. Any phase-coupled system with smooth interactions and weak noise---neural field oscillators, Josephson junction pairs, semiconductor laser arrays, or classical Kuramoto-type synchronization models---shares the same drift--diffusion balance in the phase-difference variable. As a result, the linear collapse boundary and the emergence of angle-dependent extrema should generalize broadly: the CHSH functional is simply probing a different projection of the same correlation geometry. This suggests that the structures mapped here are less properties of a specific model and more signatures of a universal phase-dynamics regime.
+Although our analysis focused on the minimal two-oscillator system, the underlying mechanisms driving the CHSH landscape are not unique to this architecture. Any phase-coupled system with smooth interactions and weak noise---neural field oscillators, Josephson junction pairs, semiconductor laser arrays, or classical Kuramoto-type synchronization models---shares the same drift--diffusion balance in the phase-difference variable. As a result, the linear collapse boundary and the emergence of angle-dependent extrema should generalize broadly: the CHSH functional is simply probing a different projection of the same correlation geometry. Taken together, these results indicate that the observed features are not tied to a special choice of model parameters but reflect broader tendencies of phase-coupled systems with drift–diffusion structure.
 
 \subsection{Scope and Limitations}
 
@@ -866,41 +876,37 @@ Defining the phase difference $\Delta\theta = \theta_B - \theta_A$, subtracting 
 
 where $\Delta\omega = \omega_B - \omega_A$ and $\xi(t)$ is a new white noise.
 
-\textbf{Linearized dynamics around the locked state}
-
-Near the synchronized state $\Delta\theta \approx 0$,
+To analyze fluctuations around the locked state ($\Delta\theta \approx 0$), we linearize the phase-difference equation:
 
 \[\sin(\Delta\theta) \approx \Delta\theta,\]
 
-and the equation reduces to an Ornstein--Uhlenbeck (OU) process:
+and the equation becomes a linearized drift-diffusion process:
 
 \[\dot{\Delta\theta} \approx \Delta\omega - 2K\,\Delta\theta + \sqrt{2}\,\sigma\,\xi(t).\]
 
-For $\Delta\omega = 0$, the stationary variance is the standard OU result
+For $\Delta\omega = 0$, the equilibrium drift-diffusion balance gives
 
 \[\langle (\Delta\theta)^2\rangle_{\mathrm{eq}} = \frac{\sigma^2}{K}.\]
 
-This linear balance between drift ($\propto K$) and diffusion ($\propto \sigma^2$) captures the main dependencies observed in Fig. 2: increasing $K$ narrows the phase distribution and increases $|S|$, whereas increasing $\sigma$ broadens the distribution and suppresses $|S|$.
+This linear balance between drift ($\propto K$) and diffusion ($\propto \sigma^2$) captures the main dependencies observed in \cref{fig:scaling}: increasing $K$ narrows the phase distribution and increases $|S|$, whereas increasing $\sigma$ broadens the distribution and suppresses $|S|$.
 
-\textbf{Predicting the collapse boundary} $\boldsymbol{\sigma_c(K)}$
-
-The CHSH amplitude $|S|$ falls below 2 when the width of the phase-difference distribution exceeds a characteristic angular scale $\Delta\theta_c$ set by the measurement geometry. Within the OU approximation,
+To predict the collapse boundary $\sigma_c(K)$, note that the CHSH amplitude $|S|$ falls below 2 when the width of the phase-difference distribution exceeds a characteristic angular scale $\Delta\theta_c$ set by the measurement geometry. Within the linearized approximation,
 
 \[\sqrt{\langle (\Delta\theta)^2\rangle_{\mathrm{eq}}} \approx \Delta\theta_c \quad\Longrightarrow\quad \sigma_c(K) \propto K.\]
 
-The numerical collapse boundary (Fig. 2) indeed exhibits a linear mid-range regime,
+The numerical collapse boundary (\cref{fig:scaling}) indeed exhibits a linear mid-range regime,
 
 \[\sigma_c(K) \approx 0.60\,K + 0.22,\]
 
 consistent with a drift--diffusion balance.
 
-Departures from linearity arise for:
+Departures from this linear trend arise in two regimes:
 \begin{itemize}
   \item \textbf{low K}, where the restoring force $2K$ is too weak for the linear approximation to hold and the dynamics explore a broad region of the $2\pi$ potential;
   \item \textbf{high K}, where the $\sin(\Delta\theta)$ nonlinearity becomes important and the benefit of increasing $K$ saturates.
 \end{itemize}
 
-Both deviations appear clearly in Fig. 2.
+Both deviations appear clearly in \cref{fig:scaling}.
 
 \subsubsection{Measurement Geometry and Correlation Structure}
 
@@ -916,16 +922,14 @@ If $\Delta\theta$ is approximately Gaussian with variance $\langle(\Delta\theta)
 
 A CHSH functional constructed from four such correlators is maximized when the four $\Delta\phi$ values sample both regions of positive correlation (near alignment) and negative correlation (near anti-alignment). For cosine functions, this occurs for relative angle separations near 90°.
 
-\textbf{Shift of the optimal geometry}
-
-The numerical optimum in Fig. 4 occurs near (95°, 84°), slightly displaced from the symmetric (90°, 90°). This shift reflects the fact that:
+The numerical optimum in \cref{fig:angles} occurs near (95°, 84°), slightly displaced from the symmetric (90°, 90°). This shift reflects the fact that:
 \begin{itemize}
   \item the stationary distribution P($\Delta\theta$) is only approximately Gaussian,
   \item finite noise introduces mild broadening and asymmetric tails, and
   \item small detuning generates slight skewness in the drift.
 \end{itemize}
 
-These effects shift the optimal sampling angles away from the perfectly symmetric case while preserving the ~90° structure predicted by the OU-based approximation.
+These effects shift the optimal sampling angles away from the perfectly symmetric case while preserving the ~90° structure predicted by the linearized approximation.
 
 \subsubsection{Detuning-Induced Maximum in $|S|$}
 
@@ -940,7 +944,7 @@ which corresponds to a tilted effective potential. This leads to three qualitati
 \end{itemize}
 
 \begin{itemize}
-  \item \textbf{Moderate detuning}: Competition between the tilt $\Delta\omega$ and the restoring force $2K$ broadens $P(\Delta\theta)$ enough to enhance the contrast among the correlators $E(a,b)$, increasing $|S|$.
+  \item \textbf{Moderate detuning}: Competition between the tilt $\Delta\omega$ (which shifts the equilibrium) and the restoring force $2K$ (which narrows $P(\Delta\theta)$) produces a moderately broadened distribution that enhances the contrast among the correlators $E(a,b)$, increasing $|S|$.
 \end{itemize}
 
 \begin{itemize}
@@ -951,11 +955,11 @@ A simple balance condition suggests an intermediate optimum when
 
 \[\Delta\omega \sim cK,\]
 
-with c of order unity. Numerically, c $\approx$ 0.3 yields good agreement with the observed maximum at $\Delta\omega$ $\approx$ 0.2 for K = 0.7 (Fig. 5). This proportionality should be interpreted as an approximate scaling rather than a strict prediction.
+with c of order unity. Numerically, c $\approx$ 0.3 yields good agreement with the observed maximum at $\Delta\omega$ $\approx$ 0.2 for K = 0.7 (\cref{fig:detuning}). This proportionality should be interpreted as an approximate scaling rather than a strict prediction.
 
 \subsubsection{Temporal Memory and the Persistence of $\rho_S$}
 
-Whereas $|S|$ depends on the instantaneous width of the distribution P($\Delta\theta$), the temporal coherence $\rho_S$ reflects correlations in time. In the OU approximation with $\Delta\omega$ = 0,
+Whereas $|S|$ depends on the instantaneous width of the distribution P($\Delta\theta$), the temporal coherence $\rho_S$ reflects correlations in time. In the linearized drift-diffusion approximation with $\Delta\omega$ = 0,
 
 \[\rho(\tau) = \exp(-2K\tau),\]
 
@@ -963,7 +967,7 @@ indicating that the decay rate is set primarily by the drift strength rather tha
 
 \textbf{Decoupling of $|S|$ and $\rho_S$}
 
-Because the drift rate remains roughly constant for moderate noise, the autocorrelation $\rho_S$ can remain high even after $|S|$ falls below 2. This behavior is visible at $\sigma = 1.0$ in Fig. 6, where $|S|$ has fallen to $\approx 1.59$ yet $\rho_S$ remains elevated.
+Because the drift rate remains roughly constant for moderate noise, the autocorrelation $\rho_S$ can remain high even after $|S|$ falls below 2. This behavior is visible at $\sigma = 1.0$ in \cref{fig:memory}, where $|S|$ has fallen to $\approx 1.59$ yet $\rho_S$ remains elevated.
 
 \textbf{Non-monotonicity near $\sigma \approx 0.7$}
 
@@ -995,7 +999,7 @@ corresponds to an effective amplitude $A\approx 0.997$, which can be attributed 
 
 Thus, the approach of $|S|$ to $2\sqrt{2}$ reflects the cosine geometry of strong phase locking rather than any quantum-specific mechanism. In this classical system, the CHSH functional acts as a sensitive probe of how tightly the correlation structure approximates a rotated cosine, revealing the underlying geometry of synchronization with high precision.
 
-In summary, the analytical approximations developed in this section---linearized phase-difference dynamics, OU-type drift--diffusion balance, angle-geometry sensitivity, detuning-induced tension, and the distinct timescales governing temporal memory---provide a consistent theoretical framework for interpreting the numerical results. Although simplified, these models capture the primary mechanisms shaping the CHSH landscape and quantitatively rationalize the empirical trends observed in Figs. 1--5. More detailed analysis, including full nonlinear treatments or Fokker--Planck solutions, lies beyond the scope of the present work but would be a natural direction for future study. We now turn to a brief summary of the main numerical findings and their implications.
+In summary, the analytical approximations developed in this section---linearized phase-difference dynamics, drift--diffusion balance, angle-geometry sensitivity, detuning-induced tension, and the distinct timescales governing temporal memory---provide a consistent theoretical framework for interpreting the numerical results. Although simplified, these models capture the primary mechanisms shaping the CHSH landscape and quantitatively rationalize the empirical trends observed in Figs. 1--5. More detailed analysis, including full nonlinear treatments or Fokker--Planck solutions, lies beyond the scope of the present work but would be a natural direction for future study. We now turn to a brief summary of the main numerical findings and their implications.
 
 
 \section{Conclusions}
@@ -1045,7 +1049,7 @@ Several issues remain unresolved and motivate ongoing work:
 
 \textbf{Extensions:}
 \begin{itemize}
-  \item \textbf{Paper 2} will map the full dynamical landscape, including regimes where temporal memory persists without $|S| > 2$, motivating the Echo-Rich Classical (ERC) taxonomy.
+  \item \textbf{Paper 2} will map the full dynamical landscape, including regimes where temporal memory persists even without $|S| > 2$.
 
   \item \textbf{Larger networks:} Extension to $N \gg 2$ oscillators could reveal collective amplification, frustration effects, or new routes to $|S| > 2$. Multi-party Bell inequalities (GHZ, Mermin) provide natural frameworks.
 
@@ -1567,10 +1571,7 @@ Laser pair & 10 GHz & $0.5\omega_0 = 5$ GHz & $0.14K_{\text{phys}} \approx 0.7$ 
 
 These conversions are order-of-magnitude estimates for experimental guidance. Actual device parameters depend on junction critical current, laser injection geometry, and measurement bandwidth. The key prediction---a sharp detuning optimum at $\Delta\omega^\ast \approx 0.14K_{\text{phys}}$ with linear collapse scaling $\sigma_c \propto K$---is robust across platforms.
 
-
-\section*{References}
-\addcontentsline{toc}{section}{References}
-\bibliographystyle{apsrev4-2}
+\bibliographystyle{unsrt}
 \bibliography{references}
 
 \end{document}

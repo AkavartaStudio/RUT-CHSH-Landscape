@@ -1,0 +1,31 @@
+{
+  "verification_timestamp": "2025-11-23T17:04:53.271605",
+  "script_path": "analysis/scripts/paper1_runners/RUN_ALL_PAPER1.sh",
+  "data_directory": "analysis/data/paper1",
+  "experiments": {
+    "A1": {
+      "data_file": "analysis/data/paper1/A1_sigma_c_K_sweep.json",
+      "timestamp": "2025-11-18T14:31:50.219776",
+      "experiment_id": "A1-SIGMA-C-K-SWEEP"
+    },
+    "A2": {
+      "data_file": "analysis/data/paper1/A2_angle_ridge.json",
+      "timestamp": "2025-11-17T18:05:02.451135",
+      "experiment_id": "A2-ANGLE-RIDGE"
+    },
+    "A3": {
+      "data_file": "analysis/data/paper1/A3_delta_omega_sweep.json",
+      "timestamp": "2025-11-20T15:00:25.387248",
+      "experiment_id": "A3-DELTA-OMEGA-SWEEP"
+    },
+    "B1": {
+      "data_file": "analysis/data/paper1/B1_minimal_echo.json",
+      "timestamp": "2025-11-17T17:27:48.442190",
+      "experiment_id": "B1-MINIMAL-ECHO"
+    }
+  },
+  "git_commit": "a971b4357bd58a0fe431a5def309688cd70650d9",
+  "git_branch": "main",
+  "python_version": "3.13.5",
+  "numpy_version": "2.1.3"
+}
