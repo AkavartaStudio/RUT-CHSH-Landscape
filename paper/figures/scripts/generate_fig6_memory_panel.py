@@ -43,7 +43,7 @@ ax1.axhline(y=2.0, color='red', linestyle='--', linewidth=2,
             label='Classical bound', alpha=0.7)
 ax1.set_ylabel('CHSH Value $|S|$', fontsize=10)
 ax1.yaxis.labelpad = 10  # Professional spacing from ticks
-ax1.set_title('Violations Vanish', fontsize=11)
+ax1.set_title('Correlations Vanish', fontsize=11)
 ax1.set_xticks(x_pos)
 ax1.set_xticklabels([f'{n}\n($\sigma={v:.1f}$)' for n, v in zip(sigma_names, sigma_values)])
 ax1.legend(fontsize=10, loc='upper right')
