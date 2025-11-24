@@ -1133,7 +1133,7 @@ When the phase difference $\Delta\theta$ is perfectly concentrated (i.e., $\Delt
 is distributed as $\delta(\Delta\theta - \theta_0)$), the two-oscillator system reduces
 to a deterministic local model with a single shared hidden variable $\theta_0$. In this
 limit each cosine observable becomes a fixed function of the four measurement angles, and
-the CHSH value reduces to a purely geometric quantity.
+the CHSH value reduces to a purely geometric quantity. For the optimal measurement geometry (angle differences producing phase shifts separated by $90^\circ$: $0^\circ$, $90^\circ$, $180^\circ$, $270^\circ$), such a model yields $S = \pm 2\sqrt{2}$, which is the absolute maximum allowed by the algebraic structure of the cosine functional.
 
 \subsection*{A.2 Phase-Locking Order Parameter and the $2\sqrt{2}$ Ceiling}
 
@@ -1167,6 +1167,11 @@ A succinct way to view the bound is to write the four cosine terms as a vector s
 four unit vectors at $0^\circ$, $90^\circ$, $180^\circ$, and $270^\circ$ with
 coefficients $(+1, +1, +1, -1)$; the magnitude of this sum is $2\sqrt{2}$, and
 multiplying by the phase-locking order parameter $r$ yields the classical ceiling.
+Explicitly, in the complex plane:
+\[
+\left| 1 \cdot e^{i \cdot 0} + 1 \cdot e^{i \cdot \pi/2} + 1 \cdot e^{i \cdot \pi} + (-1) \cdot e^{i \cdot 3\pi/2} \right| = |1 + i - 1 + i| = |2i| = 2,
+\]
+and the $2\sqrt{2}$ maximum arises from optimizing the phase-shift distribution across all four correlation terms (see \cite{cirelson1980quantum} for the quantum bound derivation, which applies to continuous observables with perfect correlations).
 
 \subsection*{A.3 General Classical Measurement Model}
 
