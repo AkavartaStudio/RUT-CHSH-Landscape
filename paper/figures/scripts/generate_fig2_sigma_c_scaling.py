@@ -34,7 +34,7 @@ ax.plot(K_values, sigma_c_values, 'o', markersize=10,
 K_fit = np.linspace(min(K_values) - 0.1, max(K_values) + 0.1, 100)
 sigma_fit = fit['slope'] * K_fit + fit['intercept']
 ax.plot(K_fit, sigma_fit, '--', linewidth=2, color='#A23B72',
-        label=f"$\sigma_c = {fit['slope']:.3f}K + {fit['intercept']:.3f}$\n$R^2 = {fit['r_squared']:.4f}$")
+        label=f"Linear fit ($K \in [0.3, 0.9]$)\n$\sigma_c = {fit['slope']:.3f}K + {fit['intercept']:.3f}$\n$R^2 = {fit['r_squared']:.4f}$")
 
 # Styling - match paper body text size
 ax.set_xlabel('Coupling Strength $K$', fontsize=10)
