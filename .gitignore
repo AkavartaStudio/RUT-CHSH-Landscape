@@ -11,6 +11,11 @@
 *.pdf
 !paper/PAPER1.pdf
 
+# Paper source - only final version tracked
+paper/*DRAFT*
+paper/*draft*
+paper/PAPER1_COMPLETE_DRAFT.tex
+
 # Python
 __pycache__/
 *.pyc
