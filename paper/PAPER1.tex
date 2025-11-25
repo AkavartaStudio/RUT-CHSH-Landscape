@@ -1319,6 +1319,10 @@ Thus, the departure from the canonical (90°, 90°) configuration is not anomalo
 \section{Supplementary Material}
 \label{supp:main}
 
+% Reset figure counter for supplementary materials
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{S\arabic{figure}}
+
 \subsection*{S1: Threshold Definition and Validation}
 
 \textbf{Justification for the $|S| = 2.3$ Threshold Choice.}
@@ -1360,7 +1364,7 @@ Unless otherwise noted, all experiments used $T = 1000$ time units (100,000 inte
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.95\textwidth]{figures/figS1_rhoS_complete_series.png}
-\caption{Figure S1: Full temporal coherence decay series across noise regimes.
+\caption{Full temporal coherence decay series across noise regimes.
 Expanded set of temporal-coherence traces showing the progression from stable correlation to noise-dominated decay across all sampled noise values.}
 \label{fig:S1}
 \end{figure}
@@ -1374,7 +1378,7 @@ Temporal coherence $\rho_S(\tau)$ as a function of lag time $\tau$ for 20 noise 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/figS2_control_random.png}
-\caption{Figure S2: Parameter-specificity control experiment.
+\caption{Parameter-specificity control experiment.
 Control study examining randomly chosen parameter configurations to demonstrate that high-correlation behavior requires coordinated tuning rather than appearing generically.}
 \label{fig:S2}
 \end{figure}
@@ -1388,7 +1392,7 @@ Control study examining randomly chosen parameter configurations to demonstrate 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/figS3_sigma_c_full_range.png}
-\caption{Figure S3: Extended coupling-range characterization of the critical noise boundary.
+\caption{Extended coupling-range characterization of the critical noise boundary.
 Critical noise levels extracted across a wide range of coupling strengths, showing the consistency of the collapse trend beyond the primary analysis region.}
 \label{fig:S3}
 \end{figure}
@@ -1402,7 +1406,7 @@ Critical noise $\sigma_c$ as a function of coupling strength $K$ over the extend
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/figS4_dtheta_histogram.png}
-\caption{Figure S4: Phase-difference distribution in the ridge regime.
+\caption{Phase-difference distribution in the ridge regime.
 Histogram of $\Delta\theta$ under conditions that support high correlations, showing concentration around the stable phase relationship.}
 \label{fig:S4}
 \end{figure}
@@ -1451,7 +1455,7 @@ $K$ & $\sigma_c(2.0)$ & $\sigma_c(2.3)$ & $\Delta\sigma_c$ \\
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.95\textwidth]{figures/figS5_collapse_logistic.png}
-\caption{Figure S5: Logistic characterization of the CHSH collapse curve.
+\caption{Logistic characterization of the CHSH collapse curve.
 Logistic fit used to quantify the decay of the CHSH amplitude $|S|(\sigma)$ under increasing noise.}
 \label{fig:S5}
 \end{figure}
