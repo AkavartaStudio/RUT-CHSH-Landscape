@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite it as below."
+type: software
+title: "RUT-CHSH-Landscape: Parameter-Space Analysis of CHSH Correlations in Coupled Oscillators"
+version: 1.0.0
+date-released: 2025-01-24
+authors:
+  - family-names: McRae
+    given-names: Kelly
+    affiliation: Akavarta Studio
+repository-code: "https://github.com/AkavartaStudio/RUT-CHSH-Landscape"
+license: CC-BY-4.0
+keywords:
+  - CHSH inequality
+  - Bell correlations
+  - coupled oscillators
+  - stochastic dynamics
+  - nonlocality
+  - classical correlations
+  - Kuramoto model
+abstract: |
+  This repository contains the complete simulation code, data, and analysis
+  scripts for "CHSH Correlation Landscape in Coupled Noisy Oscillators"
+  (Paper 1: Parameter-Space Mapping and Temporal Memory). The code implements
+  stochastic integration of coupled Kuramoto-Adler oscillators and evaluates
+  continuous-variable CHSH functionals across the (K, σ, Δω) parameter space.
+
+  Key findings include:
+  - Maximum classical CHSH value |S| = 2.819 ± 0.003
+  - Linear noise-coupling scaling law σ_c ≈ 0.60K + 0.22
+  - Optimal measurement geometry (Δα, Δβ) ≈ (95°, 84°)
+  - Persistent temporal memory beyond classical bound
+
+  All results are fully reproducible using the provided scripts.
+
+preferred-citation:
+  type: article
+  title: "CHSH Correlation Landscape in Coupled Noisy Oscillators: Parameter-Space Mapping and Temporal Memory"
+  authors:
+    - family-names: McRae
+      given-names: Kelly
+      affiliation: Akavarta Studio
+  year: 2025
+  status: preprint
+  journal: "Physical Review E (submitted)"
+  notes: "Manuscript available in paper/PAPER1_COMPLETE_DRAFT.pdf"

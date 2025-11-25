@@ -30,3 +30,10 @@ __pycache__/
 # Build directories
 build/
 dist/
+
+# Local test runs (not for publication)
+reruns/
+full_run*.log
+
+# Keep only paper/ configs, exclude analysis configs
+analysis/config/
