@@ -10,7 +10,7 @@ Computes:
 - ⟨cos Δθ⟩ ≈ 0.44
 - ⟨sin Δθ⟩ = ε ≈ 0.037 (asymmetry parameter)
 
-Saves: figSX_dtheta_histogram.png
+Saves: figS4_dtheta_histogram.png
 """
 
 import sys
@@ -161,9 +161,9 @@ def main():
 
     # Save
     output_dir = Path(__file__).parent.parent
-    output_file = output_dir / 'figSX_dtheta_histogram.png'
+    output_file = output_dir / 'figS4_dtheta_histogram.png'
     plt.savefig(output_file, dpi=300, bbox_inches='tight')
-    plt.savefig(output_dir / 'figSX_dtheta_histogram.pdf', dpi=300, bbox_inches='tight')
+    plt.savefig(output_dir / 'figS4_dtheta_histogram.pdf', dpi=300, bbox_inches='tight')
 
     print(f"✓ Figure saved: {output_file.name}")
 
@@ -180,8 +180,8 @@ def main():
 
     print(f"✓ Statistics saved: {stats_file.name}")
     print(f"\nFiles created:")
-    print(f"  - figSX_dtheta_histogram.png")
-    print(f"  - figSX_dtheta_histogram.pdf")
+    print(f"  - figS4_dtheta_histogram.png")
+    print(f"  - figS4_dtheta_histogram.pdf")
     print(f"  - dtheta_statistics.txt")
 
 

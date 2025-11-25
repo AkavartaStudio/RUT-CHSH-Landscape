@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate Figure S1 (Supplementary): Control Random Parameter Study
+Generate Figure S2 (Supplementary): Control Random Parameter Study
 
 Histogram showing random parameter choices yield |S| < 2,
 proving optimized parameters are special.
@@ -120,10 +120,10 @@ plt.tight_layout()
 
 # Save
 output_dir = Path(__file__).parent.parent
-plt.savefig(output_dir / 'figS1_control_random.pdf', dpi=300, bbox_inches='tight')
-plt.savefig(output_dir / 'figS1_control_random.png', dpi=300, bbox_inches='tight')
+plt.savefig(output_dir / 'figS2_control_random.pdf', dpi=300, bbox_inches='tight')
+plt.savefig(output_dir / 'figS2_control_random.png', dpi=300, bbox_inches='tight')
 
-print("✓ Figure S1 saved: Control random parameter study")
+print("✓ Figure S2 saved: Control random parameter study")
 print(f"  Random mean:    {mean_random:.3f} ± {std_random:.3f}")
 print(f"  Optimized mean: {mean_opt:.3f}")
 print(f"  Effect size:    Cohen's d = {cohens_d:.2f}")

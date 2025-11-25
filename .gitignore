@@ -44,3 +44,7 @@ SESSION_SUMMARY*.md
 
 # Keep only paper/ configs, exclude analysis configs
 analysis/config/
+
+# Future paper configs (not part of Paper 1)
+paper/configs_paper1/A4_dichotomic_variants.json
+paper/configs_paper1/A5_quantization_threshold.json

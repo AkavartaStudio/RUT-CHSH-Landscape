@@ -81,8 +81,29 @@ python3 analysis/scripts/run_extended_sigma_sweep.py
 
 ## Figure Regeneration
 
-After running experiments, regenerate all manuscript figures:
+After running experiments, regenerate all manuscript figures using the scripts in `paper/figures/scripts/`:
 
+### Main Figures (reproduce manuscript figures exactly)
+| Paper Figure | Script | Output File |
+|--------------|--------|-------------|
+| Figure 1 | `generate_fig1_combined.py` | `fig1_combined.png` |
+| Figure 2 | `generate_fig2_sigma_c_scaling.py` | `fig2_sigma_c_scaling.png` |
+| Figure 3 | `generate_fig3_S_vs_sigma.py` | `fig3_S_vs_sigma.png` |
+| Figure 4 | `generate_fig4_angle_ridge.py` | `fig4_angle_ridge.png` |
+| Figure 5 | `generate_fig5_delta_omega.py` | `fig5_delta_omega.png` |
+| Figure 6 | `generate_fig6_memory_panel.py` | `fig6_memory_panel.png` |
+| Figure 7 | `generate_fig7_rhoS_four_curves.py` | `fig7_rhoS_four_curves.png` |
+
+### Supplementary Figures
+| Paper Figure | Script | Output File |
+|--------------|--------|-------------|
+| Figure S1 | `generate_figS1_rhoS_complete_series.py` | `figS1_rhoS_complete_series.png` |
+| Figure S2 | `generate_figS2_control_random.py` | `figS2_control_random.png` |
+| Figure S3 | `generate_figS3_sigma_c_full_range.py` | `figS3_sigma_c_full_range.png` |
+| Figure S4 | `generate_figS4_dtheta_histogram.py` | `figS4_dtheta_histogram.png` |
+| Figure S5 | `generate_figS5_collapse_logistic.py` | `figS5_collapse_logistic.png` |
+
+### Regenerate All Figures
 ```bash
 cd paper/figures/scripts
 python3 generate_fig1_combined.py
@@ -91,7 +112,7 @@ python3 generate_fig3_S_vs_sigma.py
 python3 generate_fig4_angle_ridge.py
 python3 generate_fig5_delta_omega.py
 python3 generate_fig6_memory_panel.py
-python3 generate_fig6B_rhoS_four_curves.py
+python3 generate_fig7_rhoS_four_curves.py
 python3 generate_figS1_rhoS_complete_series.py
 python3 generate_figS2_control_random.py
 python3 generate_figS3_sigma_c_full_range.py
@@ -102,7 +123,7 @@ python3 generate_figS5_collapse_logistic.py
 Or run all at once:
 ```bash
 cd paper/figures/scripts
-for f in generate_*.py; do python3 "$f"; done
+for f in generate_fig*.py; do python3 "$f"; done
 ```
 
 ## Core Simulation Engine

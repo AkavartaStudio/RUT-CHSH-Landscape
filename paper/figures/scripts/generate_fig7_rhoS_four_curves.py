@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Figure 6B: Temporal Coherence - Four Representative Curves
+Figure 7: Temporal Coherence - Four Representative Curves
 ===========================================================
 
 Generates ρ_S(τ) decay curves for four representative noise levels
@@ -12,9 +12,9 @@ illustrating distinct dynamical regimes for main text Section 3.4.3:
 - σ = 1.00 (high noise): Collapsed |S| and ρ_S
 
 Saves:
-- fig6B_rhoS_four_curves.png
-- fig6B_rhoS_four_curves.pdf
-- data_fig6B_rhoS_four_curves.csv
+- fig7_rhoS_four_curves.png
+- fig7_rhoS_four_curves.pdf
+- data_fig7_rhoS_four_curves.csv
 """
 
 import sys
@@ -166,7 +166,7 @@ def main():
             print(f", τ_1/2>200")
 
     # ============================================
-    # Generate Figure 6B
+    # Generate Figure 7
     # ============================================
 
     fig, ax = plt.subplots(figsize=(10, 7))
@@ -217,10 +217,10 @@ def main():
 
     # Save
     output_dir = Path(__file__).parent.parent
-    plt.savefig(output_dir / 'fig6B_rhoS_four_curves.png', dpi=300, bbox_inches='tight')
-    plt.savefig(output_dir / 'fig6B_rhoS_four_curves.pdf', dpi=300, bbox_inches='tight')
+    plt.savefig(output_dir / 'fig7_rhoS_four_curves.png', dpi=300, bbox_inches='tight')
+    plt.savefig(output_dir / 'fig7_rhoS_four_curves.pdf', dpi=300, bbox_inches='tight')
 
-    print(f"\n✓ Figure 6B saved: Four representative ρ_S(τ) curves")
+    print(f"\n✓ Figure 7 saved: Four representative ρ_S(τ) curves")
     print(f"  σ = {sigma_values}")
 
     # ============================================
@@ -228,7 +228,7 @@ def main():
     # ============================================
 
     import csv
-    csv_file = output_dir / 'data_fig6B_rhoS_four_curves.csv'
+    csv_file = output_dir / 'data_fig7_rhoS_four_curves.csv'
 
     with open(csv_file, 'w', newline='') as f:
         writer = csv.writer(f)
@@ -249,11 +249,11 @@ def main():
                 row.append(f"{results[sigma]['rho_sem'][i]:.6f}")
             writer.writerow(row)
 
-    print(f"✓ Data exported: data_fig6B_rhoS_four_curves.csv")
+    print(f"✓ Data exported: data_fig7_rhoS_four_curves.csv")
     print(f"\nFiles created:")
-    print(f"  - fig6B_rhoS_four_curves.png")
-    print(f"  - fig6B_rhoS_four_curves.pdf")
-    print(f"  - data_fig6B_rhoS_four_curves.csv")
+    print(f"  - fig7_rhoS_four_curves.png")
+    print(f"  - fig7_rhoS_four_curves.pdf")
+    print(f"  - data_fig7_rhoS_four_curves.csv")
 
 
 if __name__ == "__main__":
