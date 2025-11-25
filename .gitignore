@@ -41,6 +41,7 @@ VERSION_GUIDE.md
 osf_link.md
 REPO_SUMMARY.md
 SESSION_SUMMARY*.md
+README_DRAFT.md
 
 # Keep only paper/ configs, exclude analysis configs
 analysis/config/
