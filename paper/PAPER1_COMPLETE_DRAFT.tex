@@ -375,18 +375,8 @@ The numerical results in Sec.~\ref{sec:results} are interpreted using a minimal 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/fig1_combined.png}
-\caption{
-CHSH Correlation Landscape in Parameter Space.
-Heatmap showing CHSH amplitude $|S|$ as a function of coupling strength $K$ and noise amplitude $\sigma$.
-The high-correlation region ($|S| \gtrsim 2.3$, yellow/green) is bounded by the collapse threshold
-$\sigma_c(K) \approx 0.60K + 0.22$ (black dashed line, fitted to $K \in [0.3,0.9]$).
-White circles mark tested parameter combinations at $\sigma = 0.2$.
-The threshold region $0.1 < K_{\min} < 0.2$ (where high correlations first become accessible)
-is visible at low $K$ where the boundary line begins.
-The optimal point ($K = 0.7$, $\sigma = 0.2$, gold star) yields $|S|_{\max} = 2.819$.
-Inset: 3D surface visualization showing the topographic structure of the correlation landscape.
-The surface is constructed from 144 measurements across the tested parameter space (Experiment A1).
-}
+\caption{CHSH correlation landscape across the $(K,\sigma)$ plane.
+Heatmap showing the dependence of $|S|$ on coupling and noise. The inset shows a 3D rendering of the same landscape.}
 \label{fig:landscape}
 \end{figure}
 \normalsize
@@ -457,12 +447,11 @@ Figure~\ref{fig:S3} and Table~S3 provide full characterization across $K \in [0.
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/fig2_sigma_c_scaling.png}
-\caption{Noise-Coupling Scaling Law}
+\caption{Noise--coupling scaling for the collapse boundary.
+Empirical scaling relation between noise amplitude and coupling strength defining the onset of correlation collapse.}
 \label{fig:scaling}
 \end{figure}
 \normalsize
-
-Figure 2: Global $\sigma_c(K)$ curve with mid-range linear regime. Critical noise amplitude $\sigma_c$ at which $|S|$ drops below 2.3 as a function of coupling strength K. Circles show empirical values obtained from the extended sweep $K \in \{0.1, 0.2, \ldots, 1.5\}$. The solid line shows the best-fit linear scaling $\sigma_c(K) \approx 0.60K + 0.22$ obtained by fitting only the mid-range points $K \in [0.3, 0.9]$. In this interval, $\sigma_c$ grows almost linearly with K ($R^2 \approx 0.98$), indicating a simple balance between coupling-driven alignment and noise-driven diffusion. The threshold $|S| = 2.3$ is used to capture the onset of rapid collapse (see Sec.~\ref{sec:threshold} for justification). At very weak coupling (K = 0.1), no $|S| > 2.3$ region is observed within the tested $\sigma$ range, and at strong coupling (K $\gtrsim$ 1.0) the curve flattens and the collapse boundary saturates. This establishes $\sigma_c(K)$ as a monotone, concave-down curve with a broad linear regime rather than a globally linear law.
 
 \subsubsection{Collapse Curves and Universal Shape}
 
@@ -474,12 +463,11 @@ The similarity of curve shapes across coupling strengths indicates that collapse
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/fig3_S_vs_sigma.png}
-\caption{Universal Collapse Curves for CHSH Correlations}
+\caption{Universal collapse behavior of $|S|$ under increasing noise.
+Representative decay profiles of the CHSH amplitude across noise regimes.}
 \label{fig:collapse}
 \end{figure}
 \normalsize
-
-Figure 3: Universal Collapse Curves for CHSH Correlations. Mean CHSH amplitude $\langle|S|\rangle$ as a function of noise strength $\sigma$ for coupling values ranging from K = 0.1 to K = 1.5 (see legend for color coding). All curves exhibit: (i) high-correlation plateaus near the algebraic maximum ($2\sqrt{2} \approx 2.828$) for low noise, (ii) smooth degradation through the transition zone, (iii) sharp collapse at the critical threshold $\sigma_c(K)$, identifiable where each curve crosses $|S| = 2$, and (iv) classical saturation at $|S| \approx 1.6$-1.8 for high noise. SEM error bars (N = 10 independent trajectories) are plotted but are smaller than the marker size for most K values. Dashed line shows the classical bound $|S| = 2$. Dotted line shows the algebraic maximum $2\sqrt{2}$.
 
 \subsubsection{Synchronization and CHSH Correlation Relationship}
 
@@ -587,12 +575,11 @@ This robustness indicates that the CHSH correlation structure is not fragile to 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/fig4_angle_ridge.png}
-\caption{Angle-Space Ridge Structure for Optimal CHSH Correlations}
+\caption{Angle-dependent CHSH structure.
+Correlation amplitude shown across pairs of measurement settings, illustrating the geometry of angle dependence.}
 \label{fig:angles}
 \end{figure}
 \normalsize
-
-Figure 4: Angle-Space Ridge Structure for Optimal CHSH Correlations. Heatmap of CHSH amplitude $|S|$ as a function of measurement angle differences ($\Delta\alpha = a' - a$, $\Delta\beta = b' - b$), with a = 0° and b = 45° held fixed. The global optimum (red star) occurs at ($\Delta\alpha^*$, $\Delta\beta^*$) = (95°, 84°), yielding $|S|_{\max} = 2.819 \pm 0.003$. The high-correlation region forms a broad ridge (red/yellow, $|S| > 2.7$) extending $\approx$10° around the optimum, demonstrating robustness to angular misalignment. The landscape is smooth with no local maxima. Green regions ($|S| < 2.5$) correspond to suboptimal measurement geometries.
 
 \subsubsection{Comparison to Theoretical Predictions}
 
@@ -670,13 +657,11 @@ This demonstrates that:
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/fig5_delta_omega.png}
-\caption{Frequency-Mismatch Sweet Spot and Temporal Memory}
+\caption{Detuning response and temporal coherence.
+Dependence of correlation and temporal persistence on frequency mismatch.}
 \label{fig:detuning}
 \end{figure}
 \normalsize
-
-Figure 5: Frequency-Mismatch Sweet Spot and Temporal Memory. Top: Mean CHSH amplitude $\langle|S|\rangle$ as a function of detuning $\Delta\omega$ at fixed $K = 0.7$ and $\sigma = 0.2$. A clear maximum occurs at $\Delta\omega \approx 0.10$ ($|S| = 2.779 \pm 0.001$), whereas perfect frequency matching ($\Delta\omega = 0$) yields slightly lower correlations. Bottom: Phase coherence $r$ (Kuramoto order parameter) remains nearly constant ($r \approx 0.985$) across the same $\Delta\omega$ range, indicating robust synchronization independent of detuning. The decoupling between the flat $r$ curve and the peaked $|S|$ curve demonstrates that high CHSH values depend on specific dynamical structure rather than on global phase locking.
-
 
 \subsection{Temporal Coherence Beyond $|S| > 2$ (Experiment B1)}
 
@@ -740,7 +725,8 @@ the mild non-monotonicity near $\sigma \approx 0.7$.
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/fig6_memory_panel.png}
-\caption{Temporal Memory Panel}
+\caption{Temporal memory across noise regimes.
+Persistence of the CHSH correlation signal measured over increasing noise amplitudes.}
 \label{fig:memory}
 \end{figure}
 \normalsize
@@ -792,7 +778,8 @@ The most striking feature is that $\sigma = 0.70$ shows the \textbf{slowest temp
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.95\textwidth]{figures/fig6B_rhoS_four_curves.png}
-\caption{Temporal Coherence Decay Across Noise Regimes ($K=0.7$, $\Delta\omega=0.2$)}
+\caption{Noise-driven temporal coherence decay.
+Decay of temporal correlation across representative noise values.}
 \label{fig:decay}
 \end{figure}
 \normalsize
@@ -1372,7 +1359,8 @@ Unless otherwise noted, all experiments used $T = 1000$ time units (100,000 inte
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.95\textwidth]{figures/figS1_rhoS_complete_series.png}
-\caption{Complete Temporal Coherence Decay Series Across Noise Regimes}
+\caption{Full temporal coherence decay series across noise regimes.
+Expanded set of temporal-coherence traces showing the progression from stable correlation to noise-dominated decay across all sampled noise values.}
 \label{fig:S1}
 \end{figure}
 \normalsize
@@ -1385,7 +1373,8 @@ Temporal coherence $\rho_S(\tau)$ as a function of lag time $\tau$ for 20 noise 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/figS1_control_random.png}
-\caption{Parameter Specificity Control}
+\caption{Parameter-specificity control experiment.
+Control study examining randomly chosen parameter configurations to demonstrate that high-correlation behavior requires coordinated tuning rather than appearing generically.}
 \label{fig:S2}
 \end{figure}
 \normalsize
@@ -1398,7 +1387,8 @@ Temporal coherence $\rho_S(\tau)$ as a function of lag time $\tau$ for 20 noise 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/figS3_sigma_c_full_range.png}
-\caption{Critical Noise $\sigma_c(K)$ Across Extended Coupling Range}
+\caption{Extended coupling-range characterization of the critical noise boundary.
+Critical noise levels extracted across a wide range of coupling strengths, showing the consistency of the collapse trend beyond the primary analysis region.}
 \label{fig:S3}
 \end{figure}
 \normalsize
@@ -1411,7 +1401,8 @@ Critical noise $\sigma_c$ as a function of coupling strength $K$ over the extend
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/figSX_dtheta_histogram.png}
-\caption{Phase Difference Distribution $\Delta\theta$ at Ridge Regime}
+\caption{Phase-difference distribution in the ridge regime.
+Histogram of $\Delta\theta$ under conditions that support high correlations, showing concentration around the stable phase relationship.}
 \label{fig:S4}
 \end{figure}
 \normalsize
@@ -1458,7 +1449,8 @@ $K$ & $\sigma_c(2.0)$ & $\sigma_c(2.3)$ & $\Delta\sigma_c$ \\
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.95\textwidth]{figures/figS5_collapse_logistic.png}
-\caption{Logistic-fit characterization of the collapse curve $|S|(\sigma)$}
+\caption{Logistic characterization of the CHSH collapse curve.
+Logistic fit used to quantify the decay of the CHSH amplitude $|S|(\sigma)$ under increasing noise.}
 \label{fig:S5}
 \end{figure}
 \normalsize
