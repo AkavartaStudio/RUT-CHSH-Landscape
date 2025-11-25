@@ -9,6 +9,7 @@
 *.fls
 *.synctex.gz
 *.pdf
+!paper/PAPER1.pdf
 
 # Python
 __pycache__/
