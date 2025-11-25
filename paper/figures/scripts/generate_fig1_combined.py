@@ -300,7 +300,10 @@ ax_3d.plot(K_wall, sigma_wall, abs_S_wall, color='cyan', linewidth=2, alpha=0.7)
 # Cashmere minimal labels - elegant but informative
 ax_3d.set_xlabel('Coupling Strength $K$', fontsize=12, labelpad=8)
 ax_3d.set_ylabel('Noise Amplitude $\\sigma$', fontsize=12, labelpad=8)
-ax_3d.set_zlabel('CHSH Parameter $|S|$', fontsize=12, labelpad=8)
+
+# Z-axis label: manual positioning to avoid cutoff (matplotlib 3D quirk)
+ax_3d.text2D(-0.08, 0.5, 'CHSH Parameter $|S|$', transform=ax_3d.transAxes,
+            fontsize=12, ha='center', va='center', rotation=90)
 
 # Tick labels - present but minimal
 ax_3d.set_xticks([0.5, 1.0, 1.5])
