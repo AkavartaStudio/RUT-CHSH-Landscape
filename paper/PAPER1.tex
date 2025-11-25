@@ -731,9 +731,6 @@ Persistence of the CHSH correlation signal measured over increasing noise amplit
 \end{figure}
 \normalsize
 
-\textbf{Figure 6: Temporal coherence across noise regimes.}
-Each vertical panel shows a different dynamical quantity evaluated at three representative noise levels---Ridge ($\sigma = 0.2$), Boundary ($\sigma = 0.7$), and Classical ($\sigma = 1.0$)---displayed left, middle, and right within each panel. Left panel: Instantaneous CHSH correlations $|S|$ decline steadily from ridge $\to$ boundary $\to$ classical. Middle panel: Phase coherence $r$ shows a similar decrease with noise. Right panel: Temporal memory $\rho_S(\tau)$ displays a non-monotonic pattern: it remains high at intermediate noise ($\sigma = 0.7$) despite the reduction in $|S|$, demonstrating that long-lived memory and instantaneous CHSH violations reflect different underlying dynamical structures. At high noise ($\sigma = 1.0$), both instantaneous correlations and temporal coherence degrade sharply.
-
 \subsubsection{Persistence of Temporal Memory}
 
 The temporal coherence $\rho_S(\tau)$ quantifies the autocorrelation of the CHSH time series $S(t)$ at lag $\tau$. Specifically, $\rho_S(\tau) = \text{Corr}[S(t), S(t+\tau)]$ measures the tendency for the CHSH observable to maintain a consistent value over the timescale $\tau$. A high value of $\rho_S$ indicates that the phase relation between oscillators (and thus the correlation structure encoded in $S(t)$) persists across multiple dynamical periods. This is distinct from the instantaneous correlation amplitude $\langle|S|\rangle$, which reflects the strength of phase alignment at any single moment but says nothing about how long that alignment is maintained. In coupled oscillator systems, temporal memory can persist through slow drift of the relative phase $\Delta\theta(t)$ even when noise has degraded the sharpness of the instantaneous phase distribution. This decoupling arises because $\langle|S|\rangle$ depends on the width of the phase distribution (via diffusion), while $\rho_S$ depends on the drift rate (via coupling-induced restoring forces that resist large phase excursions over time).
@@ -783,10 +780,6 @@ Decay of temporal correlation across representative noise values.}
 \label{fig:decay}
 \end{figure}
 \normalsize
-
-\textbf{Figure 7:} Temporal coherence $\rho_S(\tau)$ as a function of lag time $\tau$ for four representative noise levels at fixed coupling $K = 0.7$ and detuning $\Delta\omega = 0.2$. Black: low noise ($\sigma = 0.05$). Blue: ridge regime ($\sigma = 0.20$). Red: intermediate non-monotonic regime ($\sigma = 0.70$). Gray: high noise ($\sigma = 1.00$). Curves show the decay of temporal phase coherence averaged over $N = 30$ independent trajectories. The dotted horizontal line marks the half-decay level $\rho_S = 0.5$.
-
-Notably, $\sigma = 0.70$ exhibits the slowest temporal decay (largest $\tau_{1/2}$), even though its instantaneous CHSH amplitude $|S|$ is lower than in the ridge regime. This shows that temporal memory and instantaneous correlation respond to noise in qualitatively different ways.
 
 \subsubsection{Implications for Interpretation}
 
