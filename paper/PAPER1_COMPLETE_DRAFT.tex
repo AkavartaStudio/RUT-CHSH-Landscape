@@ -1132,7 +1132,7 @@ When the phase difference $\Delta\theta$ is perfectly concentrated (i.e., $\Delt
 is distributed as $\delta(\Delta\theta - \theta_0)$), the two-oscillator system reduces
 to a deterministic local model with a single shared hidden variable $\theta_0$. In this
 limit each cosine observable becomes a fixed function of the four measurement angles, and
-the CHSH value reduces to a purely geometric quantity. For the optimal measurement geometry (angle differences producing phase shifts separated by $90^\circ$: $0^\circ$, $90^\circ$, $180^\circ$, $270^\circ$), such a model yields $S = \pm 2\sqrt{2}$, which is the absolute maximum allowed by the algebraic structure of the cosine functional.
+the CHSH value reduces to a purely geometric quantity. For the optimal measurement geometry (angle differences producing phase shifts separated by $90^\circ$ ($0^\circ$, $90^\circ$, $180^\circ$, $270^\circ$)), such a model yields $S = \pm 2\sqrt{2}$, which is the absolute maximum allowed by the algebraic structure of the cosine functional.
 
 \subsection*{A.2 Phase-Locking Order Parameter and the $2\sqrt{2}$ Ceiling}
 
@@ -1170,7 +1170,7 @@ Explicitly, in the complex plane:
 \[
 \left| 1 \cdot e^{i \cdot 0} + 1 \cdot e^{i \cdot \pi/2} + 1 \cdot e^{i \cdot \pi} + (-1) \cdot e^{i \cdot 3\pi/2} \right| = |1 + i - 1 + i| = |2i| = 2,
 \]
-and the $2\sqrt{2}$ maximum arises from optimizing the phase-shift distribution across all four correlation terms (see \cite{cirelson1980quantum} for the quantum bound derivation, which applies to continuous observables with perfect correlations).
+and the $2\sqrt{2}$ maximum arises when the four phase shifts are arranged at $90^\circ$ separations, which rotates the vector-sum geometry into its optimal configuration. This value emerges from optimizing the phase-shift distribution across all four correlation terms (see \cite{cirelson1980quantum} for the quantum bound derivation, which applies to continuous observables with perfect correlations).
 
 \subsection*{A.3 General Classical Measurement Model}
 
@@ -1274,10 +1274,11 @@ Let
 \[
 E(a,b) = \langle \cos(\Delta\theta + \phi_{ab})\rangle
 \]
-where $\phi_{ab}$ is the measurement offset. For a symmetric distribution of $\Delta\theta$ with mean zero, the first derivative of $E(a,b)$ with respect to $\phi$ vanishes at $\phi = 90°$, yielding the familiar sinusoidal CHSH optimum. However, when the distribution acquires small skewness or kurtosis corrections---precisely the case in the ridge regime---the expectation can be expanded perturbatively as
+where $\phi_{ab}$ is the measurement offset. For a symmetric distribution of $\Delta\theta$ with mean zero, the first derivative of $E(a,b)$ with respect to $\phi$ vanishes at $\phi = 90°$, yielding the familiar sinusoidal CHSH optimum. However, when the distribution acquires small skewness or kurtosis corrections---precisely the case in the high-correlation ridge regime---the expectation can be expanded perturbatively as
 \[
 E(a,b) \approx \cos\phi \cdot \langle \cos\Delta\theta\rangle - \sin\phi \cdot \langle \sin\Delta\theta\rangle.
 \]
+Solving $\frac{\partial E}{\partial \phi} = 0$ yields the first-order shift,
 
 If $\Delta\theta$ were perfectly symmetric, $\langle \sin\Delta\theta\rangle = 0$. But numerical evaluation shows that small asymmetries (typically of order $10^{-2}$--$10^{-1}$) arise from the interplay of detuning $\Delta\omega$, noise $\sigma$, and finite-strength coupling $K$. The CHSH expression
 \[
@@ -1309,7 +1310,7 @@ Substituting these measured values, the extremum of $S$ occurs at
 \]
 in good agreement with the empirically observed optimum of $\approx$84°--86°.
 
-A similar perturbation applies to the complementary angle (nominally 90° in the CHSH construction), producing a small compensating adjustment of opposite sign (yielding $\approx$95°). Together these shifts preserve the relative structure of the CHSH geometry while accommodating the asymmetry of the underlying continuous-phase distribution.
+A similar perturbation applies to the complementary angle (nominally 90° in the CHSH construction), producing a small compensating adjustment of opposite sign (yielding $\approx$95°). Together these shifts preserve the relative structure of the CHSH geometry to first order in the asymmetry while accommodating the skewness of the phase-difference distribution.
 
 Thus, the departure from the canonical (90°, 90°) configuration is not anomalous; it is a direct, quantitatively predictable consequence of small deviations from symmetry in the $\Delta\theta$ distribution. The perturbed-optimum angles constitute the natural generalization of the CHSH geometry for continuous, correlated, non-Gaussian phase variables.
 
