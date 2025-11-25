@@ -106,15 +106,24 @@ python3 verify_paper1_pipeline.py
 ```bash
 cd paper/figures/scripts
 
-# Generate all main figures
+# Generate all main figures (Figures 1-7)
 python3 generate_fig1_combined.py
 python3 generate_fig2_sigma_c_scaling.py
 python3 generate_fig3_S_vs_sigma.py
 python3 generate_fig4_angle_ridge.py
 python3 generate_fig5_delta_omega.py
 python3 generate_fig6_memory_panel.py
+python3 generate_fig7_rhoS_four_curves.py
 
-# Check outputs
+# Generate all supplementary figures (Figures S1-S5)
+python3 generate_figS1_rhoS_complete_series.py
+python3 generate_figS2_control_random.py
+python3 generate_figS3_sigma_c_full_range.py
+python3 generate_figS4_dtheta_histogram.py
+python3 generate_figS5_collapse_logistic.py
+
+# Check outputs (should have 12 figures total)
+ls -lh ../*.png | wc -l  # Should output: 12
 ls -lh ../*.png
 ```
 
