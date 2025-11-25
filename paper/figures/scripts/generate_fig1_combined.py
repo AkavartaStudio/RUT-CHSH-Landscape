@@ -206,7 +206,7 @@ ax_inset.view_init(elev=20, azim=225)
 
 plt.tight_layout()
 
-# Save
+# Save combined figure
 output_dir = Path(__file__).parent.parent
 plt.savefig(output_dir / 'fig1_combined.pdf', dpi=300, bbox_inches='tight')
 plt.savefig(output_dir / 'fig1_combined.png', dpi=300, bbox_inches='tight')
@@ -214,4 +214,127 @@ plt.savefig(output_dir / 'fig1_combined.png', dpi=300, bbox_inches='tight')
 print("✓ Figure 1 (combined) saved!")
 print("  Main panel: 2D heatmap (clean, quantitative)")
 print("  Inset: 3D surface (visual impact)")
-print("  Best of both worlds! 🎯")
+
+# ============================================
+# COMPONENT FIGURES for reuse
+# ============================================
+
+# Fig 1a: Standalone 2D heatmap (clean, no inset)
+print("\nGenerating fig1a (2D heatmap only)...")
+fig_2d = plt.figure(figsize=(10, 7))
+ax_2d = fig_2d.add_subplot(111)
+
+# Recreate heatmap
+im_2d = ax_2d.imshow(abs_S_mesh, cmap='plasma', aspect='auto', origin='lower',
+                     extent=[0, 1.6, 0, 1.2],
+                     vmin=1.5, vmax=2.8, interpolation='bilinear')
+
+# Colorbar
+cbar_2d = plt.colorbar(im_2d, ax=ax_2d, label='CHSH Parameter $|S|$')
+cbar_2d.ax.axhline(y=2.0, color='red', linewidth=2.5, linestyle='-')
+cbar_2d.ax.axhline(y=2.3, color='orange', linewidth=2, linestyle='--', alpha=0.7)
+cbar_2d.set_ticks([1.5, 1.8, 2.0, 2.3, 2.5, 2.8])
+cbar_2d.ax.tick_params(labelsize=9, width=1.5)
+
+# Boundary line
+boundary_2d = ax_2d.plot(K_line, sigma_c_line, 'k--', linewidth=4,
+                         label='$\\sigma_c(K)$ boundary', zorder=5)[0]
+boundary_2d.set_path_effects([patheffects.Stroke(linewidth=6, foreground='white'),
+                              patheffects.Normal()])
+
+# Optimal point
+ax_2d.plot(0.7, 0.2, marker='*', markersize=30,
+          color='gold', markeredgecolor='red', markeredgewidth=2,
+          label='Optimal', zorder=10)
+
+# Tested points
+ax_2d.scatter(K_tested, sigma_low, s=100, c='white',
+             edgecolors='black', linewidths=2.5,
+             alpha=1.0, zorder=8, label='Tested points')
+
+# Styling
+ax_2d.set_xlabel('Coupling Strength $K$', fontsize=14, weight='bold')
+ax_2d.set_ylabel('Noise Amplitude $\\sigma$', fontsize=14, weight='bold')
+ax_2d.xaxis.labelpad = 10
+ax_2d.yaxis.labelpad = 10
+ax_2d.set_title('CHSH Correlation Landscape', fontsize=14, weight='bold', pad=15)
+ax_2d.set_xlim(0, 1.6)
+ax_2d.set_ylim(0, 1.2)
+ax_2d.grid(True, alpha=0.3, linestyle='--', linewidth=0.5, color='white')
+
+# Legend
+handles_2d, labels_2d = ax_2d.get_legend_handles_labels()
+ax_2d.legend(loc='upper right', bbox_to_anchor=(0.85, 0.96),
+            fontsize=10, framealpha=0.98, markerscale=0.5,
+            edgecolor='black', fancybox=False)
+
+plt.tight_layout()
+plt.savefig(output_dir / 'fig1a_heatmap.pdf', dpi=300, bbox_inches='tight')
+plt.savefig(output_dir / 'fig1a_heatmap.png', dpi=300, bbox_inches='tight')
+plt.close(fig_2d)
+
+print("✓ Figure 1a (2D heatmap) saved!")
+
+# Fig 1b: Standalone 3D (cashmere minimal - full but elegant labels)
+print("\nGenerating fig1b (3D standalone)...")
+fig_3d = plt.figure(figsize=(10, 8))
+ax_3d = fig_3d.add_subplot(111, projection='3d')
+
+# Plot 3D surface
+surf_3d = ax_3d.plot_surface(K_mesh_3d, sigma_mesh_3d, abs_S_mesh_3d,
+                             cmap='plasma', alpha=1.0, edgecolor='none',
+                             vmin=0.5, vmax=2.9, antialiased=True)
+
+# Reference planes
+classical_plane_3d = np.ones_like(K_plane) * 2.0
+ax_3d.plot_surface(K_plane, sigma_plane, classical_plane_3d,
+                  alpha=0.25, color='#FF6B9D', edgecolor='none')
+
+tsirelson_plane_3d = np.ones_like(K_plane) * 2.828
+ax_3d.plot_surface(K_plane, sigma_plane, tsirelson_plane_3d,
+                  alpha=0.25, color='#4A90E2', edgecolor='none')
+
+# Zero-noise wall
+ax_3d.plot(K_wall, sigma_wall, abs_S_wall, color='cyan', linewidth=2, alpha=0.7)
+
+# Cashmere minimal labels - elegant but informative
+ax_3d.set_xlabel('Coupling Strength $K$', fontsize=12, labelpad=8)
+ax_3d.set_ylabel('Noise Amplitude $\\sigma$', fontsize=12, labelpad=8)
+ax_3d.set_zlabel('CHSH Parameter $|S|$', fontsize=12, labelpad=8)
+
+# Tick labels - present but minimal
+ax_3d.set_xticks([0.5, 1.0, 1.5])
+ax_3d.set_yticks([0.0, 0.6, 1.2])
+ax_3d.set_zticks([1.5, 2.0, 2.5, 2.828])
+ax_3d.tick_params(labelsize=10)
+
+# Grid - subtle
+ax_3d.grid(True, alpha=0.3)
+
+# Panes - elegant transparency
+ax_3d.xaxis.pane.fill = True
+ax_3d.yaxis.pane.fill = True
+ax_3d.zaxis.pane.fill = True
+ax_3d.xaxis.pane.set_alpha(0.05)
+ax_3d.yaxis.pane.set_alpha(0.05)
+ax_3d.zaxis.pane.set_alpha(0.05)
+ax_3d.xaxis.pane.set_edgecolor('gray')
+ax_3d.yaxis.pane.set_edgecolor('gray')
+ax_3d.zaxis.pane.set_edgecolor('gray')
+ax_3d.xaxis.pane.set_linewidth(0.5)
+ax_3d.yaxis.pane.set_linewidth(0.5)
+ax_3d.zaxis.pane.set_linewidth(0.5)
+
+# Viewing angle
+ax_3d.view_init(elev=20, azim=225)
+
+# Add title - warm and elegant
+ax_3d.set_title('CHSH Correlation Landscape', fontsize=14, pad=15)
+
+plt.tight_layout()
+plt.savefig(output_dir / 'fig1b_3d.pdf', dpi=300, bbox_inches='tight')
+plt.savefig(output_dir / 'fig1b_3d.png', dpi=300, bbox_inches='tight')
+plt.close(fig_3d)
+
+print("✓ Figure 1b (3D standalone) saved!")
+print("\n🎯 Best of both worlds: combined + components for reuse!")
