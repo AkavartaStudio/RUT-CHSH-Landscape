@@ -365,10 +365,11 @@ The only minor issue (R² = 0.944 vs 0.97) is due to physically meaningful satur
 
 ```bash
 # Clone repository
-cd /Users/kellymcrae/Akavarta/research/phys/RUT-CHSH-Landscape
+git clone https://github.com/AkavartaStudio/RUT-CHSH-Landscape.git
+cd RUT-CHSH-Landscape
 
 # Run comprehensive verification
-python3 verify_paper1_pipeline.py
+python3 docs/reproducibility/verify_paper1_pipeline.py
 
 # Test determinism
 python3 test_determinism.py
