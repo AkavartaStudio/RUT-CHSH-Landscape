@@ -29,7 +29,7 @@ abstract: |
   figure-generation tools supporting the manuscript
   "Continuous-Angle CHSH Correlations in Noisy Coupled Oscillators:
    A Systematic Parameter-Space Study" (Paper 1: The CHSH Landscape).
-  The code implements stochastic integration of coupled Kuramoto–Adler
+  The code implements stochastic integration of coupled Kuramoto
   oscillators and evaluates continuous-angle CHSH functionals across the
   (K, σ, Δω) parameter space. All published figures and results can be
   reproduced directly using the provided scripts.
