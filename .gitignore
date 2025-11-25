@@ -31,7 +31,8 @@ __pycache__/
 build/
 dist/
 
-# Local test runs (not for publication)
+# Local archives and test runs (not for publication)
+archive/
 reruns/
 full_run*.log
 
