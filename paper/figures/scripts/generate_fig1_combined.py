@@ -328,8 +328,17 @@ ax_3d.xaxis.pane.set_linewidth(0.5)
 ax_3d.yaxis.pane.set_linewidth(0.5)
 ax_3d.zaxis.pane.set_linewidth(0.5)
 
-# Viewing angle
+# Viewing angle - optimal for showing peak and structure
 ax_3d.view_init(elev=20, azim=225)
+
+# Add plane labels (cashmere elegant - vertical, stacked in back-left)
+# Classical bound label (pink plane at |S| = 2.0)
+ax_3d.text(0.25, 0.9, 2.0, '2', fontsize=13, color='#C41E3A',
+          weight='bold', ha='center', va='center', alpha=0.95)
+
+# Tsirelson bound label (blue plane at |S| = 2.828)
+ax_3d.text(0.25, 0.9, 2.828, '$2\\sqrt{2}$', fontsize=13, color='#1E3A8A',
+          weight='bold', ha='center', va='center', alpha=0.9)
 
 # Add title - warm and elegant
 ax_3d.set_title('CHSH Correlation Landscape', fontsize=14, pad=15)
