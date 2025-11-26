@@ -49,6 +49,9 @@ REPO_SUMMARY.md
 SESSION_SUMMARY*.md
 README_DRAFT.md
 
+# Internal documentation (not for public repo)
+docs/internal/
+
 # Keep only paper/ configs, exclude analysis configs
 analysis/config/
 
