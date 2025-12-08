@@ -18,7 +18,7 @@ This repository contains the complete simulation code, data, and figure-generati
 Maps the CHSH correlation functional across the (K, σ, Δω) parameter space for two coupled oscillators.
 
 - **Location:** `paper1/`
-- **Reproducibility:** [REPRODUCIBILITY.md](REPRODUCIBILITY.md)
+- **Reproducibility:** [paper1/REPRODUCIBILITY.md](paper1/REPRODUCIBILITY.md)
 - **Key results:** |S|_max = 2.819, collapse boundary σ_c(K) ≈ 0.60K + 0.22
 
 ### Paper 2: The Memory Landscape
@@ -58,7 +58,6 @@ RUT-CHSH-Landscape/
 │   └── data/paper1/           # Paper 1 raw data
 │
 ├── docs/                      # Documentation
-├── REPRODUCIBILITY.md         # Paper 1 reproducibility guide
 ├── CITATION.cff               # Citation metadata
 └── LICENSE                    # CC BY 4.0
 ```
