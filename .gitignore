@@ -13,7 +13,9 @@
 *.pdf
 !paper1/PAPER1.pdf
 !paper2/main.pdf
+!paper2/figs/*.pdf
 !paper3/main.pdf
+!paper3/figs/*.pdf
 
 # Paper source - only final version tracked
 paper1/*DRAFT*
