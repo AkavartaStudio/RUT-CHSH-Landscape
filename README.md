@@ -21,7 +21,7 @@ Maps the CHSH correlation functional across the (K, σ, Δω) parameter space fo
 - **Reproducibility:** [paper1/REPRODUCIBILITY.md](paper1/REPRODUCIBILITY.md)
 - **Key results:** |S|_max = 2.819, collapse boundary σ_c(K) ≈ 0.60K + 0.22
 
-### Paper 2: The Memory Landscape
+### Paper 2: CHSH Memory Geometry
 **"Echo Geometry of the Classical CHSH Ridge: Memory, Curvature, and Directional Susceptibility"**
 
 Resolves the temporal structure of CHSH correlations, revealing memory collapse at σ_mem ≈ 0.002.
