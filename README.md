@@ -1,16 +1,16 @@
-# RUT-CHSH-Landscape
+# RUT–CHSH Series
 
-**Continuous-Angle CHSH Correlations in Noisy Coupled Oscillators**
+**Classical CHSH Geometry, Memory, and Network Topology**
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Paper Status](https://img.shields.io/badge/status-preprint-orange)]()
 [![Reproducibility](https://img.shields.io/badge/reproducibility-verified-brightgreen)]()
 
-This repository contains the complete simulation code, data, and figure-generation tools supporting a three-paper series on CHSH correlations in classical coupled oscillators.
+This repository contains the simulation engine, reproducibility configurations, and experiment data for a three-paper research program on classical CHSH geometry, temporal memory, and network topology.
 
 ---
 
-## Papers
+## From CHSH Geometry to Echo Memory to Network Topology
 
 ### Paper 1: The CHSH Landscape
 **"Continuous-Angle CHSH Correlations in Noisy Coupled Oscillators: A Systematic Parameter-Space Study"**
@@ -90,15 +90,17 @@ cd experiments/Paper2_Stage*/analysis/figs && python3 generate_*.py
 
 ---
 
-## Key Findings
+## Key Results Across the Series
 
-| Paper | Key Result | Value |
-|-------|-----------|-------|
-| 1 | Max CHSH | \|S\| = 2.819 ± 0.003 |
-| 1 | Collapse boundary | σ_c(K) ≈ 0.60K + 0.22 |
-| 2 | Memory threshold | σ_mem ≈ 0.002 (universal) |
-| 2 | Fragility ratio | σ_mem/σ_c ≈ 0.03-0.08 |
-| 3 | (in progress) | — |
+| Concept | Result | Source |
+|---------|--------|--------|
+| Classical CHSH violation exists | \|S\|_max = 2.819 ± 0.003 | Paper 1 |
+| Instantaneous collapse boundary | σ_c(K) ≈ 0.60K + 0.22 | Paper 1 |
+| Long-lag memory collapses universally | σ_mem ≈ 0.002 (independent of K) | Paper 2 |
+| Separation of scales | σ_mem ≪ σ_c (≈1–2 orders of magnitude) | Paper 2 |
+| Intermediate regime | |S| > 2 but memory already gone | Paper 2 |
+| Angle-field twisting | optimal geometry deforms under noise | Paper 2 |
+| Three-oscillator memory | dependent on topology (chain, star, triangle) | Paper 3 (in progress) |
 
 ---
 
@@ -125,3 +127,7 @@ This work is released under [CC BY 4.0](https://creativecommons.org/licenses/by/
 **Kelly McRae**
 Akavarta Studio
 [studioakavarta@gmail.com](mailto:studioakavarta@gmail.com)
+
+---
+
+*Geometry ↦ Memory ↦ Topology*
