@@ -1,11 +1,11 @@
 cff-version: 1.2.0
-message: "If you use this software or data, please cite it as below."
+message: "If you use this software or data, please cite the relevant paper(s) as below."
 type: software
 
 title: "RUT-CHSH-Landscape: Continuous-Angle CHSH Correlations in Noisy Coupled Oscillators"
 
-version: 1.0.0
-date-released: 2025-01-24
+version: 2.0.0
+date-released: 2025-12-08
 
 authors:
   - family-names: McRae
@@ -23,26 +23,36 @@ keywords:
   - classical correlations
   - continuous-variable CHSH
   - Kuramoto model
+  - temporal memory
+  - echo correlations
 
 abstract: |
   This repository contains the full simulation code, analysis scripts, and
-  figure-generation tools supporting the manuscript
-  "Continuous-Angle CHSH Correlations in Noisy Coupled Oscillators:
-   A Systematic Parameter-Space Study" (Paper 1: The CHSH Landscape).
-  The code implements stochastic integration of coupled Kuramoto
-  oscillators and evaluates continuous-angle CHSH functionals across the
-  (K, σ, Δω) parameter space. All published figures and results can be
-  reproduced directly using the provided scripts.
+  figure-generation tools supporting a three-paper series on CHSH correlations
+  in classical coupled oscillators:
 
-preferred-citation:
-  type: article
-  title: "Continuous-Angle CHSH Correlations in Noisy Coupled Oscillators:
-          A Systematic Parameter-Space Study (Paper 1: The CHSH Landscape)"
-  authors:
-    - family-names: McRae
-      given-names: Kelly
-      affiliation: Akavarta Studio
-  year: 2025
-  status: preprint
-  journal: ""
-  notes: "Preprint. Not submitted yet — final peace talks with the figures are ongoing."
+  Paper 1 (The CHSH Landscape): Maps the CHSH functional across parameter space.
+  Paper 2 (The Memory Landscape): Resolves temporal structure and memory collapse.
+  Paper 3 (Network Topology): Extends to three-oscillator networks (in progress).
+
+references:
+  - type: article
+    title: "Continuous-Angle CHSH Correlations in Noisy Coupled Oscillators:
+            A Systematic Parameter-Space Study (Paper 1: The CHSH Landscape)"
+    authors:
+      - family-names: McRae
+        given-names: Kelly
+        affiliation: Akavarta Studio
+    year: 2025
+    status: preprint
+
+  - type: article
+    title: "Echo Geometry of the Classical CHSH Ridge:
+            Memory, Curvature, and Directional Susceptibility (Paper 2: The Memory Landscape)"
+    authors:
+      - family-names: McRae
+        given-names: Kelly
+        affiliation: Akavarta Studio
+    year: 2025
+    month: 12
+    status: preprint

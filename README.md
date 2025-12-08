@@ -1,49 +1,42 @@
 # RUT-CHSH-Landscape
 
 **Continuous-Angle CHSH Correlations in Noisy Coupled Oscillators**
-**Paper 1: The CHSH Landscape**
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Paper Status](https://img.shields.io/badge/status-preprint-orange)]()
 [![Reproducibility](https://img.shields.io/badge/reproducibility-verified-brightgreen)]()
 
-This repository contains the complete simulation code, data, and figure-generation tools supporting the manuscript *"Continuous-Angle CHSH Correlations in Noisy Coupled Oscillators: A Systematic Parameter-Space Study."* All results are fully reproducible using the scripts provided.
+This repository contains the complete simulation code, data, and figure-generation tools supporting a three-paper series on CHSH correlations in classical coupled oscillators.
 
 ---
 
-## Overview
+## Papers
 
-We study how the CHSH correlation functional behaves in a classical two-oscillator system with noise, detuning, and variable measurement geometry. Although the CHSH test originates in quantum information, here it is used strictly as a correlation geometry diagnostic for classical dynamics.
+### Paper 1: The CHSH Landscape
+**"Continuous-Angle CHSH Correlations in Noisy Coupled Oscillators: A Systematic Parameter-Space Study"**
 
-Key observations include:
+Maps the CHSH correlation functional across the (K, σ, Δω) parameter space for two coupled oscillators.
 
-- **Maximum CHSH value:** |S|<sub>max</sub> = 2.819 ± 0.003
-- **Noise–coupling collapse boundary:** σ<sub>c</sub>(K) ≈ 0.60K + 0.22
-- **Optimal angles:** (Δα, Δβ) ≈ (95°, 84°)
-- **Detuning optimum:** Δω* ≈ 0.14K
-- **Temporal memory:** ρ<sub>S</sub>(τ=10) ≈ 0.86 even past collapse
+- **Location:** `paper1/`
+- **Reproducibility:** [REPRODUCIBILITY.md](REPRODUCIBILITY.md)
+- **Key results:** |S|_max = 2.819, collapse boundary σ_c(K) ≈ 0.60K + 0.22
 
-These results reveal structured classical dynamics and a narrow, tune-dependent high-correlation regime.
+### Paper 2: The Memory Landscape
+**"Echo Geometry of the Classical CHSH Ridge: Memory, Curvature, and Directional Susceptibility"**
 
----
+Resolves the temporal structure of CHSH correlations, revealing memory collapse at σ_mem ≈ 0.002.
 
-## Reproducibility
+- **Location:** `paper2/`
+- **Reproducibility:** [paper2/REPRODUCIBILITY.md](paper2/REPRODUCIBILITY.md)
+- **Key results:** Universal σ_mem ≈ 0.002 (~30× below σ_c), three distinct regimes
 
-**Run all experiments (A1, A2, A3, B1):**
-```bash
-cd analysis/scripts/paper1_runners
-bash RUN_ALL_PAPER1.sh
-```
+### Paper 3: Network Topology (In Progress)
+**"CHSH Memory in Three-Oscillator Networks"**
 
-**Generate all manuscript figures:**
-```bash
-cd paper/figures/scripts
-for f in generate_fig*.py; do python3 "$f"; done
-```
+Extends the analysis to chain, star, and triangle topologies.
 
-All figure names, output files, and corresponding scripts follow a one-to-one mapping (see [REPRODUCIBILITY.md](REPRODUCIBILITY.md)).
-
-A complete verification workflow, determinism tests, and manifest metadata are included in `docs/reproducibility/`.
+- **Location:** `paper3/`
+- **Status:** Experiments in progress
 
 ---
 
@@ -52,56 +45,73 @@ A complete verification workflow, determinism tests, and manifest metadata are i
 ```
 RUT-CHSH-Landscape/
 │
-├── analysis/
-│   ├── scripts/
-│   │   ├── rut_core.py
-│   │   ├── paper1_runners/
-│   │   ├── control_random_params.py
-│   │   └── run_extended_sigma_sweep.py
-│   └── data/paper1/
+├── paper1/                    # Paper 1 manuscript, figures, configs
+├── paper2/                    # Paper 2 manuscript, figures
+├── paper3/                    # Paper 3 manuscript (in progress)
 │
-├── paper/
-│   ├── PAPER1_COMPLETE_DRAFT.tex
-│   ├── PAPER1_COMPLETE_DRAFT.pdf
-│   ├── figures/
-│   ├── figures/scripts/
-│   └── configs_paper1/
+├── experiments/               # Experiment stages for Papers 2 & 3
+│   ├── Paper2_Stage1-4/       # Memory threshold, curvature, echo, angle-field
+│   └── Paper3_Mission2-4/     # Network topology experiments
 │
-├── docs/reproducibility/
-├── REPRODUCIBILITY.md
-├── CITATION.md
-├── CITATION.cff
-├── CLEANROOM_TEST_PROCEDURE.md
-└── LICENSE
+├── analysis/                  # Shared analysis scripts and Paper 1 data
+│   ├── scripts/rut_core.py    # Core simulation engine
+│   └── data/paper1/           # Paper 1 raw data
+│
+├── docs/                      # Documentation
+├── REPRODUCIBILITY.md         # Paper 1 reproducibility guide
+├── CITATION.cff               # Citation metadata
+└── LICENSE                    # CC BY 4.0
 ```
 
 ---
 
-## Experiments
+## Reproducibility
 
-- **A1 — Noise–Coupling Collapse:** Determines σ<sub>c</sub>(K) across the parameter range.
-- **A2 — Angle Optimization:** Maps CHSH values across measurement geometries (Δα, Δβ).
-- **A3 — Detuning Sweep:** Identifies optimal frequency mismatch Δω*.
-- **B1 — Temporal Memory:** Evaluates persistence of ρ<sub>S</sub>(τ) beyond the instantaneous collapse point.
+### Paper 1
+```bash
+cd analysis/scripts/paper1_runners
+bash RUN_ALL_PAPER1.sh
+```
 
-All configurations are in `paper/configs_paper1/`.
+### Paper 2
+```bash
+cd experiments/Paper2_Stage1/scripts
+bash RUN_P2_STAGE1_sigma_mem.sh
+# ... see paper2/REPRODUCIBILITY.md for full instructions
+```
+
+### Generate Figures
+```bash
+# Paper 1
+cd paper1/figures/scripts && for f in generate_fig*.py; do python3 "$f"; done
+
+# Paper 2
+cd experiments/Paper2_Stage*/analysis/figs && python3 generate_*.py
+```
 
 ---
 
-## Figures
+## Key Findings
 
-Twelve manuscript figures (7 main + 5 supplementary) are fully script-generated.
-Each script is named by figure number (e.g., `generate_fig5_delta_omega.py` → `fig5_delta_omega.png`).
-
-See [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for the complete figure-to-script mapping.
+| Paper | Key Result | Value |
+|-------|-----------|-------|
+| 1 | Max CHSH | \|S\| = 2.819 ± 0.003 |
+| 1 | Collapse boundary | σ_c(K) ≈ 0.60K + 0.22 |
+| 2 | Memory threshold | σ_mem ≈ 0.002 (universal) |
+| 2 | Fragility ratio | σ_mem/σ_c ≈ 0.03-0.08 |
+| 3 | (in progress) | — |
 
 ---
 
 ## Citation
 
+### Paper 1
 **McRae, K.** (2025). *Continuous-Angle CHSH Correlations in Noisy Coupled Oscillators: A Systematic Parameter-Space Study (Paper 1: The CHSH Landscape).* Preprint.
 
-See [CITATION.md](CITATION.md) and [CITATION.cff](CITATION.cff) for formatted entries.
+### Paper 2
+**McRae, K.** (2025). *Echo Geometry of the Classical CHSH Ridge: Memory, Curvature, and Directional Susceptibility (Paper 2: The Memory Landscape).* Preprint.
+
+See [CITATION.cff](CITATION.cff) for machine-readable citation metadata.
 
 ---
 
