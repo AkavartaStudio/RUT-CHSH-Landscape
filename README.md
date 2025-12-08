@@ -51,7 +51,7 @@ RUT-CHSH-Landscape/
 │
 ├── experiments/               # Experiment stages for Papers 2 & 3
 │   ├── Paper2_Stage1-4/       # Memory threshold, curvature, echo, angle-field
-│   └── Paper3_Mission2-4/     # Network topology experiments
+│   └── Paper3_Stage2-4/       # Network topology experiments
 │
 ├── analysis/                  # Shared analysis scripts and Paper 1 data
 │   ├── scripts/rut_core.py    # Core simulation engine

@@ -17,9 +17,9 @@ This directory contains reproducible experiment configurations and results for P
 |--------|-------------|------|----------|
 | `Paper3_Mission1/` | Chain topology baseline | ~2.5 GB | **External** |
 | `Paper3_Mission1B/` | Symmetric cluster analysis | ~1.9 GB | **External** |
-| `Paper3_Mission2/` | Star topology | ~100 KB | Included |
-| `Paper3_Mission3/` | Triangle topology | ~190 KB | Included |
-| `Paper3_Mission4/` | Comparative analysis | ~100 KB | Included |
+| `Paper3_Stage2/` | Star topology | ~100 KB | Included |
+| `Paper3_Stage3/` | Triangle topology | ~190 KB | Included |
+| `Paper3_Stage4/` | Comparative analysis | ~100 KB | Included |
 
 ## Large External Datasets
 
@@ -29,4 +29,4 @@ Mission1 and Mission1B contain large simulation outputs (~4.4 GB combined) that 
 
 **Canonical archive:** OSF repository (link TBD)
 
-To reproduce these experiments, run the configuration files in each mission's `config/` directory using the RUT simulation engine.
+To reproduce these experiments, run the configuration files in each stage's `config/` directory using the RUT simulation engine.
