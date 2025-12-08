@@ -12,7 +12,7 @@
 # PDFs - only track final versions
 *.pdf
 !paper1/PAPER1.pdf
-!paper2/main.pdf
+!paper2/PAPER2.pdf
 !paper2/figs/*.pdf
 !paper3/main.pdf
 !paper3/figs/*.pdf
