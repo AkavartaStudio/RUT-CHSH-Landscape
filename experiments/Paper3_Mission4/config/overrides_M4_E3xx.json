@@ -1,0 +1,242 @@
+{
+  "E381": {
+    "description": "Baseline path-order test with A->B->C sampling.",
+    "measurement": {
+      "path_order": ["A", "B", "C"],
+      "angle_set": "CHSH_4"
+    },
+    "initial_conditions": {
+      "num_initializations": 200,
+      "base_seed": 381
+    }
+  },
+
+  "E382": {
+    "description": "Reordered sampling path A->C->B.",
+    "measurement": {
+      "path_order": ["A", "C", "B"],
+      "angle_set": "CHSH_4"
+    },
+    "initial_conditions": {
+      "num_initializations": 200,
+      "base_seed": 382
+    }
+  },
+
+  "E383": {
+    "description": "C-first contextuality test: C->A->B.",
+    "measurement": {
+      "path_order": ["C", "A", "B"],
+      "angle_set": "CHSH_4"
+    },
+    "initial_conditions": {
+      "num_initializations": 200,
+      "base_seed": 383
+    }
+  },
+
+  "E384": {
+    "description": "Multi-angle order test with 6-angle set, path A->B->C.",
+    "measurement": {
+      "angle_set": "6_angle",
+      "angles": {
+        "A": [0.0, 1.0471975511965976, 2.0943951023931953],
+        "B": [0.5235987755982988, 1.5707963267948966, 2.617993877991494],
+        "C": [0.2617993877991494, 1.3089969389957472, 2.356194490192345]
+      },
+      "path_order": ["A", "B", "C"]
+    },
+    "initial_conditions": {
+      "num_initializations": 150,
+      "base_seed": 384
+    }
+  },
+
+  "E385": {
+    "description": "Multi-angle order test with 6-angle set, path A->C->B.",
+    "measurement": {
+      "angle_set": "6_angle",
+      "path_order": ["A", "C", "B"]
+    },
+    "initial_conditions": {
+      "num_initializations": 150,
+      "base_seed": 385
+    }
+  },
+
+  "E386": {
+    "description": "Multi-angle order test with 6-angle set, path C->B->A.",
+    "measurement": {
+      "angle_set": "6_angle",
+      "path_order": ["C", "B", "A"]
+    },
+    "initial_conditions": {
+      "num_initializations": 150,
+      "base_seed": 386
+    }
+  },
+
+  "E387": {
+    "description": "9-angle dense sampling set, baseline path A->B->C.",
+    "measurement": {
+      "angle_set": "9_angle_dense",
+      "angles": {
+        "A": [0.0, 0.6981317007977318, 1.3962634015954636],
+        "B": [0.3490658503988659, 1.0471975511965976, 1.7453292519943295],
+        "C": [0.17453292519943295, 0.8726646259971648, 1.5707963267948966]
+      },
+      "path_order": ["A", "B", "C"]
+    },
+    "initial_conditions": {
+      "num_initializations": 150,
+      "base_seed": 387
+    }
+  },
+
+  "E388": {
+    "description": "9-angle dense sampling set, path A->C->B.",
+    "measurement": {
+      "angle_set": "9_angle_dense",
+      "path_order": ["A", "C", "B"]
+    },
+    "initial_conditions": {
+      "num_initializations": 150,
+      "base_seed": 388
+    }
+  },
+
+  "E389": {
+    "description": "9-angle dense sampling set, path C->A->B.",
+    "measurement": {
+      "angle_set": "9_angle_dense",
+      "path_order": ["C", "A", "B"]
+    },
+    "initial_conditions": {
+      "num_initializations": 150,
+      "base_seed": 389
+    }
+  },
+
+  "E390": {
+    "description": "Summary delta_S(order) map for CHSH_4, 6-angle, and 9-angle sets.",
+    "measurement": {
+      "angle_set": "summary_mixed",
+      "path_order": ["A", "B", "C"]
+    },
+    "model": {
+      "special_mode": "deltaS_order_summary"
+    }
+  },
+
+  "E391": {
+    "description": "Two-body reduction: compute S_AB as if C does not exist (2-node model).",
+    "model": {
+      "special_mode": "two_body_AB_only"
+    },
+    "measurement": {
+      "angle_set": "CHSH_4",
+      "path_order": ["A", "B"]
+    },
+    "metrics": {
+      "compute_S_per_path": true
+    }
+  },
+
+  "E392": {
+    "description": "Two-body reduction vs full 3-body: AB pair embedded in triangle.",
+    "model": {
+      "special_mode": "AB_in_triangle"
+    },
+    "measurement": {
+      "angle_set": "CHSH_4",
+      "path_order": ["A", "B", "C"]
+    },
+    "metrics": {
+      "compute_delta_S_between_paths": true
+    }
+  },
+
+  "E393": {
+    "description": "Two-body reduction: compute S_BC vs full triangle.",
+    "model": {
+      "special_mode": "BC_in_triangle"
+    },
+    "measurement": {
+      "angle_set": "CHSH_4",
+      "path_order": ["B", "C", "A"]
+    }
+  },
+
+  "E394": {
+    "description": "Two-body reduction: compute S_CA vs full triangle.",
+    "model": {
+      "special_mode": "CA_in_triangle"
+    },
+    "measurement": {
+      "angle_set": "CHSH_4",
+      "path_order": ["C", "A", "B"]
+    }
+  },
+
+  "E395": {
+    "description": "Summary plot: 2-body vs 3-body S-metrics across all pairs.",
+    "model": {
+      "special_mode": "two_body_vs_three_body_summary"
+    },
+    "metrics": {
+      "compute_delta_S_between_paths": true
+    }
+  },
+
+  "E396": {
+    "description": "Contextuality benchmark: regimes with large |delta_S(order)| for CHSH_4.",
+    "model": {
+      "special_mode": "contextuality_scan_CHSH",
+      "K_sweep": {
+        "start": 0.5,
+        "stop": 2.5,
+        "num": 40
+      }
+    },
+    "metrics": {
+      "compute_delta_S_between_paths": true
+    }
+  },
+
+  "E397": {
+    "description": "Contextuality benchmark: multi-angle sets with large |delta_S(order)|.",
+    "model": {
+      "special_mode": "contextuality_scan_multiangle"
+    },
+    "measurement": {
+      "angle_set": "6_and_9_mix"
+    },
+    "metrics": {
+      "compute_delta_S_between_paths": true
+    }
+  },
+
+  "E398": {
+    "description": "Contextuality benchmark under mild frequency disorder.",
+    "model": {
+      "delta_omega": {
+        "mode": "two_group",
+        "value": 0.2
+      },
+      "special_mode": "contextuality_scan_disordered"
+    },
+    "metrics": {
+      "compute_delta_S_between_paths": true
+    }
+  },
+
+  "E399": {
+    "description": "Final contextuality summary: classify regimes as order-sensitive vs order-insensitive.",
+    "model": {
+      "special_mode": "contextuality_summary"
+    },
+    "metrics": {
+      "compute_delta_S_between_paths": true
+    }
+  }
+}

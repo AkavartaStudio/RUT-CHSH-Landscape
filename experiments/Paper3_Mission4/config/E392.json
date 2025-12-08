@@ -1,0 +1,91 @@
+{
+  "experiment_id": "E392",
+  "mission": "Paper3_Mission4",
+  "description": "Two-body reduction vs full 3-body: AB pair embedded in triangle.",
+  "model": {
+    "oscillators": [
+      "A",
+      "B",
+      "C"
+    ],
+    "natural_frequencies": {
+      "A": 0.0,
+      "B": 0.0,
+      "C": 0.0
+    },
+    "coupling_matrix": {
+      "A": {
+        "B": 1.2,
+        "C": 1.0
+      },
+      "B": {
+        "A": 1.2,
+        "C": 1.0
+      },
+      "C": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    "delta_omega": {
+      "mode": "single_value",
+      "value": 0.0
+    },
+    "special_mode": "AB_in_triangle"
+  },
+  "initial_conditions": {
+    "theta_distribution": "uniform_random",
+    "num_initializations": 200,
+    "pattern": "none",
+    "phi_target": null,
+    "seed_mode": "indexed",
+    "base_seed": 392
+  },
+  "integration": {
+    "dt": 0.01,
+    "T_total": 3000.0,
+    "transient_drop": 500.0,
+    "solver": "rk4",
+    "sampling_interval": 10
+  },
+  "measurement": {
+    "angle_set": "CHSH_4",
+    "angles": {
+      "A": [
+        0.0,
+        1.5707963267948966
+      ],
+      "B": [
+        0.7853981633974483,
+        2.356194490192345
+      ],
+      "C": [
+        0.39269908169872414,
+        1.9634954084936207
+      ]
+    },
+    "path_order": [
+      "A",
+      "B",
+      "C"
+    ],
+    "num_samples_per_run": 1000
+  },
+  "metrics": {
+    "compute_phi": true,
+    "compute_braid_index": false,
+    "compute_S_metric": true,
+    "compute_S_per_path": true,
+    "compute_delta_S_between_paths": true,
+    "detect_attractor": true
+  },
+  "output": {
+    "save_time_series": false,
+    "save_phi_series": false,
+    "save_braid_sequence": false,
+    "save_classification_flags": true,
+    "save_summary_table": true,
+    "save_pathwise_S_table": true,
+    "output_root": "results/Mission4"
+  }
+}

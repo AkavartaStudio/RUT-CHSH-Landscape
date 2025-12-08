@@ -1,0 +1,64 @@
+{
+  "experiment_id": "E231",
+  "name": "Angle-Resolved CHSH Field Scan",
+  "description": "Find optimal CHSH angles across (K, σ) grid and compute angle-resolved echo/susceptibility",
+  "paper": 2,
+  "mission": 4,
+
+  "parameters": {
+    "K_values": {
+      "min": 0.10,
+      "max": 1.00,
+      "n_points": 19,
+      "spacing": "linear"
+    },
+    "sigma_values": {
+      "min": 0.0,
+      "max": 0.40,
+      "n_points": 21,
+      "spacing": "linear"
+    },
+    "angle_grid": {
+      "min_deg": 0,
+      "max_deg": 180,
+      "step_deg": 6,
+      "n_angles": 31,
+      "note": "Each of a, a', b, b' scanned independently"
+    },
+    "tau_lags": [0, 25, 50],
+    "seeds_per_point": 3,
+    "delta_omega": 0.1
+  },
+
+  "simulation": {
+    "T": 600000,
+    "dt": 0.01,
+    "transient": 300000,
+    "sample_interval": 100
+  },
+
+  "outputs": {
+    "main_grid": "E231_angle_resolved_field.json",
+    "optimal_angles": "angle_optimal_grid.json",
+    "S_star_surface": "S_star_surface.json",
+    "chi_angle_surface": "chi_angle_surface.json",
+    "echo_angle_surface": "echo_angle_surface.json",
+    "angle_flow_vectors": "angle_flow_vectors.json"
+  },
+
+  "figures": {
+    "fig5a": "Fig5a_optimal_angle_geometry.pdf",
+    "fig5b": "Fig5b_chi_angle_surface.pdf",
+    "fig5c": "Fig5c_echo_angle_surface.pdf",
+    "fig5d": "Fig5d_angle_flow_vectors.pdf",
+    "fig5_combined": "Fig5_angle_resolved_field.pdf"
+  },
+
+  "notes": [
+    "Full angle scan: 31^4 = 923521 combinations per (K, σ) point",
+    "Using coarse grid (6° steps) to make tractable",
+    "Optimization finds S* = max over all angle combos",
+    "χ_angle = ∂S*/∂σ via finite difference",
+    "Echo_angle = ρ_{S*}(τ=50) using optimal angles"
+  ]
+}

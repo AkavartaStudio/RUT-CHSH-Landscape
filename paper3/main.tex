@@ -1,0 +1,138 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage[margin=1in]{geometry}
+\usepackage{mathptmx}
+\usepackage{float}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{parskip}
+\setlength{\parindent}{15pt}
+\setlength{\parskip}{0pt}
+\usepackage{physics}
+\usepackage{titlesec}
+\usepackage{tocloft}
+
+% Equation spacing
+\setlength{\abovedisplayskip}{10pt}
+\setlength{\belowdisplayskip}{10pt}
+
+% Section header formatting
+\titleformat{\section}{\normalsize\normalfont\bfseries\Large}{\thesection}{1em}{}[\normalsize]
+\titleformat{\subsection}{\normalsize\normalfont\bfseries\large}{\thesubsection}{1em}{}[\normalsize]
+\titleformat{\subsubsection}{\normalsize\normalfont\bfseries}{\thesubsubsection}{1em}{}[\normalsize]
+
+% TOC formatting
+\cftsetpnumwidth{2em}
+\cftsetrmarg{3em}
+
+\title{CHSH Memory in Small Oscillator Networks:\\
+Topology, Interference, and Collective Echo\\[10pt]
+\large Paper 3: Network Motifs}
+\author{Kelly McRae}
+\date{December 2025}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+\begin{document}
+\normalfont
+\maketitle
+
+\begin{abstract}
+% PLACEHOLDER - To be written
+Papers~1 and~2 established the CHSH landscape and its temporal structure for a
+driven two-oscillator system. Here we extend the analysis to three-oscillator
+networks, examining how topology shapes CHSH memory. We study three canonical
+motifs---chain, star, and triangle---and characterize their echo surfaces,
+curvature profiles, and susceptibility maps. The chain topology exhibits
+end-to-end memory decay with a characteristic length scale. The star motif
+shows hub-dominated correlations with spoke-to-spoke interference. The triangle
+configuration displays cyclic memory flow and topology-dependent phase
+structure. Across all motifs, the universal memory threshold
+$\sigma_{\mathrm{mem}}\approx 0.002$ persists, confirming its independence from
+network structure. These results complete the trilogy by demonstrating that
+CHSH memory is a topological observable whose geometry reflects the underlying
+coupling graph.
+\end{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+
+
+%=============================================================================
+\section{Introduction}
+%=============================================================================
+
+\input{sections/introduction}
+
+
+%=============================================================================
+\section{Methods}
+%=============================================================================
+
+\input{sections/methods}
+
+
+%=============================================================================
+\section{Results}
+%=============================================================================
+
+% Section 3.1 - Chain Topology
+\input{sections/results_3_1_chain}
+
+
+% Section 3.2 - Star Topology
+\input{sections/results_3_2_star}
+
+
+% Section 3.3 - Triangle Topology
+\input{sections/results_3_3_triangle}
+
+
+% Section 3.4 - Cross-Topology Comparison
+\input{sections/results_3_4_comparison}
+
+
+% Section 3.5 - Synthesis
+\input{sections/results_3_5_synthesis}
+
+
+%=============================================================================
+\section{Discussion}
+%=============================================================================
+
+\input{sections/discussion}
+
+
+%=============================================================================
+\section{Conclusion}
+%=============================================================================
+
+\input{sections/conclusion}
+
+
+%=============================================================================
+% References
+%=============================================================================
+
+\bibliographystyle{unsrt}
+\bibliography{bib/references}
+
+
+%=============================================================================
+% Appendices (if needed)
+%=============================================================================
+
+% \appendix
+% \input{sections/appendix}
+
+
+\end{document}

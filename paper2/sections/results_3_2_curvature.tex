@@ -1,0 +1,99 @@
+% Paper 2 - Results Section 3.2: Memory Curvature Surface
+% Camera-ready draft from Kelly
+
+\subsection{Memory curvature across the CHSH landscape}
+\label{sec:memory_curvature}
+
+The analysis above identifies a sharp separation of scales between the noise
+level required to destroy long-lag CHSH memory and the much larger scale
+required to collapse the CHSH functional itself. To resolve the internal
+structure of this ``memory layer'' we now examine how the temporal profile of
+$\rho_S(\tau)$ bends as a function of lag and location in the $(K,\sigma)$
+plane.
+
+For each parameter pair $(K,\sigma)$ we evaluate the lagged CHSH
+autocorrelation $\rho_S(\tau)$ on a small grid of lags
+$\tau \in \{\tau_1,\tau_2,\tau_3,\tau_4\}$ and construct a discrete curvature
+diagnostic $C_{\mathrm{mem}}(\tau_{\mathrm{mid}}; K,\sigma)$ at three midpoints
+$\tau_{\mathrm{mid}} \in \{17.5, 37.5, 75.0\}$ using a second-order finite
+difference across neighboring lags. Positive $C_{\mathrm{mem}}$ indicates that
+the mid-lag echo lies above the linear interpolation between shorter and longer
+lags (locally ``bulging up''), while negative $C_{\mathrm{mem}}$ indicates a
+concave profile in which the mid-lag correlation is suppressed relative to a
+linear decay.
+
+Figure~\ref{fig:fig2_memory_curvature} summarizes the curvature statistics
+across 1995 simulations (19 couplings, 21 noise levels, 5 seeds per point). At
+short lag ($\tau_{\mathrm{mid}} = 17.5$), the curvature is predominantly
+negative, with $C_{\mathrm{mem}}$ ranging from $-0.031$ to $+0.001$ and a
+strong imbalance towards decay-dominated profiles (81 positive, 318 negative
+cases). Very close to the present, CHSH memory therefore behaves as a
+conventionally relaxing signal: once noise is introduced, the correlation
+typically begins bending downward immediately.
+
+At intermediate lag ($\tau_{\mathrm{mid}} = 37.5$), the sign distribution
+reverses. Here $C_{\mathrm{mem}}$ remains modest in magnitude
+($[-0.005, +0.007]$) but is overwhelmingly positive in sign
+(339 positive, 60 negative). Across most of the high-$|S|$ region the mid-lag
+echo sits \emph{above} the straight-line interpolation between shorter and
+longer lags: as a function of $\tau$, the correlation profile develops a
+shallow hump rather than a simple exponential or power-law decay. In other
+words, there is a robust ``mid-range'' band in which CHSH memory is slightly
+enhanced relative to the naive expectation from its short- and long-lag
+behavior.
+
+At long lag ($\tau_{\mathrm{mid}} = 75.0$), the sign distribution flips back
+again: $C_{\mathrm{mem}}$ lies in $[-0.001, +0.005]$ with negative values now
+dominant (43 positive, 356 negative). Far out in time, the system behaves as a
+genuinely decaying process: whatever mid-range enhancement exists has been
+exhausted, and the residual correlations drift back toward zero or slightly
+negative values.
+
+Taken together, these curvature results show that CHSH memory is not a
+featureless exponential tail. Instead, the $(K,\sigma)$ plane contains a broad
+intermediate band in which mid-range lags display a slight echo ``bulge,''
+meaning that correlations are transiently stronger than suggested by both
+earlier and later lags. This intermediate region is embedded between short-
+and long-lag regimes in which curvature is dominantly negative. The resulting
+three-zone structure is invisible to instantaneous diagnostics such as $|S|$
+itself, and only becomes apparent once we track how the correlation profile
+bends as a function of lag.
+
+In addition to the broad sign structure, the curvature surface
+$C_{\mathrm{mem}}(K,\sigma)$ exhibits small, isolated pockets of negative
+curvature embedded within regions of positive curvature. These ``memory
+hollows'' occur near the boundary between the coherent ridge and the
+intermediate band: short- and long-lag correlations remain nontrivial, but the
+mid-lag statistic dips below its neighbors, producing a local inversion of the
+echo profile. This indicates that, in these narrow parameter zones, temporal
+coherence briefly weakens at intermediate lag before recovering, revealing
+fine-grained structure in the way CHSH memory is redistributed as noise is
+introduced.
+
+Curvature reveals how memory bends locally in $\tau$, but does not show how
+echo behaves globally across the entire $(K,\sigma)$ field. To map this full
+geometry, we next examine the echo surface $\rho_S(\tau=50)$, which exposes
+the global memory plateau and its abrupt destruction.
+
+The mid-lag enhancement occurs near $\tau \approx O(1/\lambda)$, consistent with
+a transient coherence resonance where weak noise reinforces correlations before
+eventual long-lag decay.
+
+
+%=============================================================================
+% FIGURE
+%=============================================================================
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{figs/fig2_memory_curvature}
+\caption{
+    Memory curvature surface $C_{\mathrm{mem}}(K,\sigma)$ at mid-lag
+    ($\tau_{\mathrm{mid}}=37.5$).
+    Warm colors indicate positive curvature (echo growing); cool colors
+    indicate negative curvature (echo decaying).
+    The dashed contour marks the $C_{\mathrm{mem}}=0$ boundary separating
+    mid-lag echo growth from mid-lag echo decay.
+}
+\label{fig:fig2_memory_curvature}
+\end{figure}

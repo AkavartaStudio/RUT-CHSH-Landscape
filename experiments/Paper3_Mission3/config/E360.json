@@ -1,0 +1,68 @@
+{
+  "experiment_id": "E360",
+  "mission": "Paper3_Mission3",
+  "description": "Summary Phi(K) map: stitched from representative K and delta_omega regimes.",
+  "model": {
+    "oscillators": [
+      "A",
+      "B",
+      "C"
+    ],
+    "natural_frequencies": {
+      "A": 0.0,
+      "B": 0.0,
+      "C": 0.0
+    },
+    "coupling_matrix": {
+      "A": {
+        "B": 1.0,
+        "C": 1.0
+      },
+      "B": {
+        "A": 1.0,
+        "C": 1.0
+      },
+      "C": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    "delta_omega": {
+      "mode": "single_value",
+      "value": 0.0
+    },
+    "special_mode": "phi_vs_K_summary"
+  },
+  "initial_conditions": {
+    "theta_distribution": "uniform_random",
+    "num_initializations": 50,
+    "pattern": "none",
+    "phi_target": null,
+    "seed_mode": "indexed",
+    "base_seed": 360
+  },
+  "integration": {
+    "dt": 0.01,
+    "T_total": 4000.0,
+    "transient_drop": 1000.0,
+    "solver": "rk4",
+    "sampling_interval": 5
+  },
+  "metrics": {
+    "compute_phi": true,
+    "compute_braid_index": true,
+    "compute_S_metric": false,
+    "detect_attractor": true,
+    "compute_loop_mode": true,
+    "compute_braid_mode": true,
+    "sample_interval": 5
+  },
+  "output": {
+    "save_time_series": false,
+    "save_phi_series": true,
+    "save_braid_sequence": true,
+    "save_classification_flags": true,
+    "save_summary_table": true,
+    "output_root": "results/Mission3"
+  }
+}

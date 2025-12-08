@@ -1,0 +1,66 @@
+{
+  "experiment_id": "E332",
+  "mission": "Paper3_Mission2",
+  "description": "Random-reset sweeps at weak coupling (flat-ish basin structure).",
+  "model": {
+    "oscillators": [
+      "A",
+      "B",
+      "C"
+    ],
+    "natural_frequencies": {
+      "A": 0.0,
+      "B": 0.0,
+      "C": 0.0
+    },
+    "coupling_matrix": {
+      "A": {
+        "B": 0.4,
+        "C": 0.4
+      },
+      "B": {
+        "A": 0.4,
+        "C": 0.4
+      },
+      "C": {
+        "A": 0.4,
+        "B": 0.4
+      }
+    },
+    "delta_omega": {
+      "mode": "single_value",
+      "value": 0.0
+    }
+  },
+  "initial_conditions": {
+    "theta_distribution": "uniform_random",
+    "num_initializations": 500,
+    "pattern": "none",
+    "phi_target": null,
+    "seed_mode": "indexed",
+    "base_seed": 332,
+    "reset_mode": "full_random"
+  },
+  "integration": {
+    "dt": 0.01,
+    "T_total": 3000.0,
+    "transient_drop": 500.0,
+    "solver": "rk4"
+  },
+  "metrics": {
+    "compute_phi": true,
+    "compute_braid_index": true,
+    "compute_S_metric": true,
+    "detect_attractor": true,
+    "compute_basin_id": true,
+    "sample_interval": 5
+  },
+  "output": {
+    "save_time_series": false,
+    "save_phi_series": true,
+    "save_braid_sequence": false,
+    "save_classification_flags": true,
+    "save_summary_table": true,
+    "output_root": "results/Mission2"
+  }
+}

@@ -1,0 +1,82 @@
+% Paper 2 - Results Section 3.4: Synthesis
+% Camera-ready draft from Kelly
+
+\subsection{Synthesis: Three regimes of CHSH memory dynamics}
+\label{sec:three_regimes}
+
+Taken together, the results above reveal that the CHSH landscape is not a
+single, smooth surface but a three--regime structure in which temporal
+correlations behave very differently depending on location in the
+$(K,\sigma)$ plane. These regimes appear consistently across all diagnostics
+evaluated---catastrophic memory thresholds, lag--dependent curvature, long--lag
+echo surfaces, and mid--lag susceptibilities---and together provide a coherent
+picture of how CHSH memory is organized in classical two--oscillator dynamics.
+
+\paragraph{(1) Basin of trivial memory.}
+For noise levels above the collapse threshold $\sigma_{\mathrm{c}}(K)$, the
+system enters a decorrelated region in which $|S|<2$, the long--lag echo
+$\rho_S(\tau^\ast)$ relaxes to values near zero (with weak negative
+excursions), and all curvature diagnostics are dominated by decay. This
+``basin'' behaves as a flat, noise--dominated phase: temporal correlations are
+featureless, susceptibilities are small in magnitude, and the CHSH functional
+itself carries no nontrivial structure. All memory diagnostics reduce to
+classical relaxation.
+
+\paragraph{(2) Intermediate band with mid--range echo amplification.}
+Below the CHSH collapse curve but above the universal memory threshold
+$\sigma_{\mathrm{mem}}\approx 0.002$, we observe a broad band in which
+temporal correlations are neither trivial nor robust. Here the instantaneous
+CHSH functional remains large ($|S|\gtrsim 2$), yet long--lag memory is already
+suppressed. Within this band the curvature analysis identifies a consistent
+mid--lag ``bulge'': $C_{\mathrm{mem}}$ is positive at intermediate lag while
+remaining predominantly negative at both short and long lags. This indicates a
+distinctive, three--segment memory profile---initial decay, mid--range enhancement,
+and final relaxation---that does not appear in the basin or on the ridge. The
+susceptibility surface similarly shows that this entire region is highly
+sensitive to noise: $\chi>0$ across most of the band, with a tangled
+$\chi=0$ contour delineating small pockets of local flattening. This band is
+therefore a structured ``transitional'' regime where echoes are present but
+fragile, shaped by the interplay between coupling and noise.
+
+\paragraph{(3) Ridge of instantaneous coherence without temporal persistence.}
+Along the noise--free axis and extending slightly into finite $\sigma$, the
+system forms a sharp ridge where the CHSH functional attains its maximal
+values ($|S|\approx 2.8$) and the long--lag echo is initially strong. Yet this
+ridge lies entirely above the universal memory threshold: even infinitesimal
+noise---on the order of $\sigma=0.002$---collapses long--lag memory from
+$\rho_S\approx 0.95$ to zero. The ridge therefore supports \emph{instantaneous}
+geometric coherence but not \emph{persistent} temporal memory. In this regime
+curvature is dominated by negative short-- and long--lag values with at most a
+shallow mid--lag hump, and the susceptibility is strongly positive, indicating
+that even slight perturbations produce large changes in the correlation
+profile.
+
+\paragraph{Summary.}
+These three regimes---(i) a noise--dominated basin with trivial memory,
+(ii) a structured intermediate band with mid--lag enhancement, and
+(iii) a sharp ridge of instantaneous but nonpersistent coherence---together
+establish that CHSH memory in classical oscillators is organized not as a
+single monotonic decay but as a multi--layered temporal structure. This
+three--regime map provides the framework for the global interpretation in
+Section~\ref{sec:discussion} and motivates the broader topographic analysis of
+observer fields developed in Paper~3.
+
+
+%=============================================================================
+% FIGURE
+%=============================================================================
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figs/fig5_angle_field_panel}
+\caption{
+    Angle-resolved CHSH field across the $(K,\sigma)$ plane.
+    For each grid point the measurement angles $(a,a',b,b')$ were numerically
+    optimized to maximize the continuous CHSH functional, yielding an optimal
+    value $S^*(K,\sigma)$ and corresponding echo at lag $\tau=50$.
+    On the coherent ridge the optimal angles remain close to the canonical
+    configuration; in the intermediate band they rotate rapidly, signaling
+    geometric shear; deep in the noise basin no angle choice recovers $|S|>2$.
+}
+\label{fig:fig5_angle_field_panel}
+\end{figure}

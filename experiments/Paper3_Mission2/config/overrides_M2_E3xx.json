@@ -1,0 +1,239 @@
+{
+  "E321": {
+    "description": "Uniform random initial phases across [0, 2pi).",
+    "initial_conditions": {
+      "theta_distribution": "uniform_random",
+      "num_initializations": 500,
+      "pattern": "none",
+      "phi_target": null,
+      "base_seed": 321
+    }
+  },
+
+  "E322": {
+    "description": "Clustered initial phases: theta_A approx theta_B, theta_C separated.",
+    "initial_conditions": {
+      "theta_distribution": "clustered_AB",
+      "num_initializations": 300,
+      "pattern": "cluster_AB_vs_C",
+      "base_seed": 322
+    }
+  },
+
+  "E323": {
+    "description": "Opposed pair: theta_A = 0, theta_B = pi, theta_C random.",
+    "initial_conditions": {
+      "theta_distribution": "opposed_pair_AB",
+      "num_initializations": 300,
+      "pattern": "A_0_B_pi_C_random",
+      "base_seed": 323
+    }
+  },
+
+  "E324": {
+    "description": "Biased loop charge: Phi(0) approx +pi/2.",
+    "initial_conditions": {
+      "theta_distribution": "biased_phi",
+      "pattern": "phi_positive_quarter",
+      "phi_target": 1.5707963267948966,
+      "num_initializations": 200,
+      "base_seed": 324
+    }
+  },
+
+  "E325": {
+    "description": "Biased loop charge: Phi(0) approx -pi/2.",
+    "initial_conditions": {
+      "theta_distribution": "biased_phi",
+      "pattern": "phi_negative_quarter",
+      "phi_target": -1.5707963267948966,
+      "num_initializations": 200,
+      "base_seed": 325
+    }
+  },
+
+  "E326": {
+    "description": "Biased loop charge: Phi(0) approx +pi.",
+    "initial_conditions": {
+      "theta_distribution": "biased_phi",
+      "pattern": "phi_positive_pi",
+      "phi_target": 3.141592653589793,
+      "num_initializations": 200,
+      "base_seed": 326
+    }
+  },
+
+  "E327": {
+    "description": "Biased loop charge: Phi(0) approx -pi.",
+    "initial_conditions": {
+      "theta_distribution": "biased_phi",
+      "pattern": "phi_negative_pi",
+      "phi_target": -3.141592653589793,
+      "num_initializations": 200,
+      "base_seed": 327
+    }
+  },
+
+  "E328": {
+    "description": "Braid-bait starts: ordered phases A < B < C < A around circle.",
+    "initial_conditions": {
+      "theta_distribution": "braid_bait",
+      "pattern": "increasing_ABC",
+      "num_initializations": 300,
+      "base_seed": 328
+    }
+  },
+
+  "E329": {
+    "description": "Braid-bait starts: interleaved ordering designed for frequent crossings.",
+    "initial_conditions": {
+      "theta_distribution": "braid_bait",
+      "pattern": "interleaved",
+      "num_initializations": 300,
+      "base_seed": 329
+    }
+  },
+
+  "E330": {
+    "description": "Braid-bait starts: near-degenerate phases with small random offsets.",
+    "initial_conditions": {
+      "theta_distribution": "braid_bait",
+      "pattern": "near_degenerate",
+      "num_initializations": 300,
+      "base_seed": 330
+    }
+  },
+
+  "E331": {
+    "description": "Random-reset sweeps under fixed K: test multi-basin coexistence (mild frustration).",
+    "model": {
+      "coupling_matrix": {
+        "A": { "B": 1.2, "C": 1.0 },
+        "B": { "A": 1.2, "C": 1.0 },
+        "C": { "A": 1.0, "B": 1.0 }
+      }
+    },
+    "initial_conditions": {
+      "theta_distribution": "uniform_random",
+      "pattern": "none",
+      "num_initializations": 500,
+      "reset_mode": "full_random",
+      "base_seed": 331
+    }
+  },
+
+  "E332": {
+    "description": "Random-reset sweeps at weak coupling (flat-ish basin structure).",
+    "model": {
+      "coupling_matrix": {
+        "A": { "B": 0.4, "C": 0.4 },
+        "B": { "A": 0.4, "C": 0.4 },
+        "C": { "A": 0.4, "B": 0.4 }
+      }
+    },
+    "initial_conditions": {
+      "theta_distribution": "uniform_random",
+      "pattern": "none",
+      "num_initializations": 500,
+      "reset_mode": "full_random",
+      "base_seed": 332
+    }
+  },
+
+  "E333": {
+    "description": "Random-reset sweeps at strong coupling (synchrony-biased regime).",
+    "model": {
+      "coupling_matrix": {
+        "A": { "B": 2.0, "C": 2.0 },
+        "B": { "A": 2.0, "C": 2.0 },
+        "C": { "A": 2.0, "B": 2.0 }
+      }
+    },
+    "initial_conditions": {
+      "theta_distribution": "uniform_random",
+      "pattern": "none",
+      "num_initializations": 500,
+      "reset_mode": "full_random",
+      "base_seed": 333
+    }
+  },
+
+  "E334": {
+    "description": "Random-reset sweeps with clustered starts (AB cluster vs C).",
+    "initial_conditions": {
+      "theta_distribution": "clustered_AB",
+      "pattern": "cluster_AB_vs_C",
+      "num_initializations": 500,
+      "reset_mode": "full_random",
+      "base_seed": 334
+    }
+  },
+
+  "E335": {
+    "description": "Random-reset sweeps with opposed pair starts.",
+    "initial_conditions": {
+      "theta_distribution": "opposed_pair_AB",
+      "pattern": "A_0_B_pi_C_random",
+      "num_initializations": 500,
+      "reset_mode": "full_random",
+      "base_seed": 335
+    }
+  },
+
+  "E336": {
+    "description": "Random-reset sweeps with biased positive Phi(0).",
+    "initial_conditions": {
+      "theta_distribution": "biased_phi",
+      "pattern": "phi_positive_quarter",
+      "phi_target": 1.5707963267948966,
+      "num_initializations": 500,
+      "reset_mode": "full_random",
+      "base_seed": 336
+    }
+  },
+
+  "E337": {
+    "description": "Random-reset sweeps with biased negative Phi(0).",
+    "initial_conditions": {
+      "theta_distribution": "biased_phi",
+      "pattern": "phi_negative_quarter",
+      "phi_target": -1.5707963267948966,
+      "num_initializations": 500,
+      "reset_mode": "full_random",
+      "base_seed": 337
+    }
+  },
+
+  "E338": {
+    "description": "Random-reset sweeps with braid-bait starts (increasing ABC).",
+    "initial_conditions": {
+      "theta_distribution": "braid_bait",
+      "pattern": "increasing_ABC",
+      "num_initializations": 500,
+      "reset_mode": "full_random",
+      "base_seed": 338
+    }
+  },
+
+  "E339": {
+    "description": "Random-reset sweeps with near-degenerate braid-bait starts.",
+    "initial_conditions": {
+      "theta_distribution": "braid_bait",
+      "pattern": "near_degenerate",
+      "num_initializations": 500,
+      "reset_mode": "full_random",
+      "base_seed": 339
+    }
+  },
+
+  "E340": {
+    "description": "Mixed initialization ensemble: sample across all patterns.",
+    "initial_conditions": {
+      "theta_distribution": "mixed_patterns",
+      "pattern": "mixed_uniform_clustered_biased_braid",
+      "num_initializations": 1000,
+      "reset_mode": "pattern_cycle",
+      "base_seed": 340
+    }
+  }
+}

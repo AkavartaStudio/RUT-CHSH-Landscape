@@ -1,0 +1,127 @@
+% Paper 2 - Methods
+% Camera-ready draft from Kelly
+
+\subsection{Model}
+The stochastic Kuramoto model is a canonical system in synchronization
+theory~\cite{kuramoto1984chemical,strogatz2000kuramoto,acebron2005kuramoto},
+making it a natural platform for exploring CHSH-like geometries.
+We study a pair of bidirectionally coupled phase oscillators governed by
+stochastic Kuramoto dynamics~\cite{kuramoto1984chemical,sakaguchi1986soluble},
+\begin{align}
+  \dot{\theta}_1 &= \omega_1 + K \sin(\theta_2 - \theta_1) + \sigma\,\xi_1(t),\\
+  \dot{\theta}_2 &= \omega_2 + K \sin(\theta_1 - \theta_2) + \sigma\,\xi_2(t),
+\end{align}
+where $(\theta_1,\theta_2)\in[0,2\pi)$ are phases, $K$ is coupling strength,
+$\sigma$ is additive Gaussian noise amplitude, and $\xi_i(t)$ are independent
+Wiener processes with variance $2\,\mathrm{d}t$.  Unless noted otherwise we set
+$\omega_1=1.0$, $\omega_2=1.0+\Delta\omega$ with $\Delta\omega=0.2$.  Dynamics
+are integrated with the Euler--Maruyama method using timestep $\mathrm{d}t=
+0.01$ for $T=6\times 10^5$ steps, with the first $3\times10^5$ discarded as
+transient.
+
+We explore a rectangular grid in the $(K,\sigma)$ plane.  Coupling is sampled
+uniformly from $K\in[0.10,1.00]$ in 19 steps; noise from
+$\sigma\in[0.00,0.60]$ in 21 steps unless otherwise noted.  Each configuration
+is repeated for $5$ independent random seeds.
+
+\subsection{Continuous-phase CHSH functional}
+At each sampling time $t$ we evaluate a continuous-phase version of the CHSH
+functional~\cite{clauser1969proposed},
+\begin{equation}
+  S(t) = E(a,b) - E(a,b') + E(a',b) + E(a',b'),
+\end{equation}
+where $a,a',b,b'$ are measurement angles and
+\begin{equation}
+  E(x,y) = \cos(\theta_1(t)-x)\,\cos(\theta_2(t)-y).
+\end{equation}
+In Paper~1 we showed that $(a,a',b,b')=(0^\circ,98^\circ,45^\circ,127^\circ)$
+maximizes $|S|$ in the deterministic limit.  Unless stated otherwise, these
+angles are used for all instantaneous and temporal measurements in Paper~2.
+Angle-resolved scans (Section~\ref{sec:angle_field}) search the full
+$31^4$-grid of angles with coarse-to-fine refinement to identify optimal
+settings at each $(K,\sigma)$ point.
+
+Instantaneous $S$ is computed every $100$ integration steps.  Time-averaged
+values $\langle|S|\rangle$ are obtained from the final $3\times10^5$ steps
+after the transient period.
+
+\subsection{Temporal correlation and memory measures}
+To study temporal persistence we compute the lag-resolved correlation,
+\begin{equation}
+  \rho_S(\tau) = \mathrm{corr}[S(t), S(t+\tau)],
+\end{equation}
+for $\tau\in\{10,25,50,100\}$ sampling intervals.  The primary memory statistic
+used in this paper is $\rho_S(50)$, which provides a mid-range probe of
+correlation persistence and separates the coherent ridge from the intermediate
+band and noise basin.
+
+To quantify curvature of correlation decay, we fit a three-point local
+parabolic model to the lag sequence $\{\rho_S(10), \rho_S(25), \rho_S(50),
+\rho_S(100)\}$, yielding the midpoint curvature $C_{\mathrm{mem}}$:
+\begin{equation}
+ C_{\mathrm{mem}} = \frac{\rho_S(\tau-\Delta) - 2\,\rho_S(\tau)
+                     + \rho_S(\tau+\Delta)}{\Delta^2},
+\end{equation}
+evaluated at the midpoint $\tau=37.5$ with $\Delta=12.5$.  Positive curvature
+indicates echo growth at mid-lag, while negative curvature indicates decaying
+temporal coherence.
+
+\subsection{Directional susceptibility \texorpdfstring{$\chi$}{chi} (formerly recursive susceptibility)}
+We define a susceptibility-like quantity that measures the sensitivity of the
+CHSH field to small changes in measurement geometry.  For a shift
+$\delta a=1^\circ$ we compute
+\begin{equation}
+  \chi = \frac{S(a+\delta a,a',b,b') - S(a,a',b,b')}{\delta a},
+\end{equation}
+and average over time.  This directional derivative captures how the CHSH
+surface bends under perturbations of measurement angle.  In practice we use
+central differencing to improve stability.
+
+\subsection{Memory-collapse threshold}
+The \emph{memory threshold} $\sigma_{\mathrm{mem}}$ is defined as the smallest
+noise level at which mid-lag memory satisfies
+\begin{equation}
+  \rho_S(50) < 0.05,
+\end{equation}
+a conservative threshold below the noise floor of random sequences of similar
+length.  The collapse boundary $\sigma_{\mathrm{mem}}(K)$ is identified by
+linear interpolation between the last noise value with $\rho_S(50)\ge 0.05$
+and the first with $\rho_S(50)<0.05$.  High-resolution scans use noise steps of
+$0.002$ to resolve the catastrophic collapse observed in Section~3.1.
+
+\subsection{Angle-resolved field geometry}
+\label{sec:methods-angle}
+For each $(K,\sigma)$ coordinate we search the $(a,a',b,b')$ space for the
+angles that maximize $\langle|S|\rangle$.  We first evaluate $S$ on a coarse
+$31^4$ grid (6.2M angle combinations), then refine within a $10^\circ$
+hypercube surrounding the best configuration using $1^\circ$ resolution.  This
+produces a vector field of optimal orientations across the $(K,\sigma)$ plane,
+from which we compute angle gradients, shear fields, and the orientation
+flow shown in Section~\ref{sec:angle_field}.
+
+\subsection{Software and reproducibility}
+All simulations in this work were performed using a fully scripted,
+version-controlled workflow. The oscillator dynamics, CHSH evaluation,
+temporal-memory metrics, and field-geometry analyses are implemented in
+standalone Python modules with no manual manipulation between stages. Each
+experiment (E201--E231) is specified by a JSON configuration file defining all
+parameters (time horizon, timestep, coupling values, noise levels, measurement
+angles, and random seeds). Executing a configuration produces a complete run
+manifest recording the input parameters, parameter-hash, software versions,
+and all generated outputs.
+
+For every figure, the raw data, intermediate arrays (e.g., autocorrelation
+curves, curvature maps, and angle-optimized fields), and plotting scripts are
+stored alongside the corresponding experiment directory, enabling exact
+regeneration of all panels. The CHSH and echo metrics were validated by
+independent control tests (deterministic $\sigma=0$ limit, noise-only $K=0$
+regime, and coupling-null baseline from Paper~1), and all numerical routines
+were benchmarked for timestep stability. Random seeds are fixed across all
+sweeps, ensuring that rerunning any experiment produces bitwise-identical
+output.
+
+The entire workflow---from simulation to figure generation---is executed
+through reproducible shell scripts (e.g., \texttt{RUN\_ALL\_P2\_WARMUP.sh})
+that rebuild every result from a clean environment. Together, these components provide full computational
+transparency and allow every result in this paper to be reproduced exactly on
+any standard Python installation.

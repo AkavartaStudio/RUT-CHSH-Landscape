@@ -1,0 +1,154 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage[margin=1in]{geometry}
+\usepackage{mathptmx}
+\usepackage{float}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{subcaption}
+\usepackage{parskip}
+\setlength{\parindent}{15pt}
+\setlength{\parskip}{0pt}
+\usepackage{physics}
+\usepackage{titlesec}
+\usepackage{tocloft}
+
+% Equation spacing
+\setlength{\abovedisplayskip}{10pt}
+\setlength{\belowdisplayskip}{10pt}
+
+% Section header formatting
+\titleformat{\section}{\normalsize\normalfont\bfseries\Large}{\thesection}{1em}{}[\normalsize]
+\titleformat{\subsection}{\normalsize\normalfont\bfseries\large}{\thesubsection}{1em}{}[\normalsize]
+\titleformat{\subsubsection}{\normalsize\normalfont\bfseries}{\thesubsubsection}{1em}{}[\normalsize]
+
+% TOC formatting
+\cftsetpnumwidth{2em}
+\cftsetrmarg{3em}
+
+\title{Echo Geometry of the Classical CHSH Ridge:\\
+Memory, Curvature, and Directional Susceptibility\\[10pt]
+\large Paper 2: The Memory Landscape}
+\author{Kelly McRae}
+\date{December 2025}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+\begin{document}
+\normalfont
+\maketitle
+
+\begin{abstract}
+Paper~1 showed that a pair of deterministically coupled oscillators exhibits a
+well-defined CHSH landscape: a high-$|S|$ ridge at low noise and a sharp
+collapse boundary at $\sigma_{\mathrm{c}}(K)$. Here we extend this analysis by
+resolving the \emph{temporal structure} of CHSH correlations across the full
+$(K,\sigma)$ plane. Using lag-resolved correlation decay, curvature,
+susceptibility, and angle-dependent scanning, we identify three robust regimes.
+(1) A trivial noise-dominated basin in which $|S|<2$ and all memory measures
+vanish. (2) A structured intermediate band where $|S|>2$ persists but
+long-lag memory has already collapsed, marked by a shallow mid-range
+enhancement in $\rho_S(\tau)$ and a complex pattern of positive and negative
+curvature. (3) A narrow ridge of strong instantaneous coherence in which
+$|S|\approx 2.8$ but temporal persistence remains extremely fragile. Across the
+entire domain we find a universal memory threshold
+$\sigma_{\mathrm{mem}}\approx 0.002$, two orders of magnitude below the CHSH
+collapse curve, beyond which long-lag CHSH memory cannot be sustained for any
+choice of angles, confirming that memory collapse reflects intrinsic
+relative-phase dynamics rather than discretization or finite sampling.
+
+We further treat the CHSH functional as a directional field by scanning across
+all measurement geometries. The resulting angle-resolved surfaces show that
+the optimal CHSH configuration twists under noise, exhibiting multiple
+susceptibility sign changes and a well-defined angle-flow structure. Evaluated
+at these optimal angles, long-lag memory still collapses at the universal
+threshold, confirming that temporal coherence is limited by intrinsic dynamics
+rather than geometry. Together, these results show that the CHSH ridge is a
+multi-layered temporal object whose instantaneous and lagged correlations are
+governed by distinct noise scales. This temporal decomposition provides the
+framework used in Paper~3 to analyze CHSH-like memory in small oscillator
+networks.
+\end{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+
+
+%=============================================================================
+\section{Introduction}
+%=============================================================================
+
+\input{sections/introduction}
+
+
+%=============================================================================
+\section{Methods}
+%=============================================================================
+
+\input{sections/methods}
+
+
+%=============================================================================
+\section{Results}
+%=============================================================================
+
+% Section 3.1 - Camera-ready draft
+\input{sections/results_3_1_memory_threshold}
+
+
+% Section 3.2 - Camera-ready draft
+\input{sections/results_3_2_curvature}
+
+
+% Section 3.3 - Camera-ready draft (includes echo + χ surfaces)
+\input{sections/results_3_3_echo}
+
+
+% Section 3.4 - Synthesis: Three Regimes
+\input{sections/results_3_4_chi}
+
+
+% Section 3.5 - Angle-Resolved Observer Field
+\input{sections/results_3_5_angle_field}
+
+
+%=============================================================================
+\section{Discussion}
+%=============================================================================
+
+\input{sections/discussion}
+
+
+%=============================================================================
+\section{Conclusion}
+%=============================================================================
+
+\input{sections/conclusion}
+
+
+%=============================================================================
+% References
+%=============================================================================
+
+\bibliographystyle{unsrt}
+\bibliography{bib/references}
+
+
+%=============================================================================
+% Appendices (if needed)
+%=============================================================================
+
+% \appendix
+% \input{sections/appendix}
+
+
+\end{document}

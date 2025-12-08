@@ -1,0 +1,36 @@
+{
+  "experiment_id": "E221",
+  "run_type": "P2_Mission2_memory_curvature_surface",
+  "description": "Full 2D surface mapping memory curvature C_mem(K, sigma) across the ridge",
+  "purpose": "Build the memory topology heatmap - how memory shape changes with coupling and noise",
+  "paper": "Paper 2 - Act II - Mission 2",
+  "tags": ["Paper2", "Mission2", "MemoryCurvature", "C_mem_surface"],
+  "parameters": {
+    "K_values": [0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50,
+                 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95, 1.00],
+    "sigma_values": [0.00, 0.02, 0.04, 0.06, 0.08, 0.10, 0.12, 0.14, 0.16, 0.18,
+                    0.20, 0.22, 0.24, 0.26, 0.28, 0.30, 0.32, 0.34, 0.36, 0.38, 0.40],
+    "tau_vals": [10, 25, 50, 100],
+    "tau_mid_vals": [17.5, 37.5, 75.0],
+    "delta_omega": 0.2,
+    "angles": {
+      "a": 0.0,
+      "a_prime": 98.0,
+      "b": 45.0,
+      "b_prime": 127.0
+    },
+    "n_seeds": 5,
+    "T_steps": 600000,
+    "dt": 0.01,
+    "transient_steps": 300000,
+    "sample_interval": 100,
+    "omega1": 1.0
+  },
+  "outputs": {
+    "main_grid": "research/phys/Paper2_Mission2/analysis/data/E221_memory_curvature_surface.json",
+    "Cmem_short": "research/phys/Paper2_Mission2/analysis/data/Cmem_short.json",
+    "Cmem_mid": "research/phys/Paper2_Mission2/analysis/data/Cmem_mid.json",
+    "Cmem_long": "research/phys/Paper2_Mission2/analysis/data/Cmem_long.json"
+  },
+  "notes": "Full grid: 19 K values x 21 sigma values x 5 seeds = 1995 simulations. Expect ~60-90 minutes."
+}

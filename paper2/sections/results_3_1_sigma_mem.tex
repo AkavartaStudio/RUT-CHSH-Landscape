@@ -1,0 +1,61 @@
+% Paper 2 - Section 3.1: Universal memory-collapse threshold
+% PLACEHOLDER - Kelly to fill
+
+% Key result from Stage 1 / 1b:
+% σ_mem ≈ 0.002 is CONSTANT across all K values tested
+% This is ~30× lower than σ_c (CHSH collapse threshold)
+
+The first striking result is the existence of a \emph{universal} memory-collapse threshold $\sigma_{\mathrm{mem}}$ that is independent of coupling strength $K$.
+
+Figure~\ref{fig:sigma_mem_vs_sigma_c} compares the memory-collapse threshold $\sigma_{\mathrm{mem}}(K)$ with the CHSH-collapse threshold $\sigma_c(K)$ from Paper~1.
+
+\begin{figure}[H]
+    \centering
+    % TODO: Insert actual figure
+    \includegraphics[width=\textwidth]{figs/placeholder_fig1.pdf}
+    \caption{%
+        \textbf{Memory collapses ${\sim}30\times$ before CHSH amplitude.}
+        (a) $\sigma_{\mathrm{mem}}(K)$ (coral) vs.\ $\sigma_c(K)$ (teal) on log scale. The shaded region is the ``memory-fragile zone'' where $|S|$ remains high but temporal coherence is lost.
+        (b) Fragility ratio $r(K) = \sigma_{\mathrm{mem}}/\sigma_c \approx 0.03$--$0.08$ across the ridge.
+        % DATA SOURCE: E211, E211b
+    }
+    \label{fig:sigma_mem_vs_sigma_c}
+\end{figure}
+
+
+\subsubsection{Catastrophic Collapse}
+
+High-resolution zoom (Stage 1b) reveals that the collapse is \emph{catastrophic} rather than gradual:
+
+\begin{quote}
+The collapse of long-lag CHSH memory occurs at $\sigma_{\mathrm{mem}} \approx 0.002$ uniformly across all coupling strengths tested. The drop is discontinuous at our resolution: $\rho_S(50)$ plunges from ${\approx}0.95$ at $\sigma=0$ to ${\approx}0.003$ at $\sigma=0.002$. This indicates a catastrophic transition rather than gradual decoherence, consistent with the onset of chaotic phase diffusion dominating the CHSH angle geometry. Notably, the collapse is $K$-independent, suggesting that echo coherence is controlled by a universal fragility mode not visible in $|S|$ itself.
+\end{quote}
+
+We verified the collapse location using $\Delta t = 0.001$ and found
+$\sigma_{\mathrm{mem}} = 0.002 \pm 0.0005$ across all tested $K$, confirming
+that the threshold is not a timestep artifact.
+
+\begin{figure}[H]
+    \centering
+    % TODO: Insert zoom figure
+    \includegraphics[width=0.8\textwidth]{figs/placeholder_fig1b.pdf}
+    \caption{%
+        \textbf{Step-function memory collapse.}
+        $\rho_S(\tau=50)$ vs.\ $\sigma$ for $K \in \{0.3, 0.6, 0.9\}$ in the high-resolution zoom window $\sigma \in [0, 0.04]$. All three curves collapse at $\sigma_{\mathrm{mem}} = 0.002$ from $\rho \approx 0.95$ to $\rho \approx 0$.
+        % DATA SOURCE: E211b
+    }
+    \label{fig:sigma_mem_zoom}
+\end{figure}
+
+
+\subsubsection{Physical Interpretation}
+
+The $K$-independence of $\sigma_{\mathrm{mem}}$ implies that memory fragility is controlled by a \emph{universal} mechanism---likely the onset of chaotic phase diffusion that disrupts the delicate angle geometry underlying the CHSH functional, regardless of how strongly the oscillators are coupled.
+
+This stands in contrast to $\sigma_c$, which scales linearly with $K$ (Paper~1), reflecting the noise level at which synchronization itself breaks down.
+
+Increasing $K$ suppresses global phase diffusion but does not prevent local
+twisting of the optimal CHSH geometry. Since CHSH depends on relative phase,
+memory loss arises from angular shear rather than absolute phase drift. This
+explains why $\sigma_{\mathrm{mem}}$ is insensitive to coupling even though
+$\sigma_c(K)$ increases.

@@ -1,0 +1,68 @@
+% Paper 2 - Section 3.5: Angle-Resolved Geometry of the CHSH Field
+% Camera-ready draft from Kelly
+
+\subsection{Angle-Resolved Geometry of the CHSH Field}
+\label{sec:angle_field}
+
+The previous sections established that CHSH structure in the two-oscillator
+system is not a single quantity but a multi-layered field with distinct
+temporal components. Instantaneous correlations remain strong across the
+high-$|S|$ ridge, whereas long-lag persistence collapses at a universal noise
+threshold $\sigma_{\mathrm{mem}}\approx 0.002$. Curvature and susceptibility
+maps revealed additional structure, including sign changes in the intermediate
+band and a sharp coherent spine along the ridge. Together these results suggest
+that the CHSH functional, treated as a directional probe, must itself vary
+meaningfully with measurement geometry.
+
+In this section we characterize the \emph{angle-resolved CHSH field} across the
+$(K,\sigma)$ plane. For each grid point we scan over all measurement geometries
+$(a,a',b,b')$ and identify both the optimal angles that maximize $|S|$ and the
+local orientation of the CHSH gradient. This analysis transforms the CHSH
+surface from a scalar field into a four-dimensional directional object whose
+shape reflects how the system responds to perturbations in measurement
+geometry.
+
+The key advantage of this approach is that angle dependence reacts more
+sensitively to noise than the absolute value of $|S|$. Near the coherent ridge
+the optimal angles remain close to the canonical $(0^\circ,98^\circ,45^\circ,
+127^\circ)$ configuration used in Paper~1. As noise increases the optimal
+angles twist systematically, forming a smooth rotational flow that predicts the
+location of the collapse boundary. Inside the intermediate band, where long-lag
+memory has already failed but instantaneous coherence survives, the angle field
+develops shear and local vortices indicative of competing phase preferences.
+Deep inside the noise basin, the angle field degenerates, with the optimal
+angles drifting freely and $|S|<2$ for all configurations.
+
+This angle-resolved view completes the geometric decomposition of the CHSH
+landscape. Instead of a single ``ridge,'' the system exhibits: (i) a coherent
+spine where optimal geometry is stable; (ii) a twisting transition region where
+noise induces rotation and shear in the angle field; and (iii) a noise basin in
+which directional structure collapses entirely.
+
+% Figure moved to results_3_4_chi.tex per patch instructions
+
+Figure~\ref{fig:fig5_angle_field_panel} summarizes the angle-resolved CHSH field
+obtained in Experiment E231. For each point in the $(K,\sigma)$ plane we
+numerically optimized the measurement angles to maximize the continuous
+CHSH functional, yielding an optimal value $S^*(K,\sigma)$ and a
+corresponding echo value at lag $\tau=50$. Across the full grid the
+optimized CHSH surface spans the range $1.45 \lesssim S^* \lesssim 2.83$
+with a mean of $S^* \approx 2.71$: deep inside the noise basin even the
+best measurement geometry cannot recover a violation ($S^*<2$), whereas on
+the coherent ridge the optimized values remain close to the algebraic
+maximum. At $\sigma=0$ the optimal-angle configurations preserve perfect
+temporal memory with $\rho_S(\tau) = 1.0$, but away from this deterministic
+limit the echo at the optimal geometry degrades, taking values as low as
+$\rho_S \approx 0.43$.
+
+The optimized angles themselves vary substantially across the field: the
+best setting $a$ spans approximately $29^\circ$--$179^\circ$ and $b'$ spans
+$13^\circ$--$186^\circ$, indicating strong twisting of the preferred
+measurement geometry as $(K,\sigma)$ changes. On the coherent ridge the
+optimal angles remain close to the canonical CHSH configuration, but in the
+intermediate band they rotate rapidly, signaling geometric shear and
+competing local optima in the CHSH field. These patterns reinforce the
+three-regime picture: a well-aligned ridge with high $S^*$ and strong
+memory, a geometrically unstable intermediate band with reduced echo, and a
+noise basin in which CHSH structure cannot be recovered by any angle
+choice.

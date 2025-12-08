@@ -1,0 +1,478 @@
+{
+  "E341": {
+    "description": "Static Phi detection: classify regimes where loop charge converges to a fixed value.",
+    "metrics": {
+      "compute_S_metric": false
+    },
+    "integration": {
+      "T_total": 3000.0
+    },
+    "model": {
+      "special_mode": "loop_static_scan"
+    }
+  },
+
+  "E342": {
+    "description": "Circulating Phi detection: identify regimes where Phi(t) exhibits steady rotation.",
+    "integration": {
+      "T_total": 5000.0
+    },
+    "model": {
+      "special_mode": "loop_circulating_scan"
+    }
+  },
+
+  "E343": {
+    "description": "Intermittent loop charge: alternating static and circulating segments.",
+    "integration": {
+      "T_total": 6000.0
+    },
+    "model": {
+      "special_mode": "loop_intermittent_scan"
+    }
+  },
+
+  "E344": {
+    "description": "Loop-charge reversal events with mild frustration.",
+    "model": {
+      "coupling_matrix": {
+        "A": { "B": 1.2, "C": 1.0 },
+        "B": { "A": 1.2, "C": 1.0 },
+        "C": { "A": 1.0, "B": 1.0 }
+      },
+      "special_mode": "loop_reversal_scan"
+    }
+  },
+
+  "E345": {
+    "description": "Loop-charge reversal events with stronger frustration.",
+    "model": {
+      "coupling_matrix": {
+        "A": { "B": 1.6, "C": 1.0 },
+        "B": { "A": 1.6, "C": 1.0 },
+        "C": { "A": 1.0, "B": 1.0 }
+      },
+      "special_mode": "loop_reversal_scan"
+    }
+  },
+
+  "E346": {
+    "description": "Loop-charge reversal events with sign-mixed edges.",
+    "model": {
+      "coupling_matrix": {
+        "A": { "B": 1.0,  "C": -1.0 },
+        "B": { "A": 1.0,  "C": 1.0  },
+        "C": { "A": -1.0, "B": 1.0  }
+      },
+      "special_mode": "loop_reversal_scan"
+    }
+  },
+
+  "E347": {
+    "description": "Loop-charge reversals under random K-perturbations.",
+    "model": {
+      "random_K": {
+        "Kmin": 0.5,
+        "Kmax": 2.0,
+        "num_samples": 50
+      },
+      "special_mode": "loop_reversal_randomK"
+    }
+  },
+
+  "E348": {
+    "description": "Loop-charge reversal statistics across initial conditions.",
+    "initial_conditions": {
+      "num_initializations": 200,
+      "theta_distribution": "uniform_random"
+    },
+    "model": {
+      "special_mode": "loop_reversal_initial_scan"
+    }
+  },
+
+  "E349": {
+    "description": "Loop-charge basin mapping at moderate coupling.",
+    "model": {
+      "coupling_matrix": {
+        "A": { "B": 1.2, "C": 1.2 },
+        "B": { "A": 1.2, "C": 1.2 },
+        "C": { "A": 1.2, "B": 1.2 }
+      },
+      "special_mode": "loop_basin_scan"
+    },
+    "initial_conditions": {
+      "num_initializations": 400
+    }
+  },
+
+  "E350": {
+    "description": "Loop-charge basin mapping at strong coupling.",
+    "model": {
+      "coupling_matrix": {
+        "A": { "B": 2.0, "C": 2.0 },
+        "B": { "A": 2.0, "C": 2.0 },
+        "C": { "A": 2.0, "B": 2.0 }
+      },
+      "special_mode": "loop_basin_scan"
+    },
+    "initial_conditions": {
+      "num_initializations": 400
+    }
+  },
+
+  "E351": {
+    "description": "Loop-charge basins with clustered AB vs C starts.",
+    "initial_conditions": {
+      "theta_distribution": "clustered_AB",
+      "pattern": "cluster_AB_vs_C",
+      "num_initializations": 400
+    },
+    "model": {
+      "special_mode": "loop_basin_clustered"
+    }
+  },
+
+  "E352": {
+    "description": "Loop-charge basins with opposed pair starts.",
+    "initial_conditions": {
+      "theta_distribution": "opposed_pair_AB",
+      "pattern": "A_0_B_pi_C_random",
+      "num_initializations": 400
+    },
+    "model": {
+      "special_mode": "loop_basin_opposed"
+    }
+  },
+
+  "E353": {
+    "description": "Loop-charge basins with biased positive Phi(0).",
+    "initial_conditions": {
+      "theta_distribution": "biased_phi",
+      "pattern": "phi_positive_quarter",
+      "phi_target": 1.5707963267948966,
+      "num_initializations": 400
+    },
+    "model": {
+      "special_mode": "loop_basin_phi_positive"
+    }
+  },
+
+  "E354": {
+    "description": "Loop-charge basins with biased negative Phi(0).",
+    "initial_conditions": {
+      "theta_distribution": "biased_phi",
+      "pattern": "phi_negative_quarter",
+      "phi_target": -1.5707963267948966,
+      "num_initializations": 400
+    },
+    "model": {
+      "special_mode": "loop_basin_phi_negative"
+    }
+  },
+
+  "E355": {
+    "description": "Loop-charge basins with braid-bait initial patterns.",
+    "initial_conditions": {
+      "theta_distribution": "braid_bait",
+      "pattern": "increasing_ABC",
+      "num_initializations": 400
+    },
+    "model": {
+      "special_mode": "loop_basin_braid_bait"
+    }
+  },
+
+  "E356": {
+    "description": "Phi(K) curve: sweep K globally and record asymptotic Phi.",
+    "model": {
+      "K_sweep": {
+        "start": 0.1,
+        "stop": 3.0,
+        "num": 60
+      },
+      "special_mode": "phi_vs_K"
+    }
+  },
+
+  "E357": {
+    "description": "Phi(K) curve with mild frequency disorder (delta_omega).",
+    "model": {
+      "K_sweep": {
+        "start": 0.1,
+        "stop": 3.0,
+        "num": 60
+      },
+      "delta_omega": {
+        "mode": "two_group",
+        "value": 0.1
+      },
+      "special_mode": "phi_vs_K_disordered"
+    }
+  },
+
+  "E358": {
+    "description": "Phi(K) curve with stronger frequency disorder.",
+    "model": {
+      "K_sweep": {
+        "start": 0.1,
+        "stop": 3.0,
+        "num": 60
+      },
+      "delta_omega": {
+        "mode": "two_group",
+        "value": 0.3
+      },
+      "special_mode": "phi_vs_K_disordered"
+    }
+  },
+
+  "E359": {
+    "description": "Phi(K) curve under sign-mixed coupling.",
+    "model": {
+      "coupling_matrix": {
+        "A": { "B": 1.0,  "C": -1.0 },
+        "B": { "A": 1.0,  "C": 1.0  },
+        "C": { "A": -1.0, "B": 1.0  }
+      },
+      "K_sweep": {
+        "start": 0.1,
+        "stop": 3.0,
+        "num": 60
+      },
+      "special_mode": "phi_vs_K_sign_mixed"
+    }
+  },
+
+  "E360": {
+    "description": "Summary Phi(K) map: stitched from representative K and delta_omega regimes.",
+    "model": {
+      "special_mode": "phi_vs_K_summary"
+    }
+  },
+
+  "E361": {
+    "description": "Permutation tracking: record ordering of (theta_A, theta_B, theta_C) at each sample.",
+    "metrics": {
+      "compute_braid_index": true,
+      "compute_loop_mode": false
+    },
+    "model": {
+      "special_mode": "braid_permutation_tracking"
+    }
+  },
+
+  "E362": {
+    "description": "Braid index computation over long trajectories.",
+    "integration": {
+      "T_total": 6000.0
+    },
+    "model": {
+      "special_mode": "braid_index_long_run"
+    }
+  },
+
+  "E363": {
+    "description": "Braid transitions across K: low to moderate coupling.",
+    "model": {
+      "K_sweep": {
+        "start": 0.1,
+        "stop": 1.5,
+        "num": 40
+      },
+      "special_mode": "braid_transition_K_low"
+    }
+  },
+
+  "E364": {
+    "description": "Braid transitions across K: moderate to strong coupling.",
+    "model": {
+      "K_sweep": {
+        "start": 1.0,
+        "stop": 3.0,
+        "num": 40
+      },
+      "special_mode": "braid_transition_K_high"
+    }
+  },
+
+  "E365": {
+    "description": "Braid transitions under sign-mixed coupling.",
+    "model": {
+      "coupling_matrix": {
+        "A": { "B": 1.0,  "C": -1.0 },
+        "B": { "A": -1.0, "C": 1.0  },
+        "C": { "A": 1.0,  "B": -1.0 }
+      },
+      "special_mode": "braid_transition_sign_mixed"
+    }
+  },
+
+  "E366": {
+    "description": "Braid transitions under frequency disorder.",
+    "model": {
+      "delta_omega": {
+        "mode": "two_group",
+        "value": 0.2
+      },
+      "special_mode": "braid_transition_disordered"
+    }
+  },
+
+  "E367": {
+    "description": "Braid transitions under biased initial conditions (clustered AB).",
+    "initial_conditions": {
+      "theta_distribution": "clustered_AB",
+      "pattern": "cluster_AB_vs_C"
+    },
+    "model": {
+      "special_mode": "braid_transition_clustered"
+    }
+  },
+
+  "E368": {
+    "description": "Braid transitions under braid-bait initial conditions.",
+    "initial_conditions": {
+      "theta_distribution": "braid_bait",
+      "pattern": "increasing_ABC"
+    },
+    "model": {
+      "special_mode": "braid_transition_braid_bait"
+    }
+  },
+
+  "E369": {
+    "description": "Braid transitions near loop-charge reversal boundaries.",
+    "model": {
+      "special_mode": "braid_transition_loop_boundary"
+    }
+  },
+
+  "E370": {
+    "description": "Summary map of braid classes across representative K and delta_omega.",
+    "model": {
+      "special_mode": "braid_transition_summary"
+    }
+  },
+
+  "E371": {
+    "description": "Braid frequency vs K: count permutation changes per unit time.",
+    "model": {
+      "K_sweep": {
+        "start": 0.1,
+        "stop": 3.0,
+        "num": 40
+      },
+      "special_mode": "braid_frequency_scan"
+    }
+  },
+
+  "E372": {
+    "description": "Braid frequency vs delta_omega.",
+    "model": {
+      "delta_omega": {
+        "mode": "two_group",
+        "value": 0.0
+      },
+      "special_mode": "braid_frequency_vs_deltaomega"
+    }
+  },
+
+  "E373": {
+    "description": "Braid frequency vs delta_omega with moderate disorder.",
+    "model": {
+      "delta_omega": {
+        "mode": "two_group",
+        "value": 0.2
+      },
+      "special_mode": "braid_frequency_vs_deltaomega"
+    }
+  },
+
+  "E374": {
+    "description": "Braid frequency vs delta_omega with strong disorder.",
+    "model": {
+      "delta_omega": {
+        "mode": "two_group",
+        "value": 0.4
+      },
+      "special_mode": "braid_frequency_vs_deltaomega"
+    }
+  },
+
+  "E375": {
+    "description": "Braid frequency vs initial condition pattern.",
+    "initial_conditions": {
+      "theta_distribution": "mixed_patterns",
+      "pattern": "mixed_uniform_clustered_biased_braid"
+    },
+    "model": {
+      "special_mode": "braid_frequency_vs_init"
+    }
+  },
+
+  "E376": {
+    "description": "Braid-chaos boundary: high K, long integration, detect intermittency.",
+    "integration": {
+      "T_total": 8000.0
+    },
+    "model": {
+      "K_sweep": {
+        "start": 2.0,
+        "stop": 4.0,
+        "num": 40
+      },
+      "special_mode": "braid_chaos_edge"
+    }
+  },
+
+  "E377": {
+    "description": "Braid-chaos boundary under sign-mixed coupling.",
+    "integration": {
+      "T_total": 8000.0
+    },
+    "model": {
+      "coupling_matrix": {
+        "A": { "B": 2.0,  "C": -2.0 },
+        "B": { "A": -2.0, "C": 2.0  },
+        "C": { "A": 2.0,  "B": -2.0 }
+      },
+      "special_mode": "braid_chaos_edge_sign_mixed"
+    }
+  },
+
+  "E378": {
+    "description": "Braid-chaos boundary under frequency disorder.",
+    "integration": {
+      "T_total": 8000.0
+    },
+    "model": {
+      "delta_omega": {
+        "mode": "two_group",
+        "value": 0.3
+      },
+      "special_mode": "braid_chaos_edge_disordered"
+    }
+  },
+
+  "E379": {
+    "description": "Braid-chaos boundary with braid-bait initial conditions.",
+    "integration": {
+      "T_total": 8000.0
+    },
+    "initial_conditions": {
+      "theta_distribution": "braid_bait",
+      "pattern": "increasing_ABC"
+    },
+    "model": {
+      "special_mode": "braid_chaos_edge_braid_bait"
+    }
+  },
+
+  "E380": {
+    "description": "Summary classification of braided vs chaotic edge regimes.",
+    "model": {
+      "special_mode": "braid_chaos_summary"
+    }
+  }
+}

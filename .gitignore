@@ -8,13 +8,17 @@
 *.fdb_latexmk
 *.fls
 *.synctex.gz
+
+# PDFs - only track final versions
 *.pdf
-!paper/PAPER1.pdf
+!paper1/PAPER1.pdf
+!paper2/main.pdf
+!paper3/main.pdf
 
 # Paper source - only final version tracked
-paper/*DRAFT*
-paper/*draft*
-paper/PAPER1_COMPLETE_DRAFT.tex
+paper1/*DRAFT*
+paper1/*draft*
+paper1/PAPER1_COMPLETE_DRAFT.tex
 
 # Python
 __pycache__/
@@ -52,10 +56,16 @@ README_DRAFT.md
 # Internal documentation (not for public repo)
 docs/internal/
 
-# Keep only paper/ configs, exclude analysis configs
+# Keep only paper configs, exclude analysis configs
 analysis/config/
+analysis/README.md
 
 # Future paper configs (not part of Paper 1)
-paper/configs_paper1/A4_dichotomic_variants.json
-paper/configs_paper1/A5_quantization_threshold.json
-analysis/README.md
+paper1/configs_paper1/A4_dichotomic_variants.json
+paper1/configs_paper1/A5_quantization_threshold.json
+
+# Large experiment data (hosted on OSF)
+experiments/Paper3_Mission1/
+experiments/Paper3_Mission1B/
+Paper3_Mission1/
+Paper3_Mission1B/

@@ -1,0 +1,132 @@
+% Paper 2 - Results Section 3.1: Universal Memory Threshold
+% Camera-ready draft from Kelly
+
+\subsection{Universal noise threshold for temporal CHSH memory}
+\label{sec:universal_memory_threshold}
+
+In Paper~1 we characterized how the CHSH functional $S$ responds to increasing noise,
+identifying a coupling-dependent collapse boundary $\sigma_c(K)$ at which the
+noise-averaged value $\langle |S| \rangle$ falls below the classical limit
+$|S| = 2$. Here we ask a different question: at what noise level does the
+\emph{memory} of these correlations disappear, even while the instantaneous
+geometry of $S$ remains strongly nonclassical?
+
+To answer this, we use the same driven two-oscillator model and CHSH angle set
+as in Paper~1, but focus on the temporal correlation of the CHSH signal.
+For each parameter pair $(K,\sigma)$ we compute the lagged autocorrelation
+$\rho_S(\tau)$ of the instantaneous CHSH value $S(t)$ and use $\rho_S(\tau=50)$
+as a canonical long-lag memory diagnostic. At fixed coupling $K$ we first
+estimate the deterministic memory level
+$\rho_{\mathrm{det}}(K) = \rho_S(\tau=50; K, \sigma = 0)$, which is typically
+$\rho_{\mathrm{det}} \approx 0.95$ along the high-$|S|$ ridge. We then define a
+memory-collapse threshold $\sigma_{\mathrm{mem}}(K)$ as the smallest noise
+level for which
+\begin{equation}
+  \rho_S(\tau=50; K, \sigma) \;<\; f\,\rho_{\mathrm{det}}(K),
+  \qquad f = 0.5,
+  \label{eq:sigma_mem_def}
+\end{equation}
+i.e.\ the point where long-lag CHSH memory has fallen below half its
+deterministic value. This definition is intentionally conservative: it does not
+require $\rho_S(\tau)$ to vanish, only to lose a substantial fraction of its
+coherence.
+
+A coarse sweep over the parameter range $K \in [0.1,1.0]$ and
+$\sigma \in [0.0,0.40]$ with $\Delta\sigma = 0.02$ already reveals a striking
+separation of scales. For every coupling tested, the extracted
+$\sigma_{\mathrm{mem}}(K)$ is approximately constant:
+$\sigma_{\mathrm{mem}}(K) \approx 0.02$, while the CHSH-collapse boundary
+$\sigma_c(K)$ inherited from Paper~1 rises from about $0.4$ at weak coupling
+to $0.7$--$0.8$ near the ridge. Thus, across the entire high-$|S|$ region,
+there exists a broad band $\sigma_{\mathrm{mem}} \lesssim \sigma \lesssim \sigma_c(K)$
+in which the instantaneous CHSH value remains large and $|S| > 2$, yet
+long-lag temporal memory has already collapsed. In this intermediate regime the
+system continues to produce strong snapshot correlations, but no longer
+remembers its own correlation history.
+
+A high-resolution zoom around the coarse threshold shows that this separation
+is even more extreme than the coarse sweep suggests. For three representative
+couplings $K = 0.3, 0.6, 0.9$ we scan $\sigma \in [0.0, 0.04]$ with
+$\Delta\sigma = 0.002$. In all cases the long-lag autocorrelation
+$\rho_S(\tau=50)$ drops catastrophically from $\approx 0.95$ at $\sigma=0$
+to values on the order of $10^{-3}$ at $\sigma = 0.002$, with no gradual
+decrease in between at our resolution. Within numerical precision, the
+memory-collapse threshold is therefore $\sigma_{\mathrm{mem}} \approx 0.002$
+and, notably, is \emph{independent of $K$} across the ridge. By contrast, the
+CHSH-collapse scale $\sigma_c(K)$ remains of order $0.5$--$0.8$ and retains its
+strong coupling dependence. As a result, the ratio
+$\sigma_{\mathrm{mem}}/\sigma_c(K)$ lies at only a few percent throughout the
+high-$|S|$ domain.
+
+These results establish two key points. First, temporal CHSH memory is
+\emph{exponentially more fragile} to noise than the instantaneous CHSH
+geometry: in our system, long-lag correlation memory collapses at a noise
+scale roughly $30$ times smaller than the scale required to destroy
+$|S|>2$. Second, the memory-collapse threshold is effectively universal along
+the ridge: while $\sigma_c(K)$ tracks the details of the coupling, the scale at
+which the system forgets its own correlation history is set by an almost
+$K$-independent noise level. The $(K,\sigma)$ plane is therefore naturally
+partitioned into three regimes: an echo-coherent phase
+($\sigma \lesssim \sigma_{\mathrm{mem}}$) in which both $|S|$ and $\rho_S$ are
+large; a memory-dead but CHSH-strong phase
+($\sigma_{\mathrm{mem}} \lesssim \sigma \lesssim \sigma_c(K)$) in which
+$|S|>2$ persists despite the loss of temporal coherence; and a classical phase
+($\sigma \gtrsim \sigma_c(K)$) in which both diagnostics have relaxed below the
+CHSH bound. The remainder of this paper is devoted to resolving the internal
+structure of these regimes using more detailed memory and curvature measures.
+
+The catastrophic nature of the long-lag memory collapse raises a deeper
+question: how does the internal structure of the echo evolve before the
+collapse? To resolve this internal geometry, we turn to the memory curvature
+$C_{\mathrm{mem}}(K,\sigma)$, which captures whether mid-lag memory is
+amplifying or decaying. This allows us to see inside the memory layer.
+
+
+%=============================================================================
+% FIGURES
+%=============================================================================
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.9\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figs/fig1_sigma_mem_comparison}
+    \caption{Comparison of the long-lag memory-collapse threshold
+    $\sigma_{\mathrm{mem}}$ with the CHSH collapse boundary
+    $\sigma_{\mathrm{c}}(K)$.
+    The left panel shows that $\sigma_{\mathrm{mem}}$ is effectively flat
+    across all coupling strengths tested, with
+    $\sigma_{\mathrm{mem}} \approx 0.002$ independent of $K$.
+    In contrast, the CHSH boundary $\sigma_{\mathrm{c}}(K)$ grows
+    approximately linearly with coupling, consistent with the
+    empirical relation $\sigma_{\mathrm{c}} \approx 0.60 K + 0.22$ from
+    Paper~1.
+    The right panel plots the ratio $\sigma_{\mathrm{mem}} / \sigma_{\mathrm{c}}$,
+    highlighting the extreme separation of scales:
+    long-lag memory collapses roughly $25$--$40\times$ earlier than
+    instantaneous CHSH structure across the entire ridge.}
+    \label{fig:fig1a_sigma_mem_comparison}
+\end{subfigure}
+
+\vspace{1em}
+
+\begin{subfigure}[t]{0.9\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figs/fig1b_sigma_mem_zoom}
+    \caption{\textbf{Catastrophic collapse of long-lag CHSH memory.}
+    Long-lag autocorrelation $\rho_S(\tau=50)$ as a function of noise strength
+    $\sigma$ for three representative couplings $K = 0.3, 0.6, 0.9$.
+    In all cases the deterministic system ($\sigma=0$) exhibits strong temporal
+    memory with $\rho_S(\tau=50) \approx 0.95$. Introducing a tiny amount of
+    noise at $\sigma = 0.002$ causes $\rho_S$ to plummet to values on the
+    order of $10^{-3}$, with no gradual decay resolved at intermediate
+    $\sigma$. The memory-collapse threshold is thus
+    $\sigma_{\mathrm{mem}} \approx 0.002$, independent of $K$ at our
+    resolution, confirming that long-lag CHSH memory is extraordinarily
+    fragile compared to the instantaneous CHSH geometry.}
+    \label{fig:fig1b_sigma_mem_zoom}
+\end{subfigure}
+\caption{Universal memory-collapse threshold $\sigma_{\mathrm{mem}}$ and its
+    relationship to the CHSH collapse boundary $\sigma_{\mathrm{c}}(K)$.}
+\label{fig:fig1_memory_threshold}
+\end{figure}

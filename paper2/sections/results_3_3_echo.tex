@@ -1,0 +1,103 @@
+% Paper 2 - Results Section 3.3: Echo and χ Surfaces
+% Camera-ready draft from Kelly
+
+\subsection{Echo and susceptibility surfaces}
+\label{sec:echo_chi_surfaces}
+
+We next summarize the global structure of CHSH memory across the full
+$(K,\sigma)$ plane using two complementary diagnostics: a long-lag echo
+surface $\rho_S(\tau^\ast)$ and a mid-lag susceptibility $\chi$, both evaluated
+on the same grid of 19 couplings and 21 noise levels.
+
+Figure~\ref{fig:fig3_echo_surface} shows the echo surface
+$\rho_S(\tau=50)$ across the $(K,\sigma)$ plane.
+At zero noise, the entire high-$|S|$ ridge lies on a broad plateau with
+$\rho_S \approx 0.95$, indicating strong temporal persistence of CHSH
+correlations.
+However, even a small amount of noise disrupts this structure:
+at $\sigma \approx 0.002$ the echo collapses sharply across all $K$,
+falling to values near zero.
+Above this universal threshold the surface remains essentially flat, with
+$\rho_S$ indistinguishable from noise-level fluctuations throughout both the
+intermediate band and the noise basin.
+Thus, echo persistence is not graded across the ridge but instead exhibits a
+catastrophic transition: temporal coherence is robust in the deterministic
+limit but becomes extremely fragile once noise is introduced, collapsing
+roughly thirty times earlier than the instantaneous CHSH functional.
+
+Echo strength shows where memory survives, but not how fragile the CHSH
+geometry becomes to angular perturbations. This requires a directional
+derivative. We therefore examine the susceptibility $\chi$, which reveals the
+shear, instability pockets, and rotational flow within the CHSH field.
+
+While the echo surface captures the absolute level of long-lag memory, it does
+not quantify how \emph{sensitive} that memory is to changes in noise. To do
+so, we construct a mid-lag susceptibility $\chi(K,\sigma)$ by measuring the
+finite-difference response of $\rho_S(\tau_{\mathrm{mid}})$ to small changes in
+$\sigma$ at fixed coupling. The resulting $\chi$ surface, shown in
+Fig.~\ref{fig:fig4_chi_surface}, is overwhelmingly positive: across the grid,
+approximately $86\%$ of sampled points have $\chi>0$, indicating that in most
+of the high-$|S|$ and intermediate regions an incremental increase in noise
+leads to a disproportionate reduction in mid-lag memory. The remaining
+$\sim 14\%$ of points with $\chi<0$ form scattered pockets in which additional
+noise locally flattens or suppresses structure in a way that slightly
+stabilizes the mid-range correlation.
+
+The $\chi=0$ contour, highlighted in Fig.~\ref{fig:fig4_chi_surface} as a
+black curve, marks a nontrivial boundary between echo-amplifying and
+echo-suppressing regimes: we identify around ninety distinct crossings of this
+contour across the $(K,\sigma)$ grid, confirming that the susceptibility
+landscape is far from featureless. In combination with the echo surface, this
+reveals that the CHSH ridge is not merely a single ``wall'' of high
+instantaneous correlation, but is embedded within a broader band where
+long-lag echoes are both strong and extremely sensitive to perturbations. The
+system therefore behaves as a kind of classical echo amplifier near the ridge,
+with long-lag memory that is simultaneously large in magnitude and highly
+fragile to noise.
+
+
+%=============================================================================
+% FIGURES
+%=============================================================================
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{figs/fig3_echo_surface}
+\caption{
+    Echo surface $\rho_S(\tau = 50)$ across the $(K,\sigma)$ plane.
+    Colors show the lagged CHSH autocorrelation at $\tau=50$ sampling
+    intervals. At $\sigma=0$ the system lies on a high-coherence plateau
+    with $\rho_S \approx 0.95$ along the entire CHSH ridge. As noise
+    increases, echo strength collapses sharply near the universal memory
+    threshold $\sigma_{\mathrm{mem}} \approx 0.002$ and remains near zero
+    throughout the intermediate band and noise basin, even in regions where
+    the instantaneous CHSH functional still satisfies $|S|>2$.
+}
+\label{fig:fig3_echo_surface}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{figs/fig4_chi_surface}
+\caption{
+    Susceptibility surface $\chi(K,\sigma)$ showing the directional
+    derivative of the CHSH functional with respect to measurement angle.
+    Positive values indicate that small rotations of the measurement
+    geometry increase $|S|$, while negative values indicate decreasing
+    sensitivity.
+    The coherent ridge exhibits a broad region of positive $\chi$,
+    reflecting a stable and well-oriented CHSH geometry.
+    In the intermediate band, $\chi$ alternates sign and develops shear
+    structures, indicating competition between nearby angle optima and the
+    onset of rotational flow in the CHSH field.
+    Deep in the noise basin, $\chi \approx 0$, consistent with the loss of
+    all directional CHSH structure when $|S|<2$ for every angle choice.
+}
+\label{fig:fig4_chi_surface}
+\end{figure}
+
+Susceptibility shows where the CHSH geometry bends, but not how the optimal
+measurement directions reorganize across the field. To expose the underlying
+geometric structure, we compute the angle-resolved field geometry from
+Experiment E231, which reveals the rotational shear and the distinct regimes
+of CHSH organization.

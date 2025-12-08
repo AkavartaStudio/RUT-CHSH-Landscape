@@ -1,0 +1,74 @@
+% Paper 2 - Introduction
+% Camera-ready draft from Kelly
+
+\subsection{Motivation}
+
+Coupled phase oscillators provide a simple but expressive setting for studying
+CHSH-like correlations in classical dynamics. In Paper~1 we established that a
+pair of deterministically coupled oscillators produces a well-defined CHSH
+landscape: a high-$|S|$ ridge for sufficiently strong coupling and low noise,
+and a sharp collapse curve $\sigma_{\mathrm{c}}(K)$ that separates high-$|S|$
+from classical regimes. Yet that analysis treated the CHSH functional as a
+time-averaged quantity, collapsing the temporal dimension into a single
+statistic.
+
+Here we restore that temporal dimension. By computing lag-resolved correlations
+across the full $(K,\sigma)$ plane, we reveal the internal structure of the
+CHSH ridge: how $S(t)$ ``remembers'' itself at finite lags, how that memory
+degrades under noise, and whether the system's temporal coherence can survive
+when the instantaneous magnitude $|S|$ remains high.
+
+\subsection{Background and Related Work}
+
+The CHSH inequality~\cite{clauser1969proposed} and its
+generalizations~\cite{cirelson1980quantum} have been extensively studied in
+the context of quantum foundations and information theory, building on Bell's
+original work~\cite{bell1964einstein}. Classical analogues
+of Bell-type correlations arise in a variety of dynamical systems, from coupled
+oscillators to chaotic maps, whenever continuous measurement parameters can be
+tuned to maximize correlations between subsystems. Following the classical Kuramoto
+framework~\cite{kuramoto1984chemical,strogatz2000kuramoto,acebron2005kuramoto},
+we adopt a minimal setting in which coupling strength and noise amplitude
+can be varied independently, allowing systematic exploration of the
+correlation landscape.
+
+Previous work has focused primarily on instantaneous or time-averaged CHSH
+statistics. The temporal structure of correlations---how CHSH memory decays
+with lag, how curvature varies across parameter space, and how susceptibility
+responds to noise---has received less attention. This paper addresses that gap
+by introducing lag-resolved diagnostics that reveal the internal temporal
+organization of the CHSH ridge.
+
+\subsection{Contributions}
+
+The central finding is that instantaneous magnitude and temporal memory are
+governed by distinct noise scales. CHSH memory collapses at
+$\sigma_{\mathrm{mem}} \approx 0.002$---roughly thirty times lower than the
+$|S|$-collapse curve $\sigma_{\mathrm{c}}(K)$. This separation defines three
+robust regimes in the $(K,\sigma)$ plane: (1) a noise-dominated basin where
+both $|S|$ and memory are trivial; (2) a structured intermediate band where
+$|S|>2$ persists but long-lag memory has already vanished; and (3) a narrow
+ridge of maximal $|S|$ and non-zero memory. Throughout these regimes, the
+curvature and susceptibility of the CHSH memory field encode nontrivial
+temporal structure that cannot be read from the $|S|$ functional alone.
+
+We further examine the CHSH functional as a directional field by scanning
+across all measurement geometries. This angle-resolved analysis shows that the
+optimal CHSH configuration twists under noise, with the susceptibility
+$\partial S^*/\partial\sigma$ changing sign multiple times as coupling and
+noise vary. Evaluated at these optimal angles, long-lag memory still collapses
+at $\sigma_{\mathrm{mem}}$, confirming that the memory threshold arises from
+intrinsic dynamics rather than geometric artifact.
+
+\subsection{Outline}
+
+The paper is organized as follows. Section~2 defines the observables---echo
+strength $\rho_S(\tau)$, memory curvature, and susceptibility---and specifies
+the simulation and grid parameters. Section~3 presents results in five
+subsections: (3.1) the $\sigma_{\mathrm{mem}}$ threshold and regime
+separation; (3.2) the curvature surface and its sign structure; (3.3) echo
+and susceptibility surfaces; (3.4) synthesis of the three regimes; and
+(3.5) angle-resolved observer fields. Section~4
+discusses implications for classical CHSH dynamics and the coherence-memory
+distinction. The conclusion summarizes the framework and sets the stage for
+Paper~3, where we extend the analysis to small oscillator networks.
