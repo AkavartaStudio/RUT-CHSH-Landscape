@@ -15,17 +15,17 @@ This directory contains reproducible experiment configurations and results for P
 
 | Folder | Description | Size | Location |
 |--------|-------------|------|----------|
-| `Paper3_Mission1/` | Chain topology baseline | ~2.5 GB | **External** |
-| `Paper3_Mission1B/` | Symmetric cluster analysis | ~1.9 GB | **External** |
+| `Paper3_Stage1/` | Chain topology baseline | ~2.5 GB | **External** |
+| `Paper3_Stage1B/` | Symmetric cluster analysis | ~1.9 GB | **External** |
 | `Paper3_Stage2/` | Star topology | ~100 KB | Included |
 | `Paper3_Stage3/` | Triangle topology | ~190 KB | Included |
 | `Paper3_Stage4/` | Comparative analysis | ~100 KB | Included |
 
 ## Large External Datasets
 
-Mission1 and Mission1B contain large simulation outputs (~4.4 GB combined) that are not tracked in Git.
+Stage1 and Stage1B contain large simulation outputs (~4.4 GB combined) that are not tracked in Git.
 
-**Local path:** `/Users/kellymcrae/Akavarta/research/phys/Paper3_Mission1/` and `Paper3_Mission1B/`
+**Local path:** `/Users/kellymcrae/Akavarta/research/phys/Paper3_Stage1/` and `Paper3_Stage1B/`
 
 **Canonical archive:** OSF repository (link TBD)
 
