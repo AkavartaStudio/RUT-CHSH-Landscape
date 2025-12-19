@@ -30,16 +30,17 @@ import numpy as np
 # Core Simulation (self-contained, no external dependencies)
 # ============================================================================
 
-def simulate_coupled_oscillators(K, sigma, T=5000, dt=0.01, seed=None):
+def simulate_coupled_oscillators(K, sigma, T=5000, dt=0.01, seed=None, delta_omega=0.0):
     """
     Simulate two Kuramoto-coupled oscillators with noise.
 
     Parameters:
-        K     : Coupling strength (try 1.0)
-        sigma : Noise level (try 0.1 for ridge, 1.0 for classical)
-        T     : Number of time steps
-        dt    : Time step size
-        seed  : Random seed for reproducibility
+        K           : Coupling strength
+        sigma       : Noise level (0 for deterministic)
+        T           : Number of time steps
+        dt          : Time step size
+        seed        : Random seed for reproducibility
+        delta_omega : Frequency mismatch (omega2 - omega1)
 
     Returns:
         theta1, theta2 : Phase trajectories
@@ -53,8 +54,9 @@ def simulate_coupled_oscillators(K, sigma, T=5000, dt=0.01, seed=None):
     theta1[0] = np.random.uniform(0, 2*np.pi)
     theta2[0] = np.random.uniform(0, 2*np.pi)
 
-    # Natural frequencies (identical for simplicity)
-    omega1, omega2 = 1.0, 1.0
+    # Natural frequencies
+    omega1 = 1.0
+    omega2 = omega1 + delta_omega
 
     # Euler-Maruyama integration
     for t in range(T - 1):
@@ -140,22 +142,23 @@ def main():
     print("Tsirelson bound:  |S| <= 2.828...")
     print()
 
-    # Optimal measurement angles (found via parameter sweep)
+    # Optimal measurement angles (from Paper 1 parameter sweep)
     # These maximize |S| for phase-locked oscillators
     angles = {
         'a': 0,
-        'a_prime': 95,   # Δα ≈ 95°
-        'b': 42,
-        'b_prime': 126   # Δβ ≈ 84°
+        'a_prime': 95,   # Δα = 95°
+        'b': 45,
+        'b_prime': 129   # Δβ = 84°
     }
 
-    # Parameters
-    K = 1.0       # Strong coupling (ensures phase lock)
-    sigma = 0.1   # Low noise (on the "ridge")
-    n_trials = 10 # Average over multiple runs
+    # Parameters (exact Paper 1 ridge maximum)
+    K = 0.7           # Coupling strength
+    delta_omega = 0.2 # Frequency mismatch
+    sigma = 0.0       # Zero noise (deterministic)
+    n_trials = 5      # Fewer trials needed (deterministic)
 
-    print(f"Parameters: K={K}, σ={sigma}, {n_trials} trials")
-    print(f"Angles: a={angles['a']}°, a'={angles['a_prime']}°, "
+    print(f"Parameters: K={K}, Δω={delta_omega}, σ={sigma}")
+    print(f"Angles (optimized): a={angles['a']}°, a'={angles['a_prime']}°, "
           f"b={angles['b']}°, b'={angles['b_prime']}°")
     print()
     print("-" * 70)
@@ -164,7 +167,8 @@ def main():
     S_values = []
     for trial in range(n_trials):
         theta1, theta2 = simulate_coupled_oscillators(
-            K=K, sigma=sigma, T=5000, dt=0.01, seed=42 + trial
+            K=K, sigma=sigma, T=50000, dt=0.01, seed=42 + trial,
+            delta_omega=delta_omega
         )
 
         # Discard transient (first 20%)

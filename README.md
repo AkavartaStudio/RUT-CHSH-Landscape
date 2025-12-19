@@ -75,11 +75,11 @@ python quick_verify_chsh.py
 
 Output:
 ```
-RESULTS (10 trials):
-  |S| = 2.785 ± 0.001
+RESULTS (5 trials):
+  |S| = 2.819 ± 0.000
 
-  ✓ CLASSICAL BOUND VIOLATED by 0.785
-  ✓ This is 98.5% of Tsirelson bound
+  ✓ CLASSICAL BOUND VIOLATED by 0.819
+  ✓ This is 99.7% of Tsirelson bound
 ```
 
 This self-contained script demonstrates CHSH violation in coupled oscillators without any setup beyond numpy.
